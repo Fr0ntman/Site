@@ -1,2 +1,5 @@
-= content_for :title, 'ola'
-p hello
+= content_for :title, 'Новости'
+ul
+	= @news.each do |item|
+		li: a href="#{item}"= item.title
+	
