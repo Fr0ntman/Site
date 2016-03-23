@@ -3,7 +3,8 @@
 	ul
 		= @news.each do |item|
 			li
-				a href="#{news_path item}"= item.title
+				= link_to item.title, item
 				small добавлено #{l item.updated_at.localtime, format: :default}
+				= link_to 'Удалить', item, method: :delete
 - else
 	p Нет новостей
