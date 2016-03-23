@@ -7,3 +7,12 @@ ru:
     <<: *defaults
   time:
     <<: *defaults
+  activerecord:
+    errors:
+      models:
+        news:
+          attributes:
+            title:
+              blank: "Заголовок статьи не может быть пустым"
+            content:
+              blank: "Контент статьи не может быть пустым"

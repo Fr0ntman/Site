@@ -14,9 +14,9 @@ class NewsController < ApplicationController
 	def create
 		@news = News.new(news_params)
 		if @news.save
-			redirect_to :root
+			redirect_to news_path @news
 		else
-			redirect_to :new_news
+			render :new
 		end
 	end
 
