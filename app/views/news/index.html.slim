@@ -1,7 +1,9 @@
 = content_for :title, 'Новости'
-ul
-	= @news.each do |item|
-		li
-			a href="#{news_path item}"= item.title
-			small добавлено #{l item.updated_at, format: :default}
-	
+- unless @news.size == 0
+	ul
+		= @news.each do |item|
+			li
+				a href="#{news_path item}"= item.title
+				small добавлено #{l item.updated_at.localtime, format: :default}
+- else
+	p Нет новостей
