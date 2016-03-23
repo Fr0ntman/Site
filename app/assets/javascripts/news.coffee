@@ -1,2 +1,0 @@
-$ ->
-	$('#news_content').froalaEditor()
