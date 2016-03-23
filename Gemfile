@@ -10,7 +10,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails', '~> 3.0', '>= 3.0.1'
 gem 'passenger', '~> 5.0', '>= 5.0.26'
 gem 'pg'
-gem 'wysiwyg-rails'
+gem 'summernote-rails'
+gem 'bootstrap-sass'
+gem 'bootswatch-rails'
 group :development, :test do
   gem 'byebug'
 end
