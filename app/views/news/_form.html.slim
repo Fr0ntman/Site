@@ -1,4 +1,8 @@
 = form_for @news do |f|
+	= if @news.errors.messages.any?
+		ul
+			= @news.errors.messages.each do |msg|
+				li= msg
 	= f.label :title, 'Заголовок новости'
 	= f.text_field :title
 	= f.label :content, 'Текст новости'

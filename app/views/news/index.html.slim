@@ -1,5 +1,7 @@
 = content_for :title, 'Новости'
 ul
 	= @news.each do |item|
-		li: a href="#{news_path item}"= item.title
+		li
+			a href="#{news_path item}"= item.title
+			small= l item.updated_at, format: "%-d %B в %H:%M"
 	

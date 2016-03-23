@@ -16,7 +16,7 @@ class NewsController < ApplicationController
 		if @news.save
 			redirect_to :root
 		else
-			redirect_to :new
+			redirect_to :new_news
 		end
 	end
 
