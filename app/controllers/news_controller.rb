@@ -13,7 +13,7 @@ class NewsController < ApplicationController
 	end
 
 	def create
-		@news = News.new(news_params)
+		@news = News.new news_params
 		if @news.save
 			redirect_to news_path @news
 		else
@@ -25,7 +25,7 @@ class NewsController < ApplicationController
 	end
 
 	def update
-		if @news.update_attributes(news_params)
+		if @news.update_attributes news_params
 			redirect_to news_path @news
 		else
 			render :edit
@@ -33,8 +33,12 @@ class NewsController < ApplicationController
 	end
 
 	def destroy
-		News.find(params[:id]).destroy
-		redirect_to root_path
+		vk = vk_init
+		@item = News.find params[:id]
+		if @item.destroy
+			vk.wall.delete owner_id: ENV['vk_group_id'], post_id: @item.vk_post_id
+			redirect_to root_path
+		end
 	end
 
 	private
@@ -44,6 +48,6 @@ class NewsController < ApplicationController
 		end
 
 		def news_item
-			@news = News.find(params[:id])
+			@news = News.find params[:id]
 		end
 end
