@@ -17,7 +17,7 @@ class NewsController < ApplicationController
 		begin
 			redirect_to news_path @news if @news.save
 		rescue
-			flash[:error] = @news.vk_fail
+			flash[:error] = "Ошибка сервера, попробуйте добавить новость позднее или обратитесь к администратору"
 			render :new
 		end
 	end
