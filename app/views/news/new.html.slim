@@ -1,2 +1,3 @@
 = content_for :title, 'Добавление новости'
+= flash[:error]
 = render 'form', news: @news

@@ -14,9 +14,10 @@ class NewsController < ApplicationController
 
 	def create
 		@news = News.new news_params
-		if @news.save
-			redirect_to news_path @news
-		else
+		begin
+			redirect_to news_path @news if @news.save
+		rescue
+			flash[:error] = @news.vk_fail
 			render :new
 		end
 	end
