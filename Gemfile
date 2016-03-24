@@ -13,6 +13,7 @@ gem 'pg'
 gem 'summernote-rails'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
+gem 'vkontakte_api'
 group :development, :test do
   gem 'byebug'
 end
