@@ -1,0 +1,10 @@
+= form_for news do |f|
+	- if news.errors.messages.any?
+		ul
+			- news.errors.messages.each do |attr, msg|
+				li= msg[0]
+	= f.label :title, 'Заголовок новости'
+	= f.text_field :title
+	= f.label :content, 'Текст новости'
+	= f.text_area :content
+	= f.submit 'Добавить новость'
