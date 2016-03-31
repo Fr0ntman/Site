@@ -1,7 +1,7 @@
 = content_for :title, 'Новости'
 - unless @news.size == 0
 	ul
-		= @news.each do |item|
+		- @news.each do |item|
 			li
 				= link_to item.title, item
 				small добавлено #{l item.updated_at.localtime, format: :default}

@@ -5,6 +5,8 @@
 				li= msg[0]
 	= f.label :title, 'Заголовок новости'
 	= f.text_field :title
+	= f.label :attachments, 'Выберите файлы'
+	= f.file_field :attachments, multiple: true
 	= f.label :content, 'Текст новости'
 	= f.text_area :content
 	= f.submit

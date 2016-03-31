@@ -37,18 +37,18 @@ class NewsController < ApplicationController
 	end
 
 	def destroy
-		vk = vk_init
-		@item = News.find params[:id]
-		if @item.destroy
-			vk.wall.delete owner_id: ENV['vk_group_id'], post_id: @item.vk_post_id
-			redirect_to root_path
+		@news = News.find params[:id]
+		begin
+			redirect_to root_path if @news.destroy
+		rescue
+			flash.now[:error] = "Ошибка сервера, попробуйте удалить новость позднее или обратитесь к администратору"
 		end
 	end
 
 	private
 
 		def news_params
-			params.require(:news).permit(:title, :content)			
+			params.require(:news).permit(:title, :content, {attachments: []})			
 		end
 
 		def news_item
