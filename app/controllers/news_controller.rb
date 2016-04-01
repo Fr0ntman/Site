@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-	before_action  :news_item, only: [:show, :edit, :update]
+	before_action  :news_item, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@news = News.find_each
@@ -15,7 +15,7 @@ class NewsController < ApplicationController
 	def create
 		@news = News.new news_params
 		begin
-			redirect_to news_path @news if @news.save
+			redirect_to @news if @news.save
 		rescue
 			flash.now[:error] = "Ошибка сервера, попробуйте добавить новость позднее или обратитесь к администратору"
 			render :new
@@ -28,7 +28,7 @@ class NewsController < ApplicationController
 	def update
 		begin
 			if @news.update_attributes news_params
-				redirect_to news_path @news
+				redirect_to @news
 			end
 		rescue
 			flash.now[:error] = "Ошибка сервера, попробуйте изменить новость позднее или обратитесь к администратору"
@@ -37,11 +37,9 @@ class NewsController < ApplicationController
 	end
 
 	def destroy
-		@news = News.find params[:id]
-		begin
-			redirect_to root_path if @news.destroy
-		rescue
-			flash.now[:error] = "Ошибка сервера, попробуйте удалить новость позднее или обратитесь к администратору"
+		@count = News.find_each.count
+		respond_to do |format|
+			format.js if @news.destroy
 		end
 	end
 

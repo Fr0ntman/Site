@@ -16,6 +16,7 @@ gem 'bootswatch-rails'
 gem 'vkontakte_api'
 gem 'figaro'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'spinjs-rails'
 group :development, :test do
   gem 'byebug'
 end
