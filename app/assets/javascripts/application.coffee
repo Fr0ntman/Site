@@ -4,3 +4,5 @@
 #= require bootstrap
 #= require summernote
 #= require_tree .
+#= require spin
+#= require jquery.spin

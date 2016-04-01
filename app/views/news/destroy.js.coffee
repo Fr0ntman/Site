@@ -1,9 +1,8 @@
-$ ->
+link = 'a[data-remote]'
+news_container = '.news'
 
-	link = 'a[data-remote]'
-	news_container = '.news'
-
-	$(link).on 'ajax:success', (e, data, status, xhr) ->
+$(link).on 'ajax:success', (e, data, status, xhr) ->
+	<% unless @error %>
 		e.preventDefault()
 		if <%= @count %> is 1
 			$(news_container).fadeOut 500, -> 
@@ -11,7 +10,6 @@ $ ->
 				$(this).remove()
 		else
 			$('#news-<%= @news.id %>').fadeOut 500, -> $(this).remove()
-
-	$(link).on 'ajax:error', (e, status, xhr, error) ->
-		e.preventDefault()
+	<% else %>
 		alert 'error'
+	<% end %>

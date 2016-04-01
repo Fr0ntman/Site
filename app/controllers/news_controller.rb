@@ -38,8 +38,14 @@ class NewsController < ApplicationController
 
 	def destroy
 		@count = News.find_each.count
+		@error = false
 		respond_to do |format|
-			format.js if @news.destroy
+			begin
+				format.js if @news.destroy
+			rescue
+				@error = true
+				format.js
+			end
 		end
 	end
 
