@@ -2,23 +2,25 @@ class NewsController < ApplicationController
 	before_action  :news_item, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@news = News.find_each
+		@news = News.order(created_at: :desc).all
+		@news_init = News.new
 	end
 
 	def show
 	end
 
 	def new
-		@news = News.new
+		render file: 'public/404'
 	end
 
 	def create
 		@news = News.new news_params
-		begin
-			redirect_to @news if @news.save
-		rescue
-			flash.now[:error] = "Ошибка сервера, попробуйте добавить новость позднее или обратитесь к администратору"
-			render :new
+		respond_to do |format|
+			if @news.save
+				format.js
+			else
+				format.json { render json: @news.errors, status: :unprocessable_entity }
+			end
 		end
 	end
 
@@ -38,13 +40,11 @@ class NewsController < ApplicationController
 
 	def destroy
 		@count = News.find_each.count
-		@error = false
 		respond_to do |format|
-			begin
-				format.js if @news.destroy
-			rescue
-				@error = true
+			if @news.destroy
 				format.js
+			else
+				format.json { render json: @news.errors, status: :internal_server_error }
 			end
 		end
 	end

@@ -17,6 +17,7 @@ gem 'vkontakte_api'
 gem 'figaro'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'spinjs-rails'
+gem 'remotipart'
 group :development, :test do
   gem 'byebug'
 end

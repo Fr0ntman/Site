@@ -1,15 +1,7 @@
-link = 'a[data-remote]'
-news_container = '.news'
+if <%= @count %> is 1
+	$('.news').fadeOut 500, -> 
+		$(document.body).append '<p class="news-empty">Нет новостей</p>'
+		$(this).remove()
+else
+	$('#news-<%= @news.id %>').fadeOut 500, -> $(this).remove()
 
-$(link).on 'ajax:success', (e, data, status, xhr) ->
-	<% unless @error %>
-		e.preventDefault()
-		if <%= @count %> is 1
-			$(news_container).fadeOut 500, -> 
-				$(document.body).append '<p>Нет новостей</p>'
-				$(this).remove()
-		else
-			$('#news-<%= @news.id %>').fadeOut 500, -> $(this).remove()
-	<% else %>
-		alert 'error'
-	<% end %>

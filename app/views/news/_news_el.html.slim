@@ -1,0 +1,5 @@
+li id="news-#{item.id}"
+	= link_to item.title, item
+	small добавлено #{l item.updated_at.localtime, format: :default}
+	= link_to 'Удалить', item, method: :delete, remote: true
+	.spin
