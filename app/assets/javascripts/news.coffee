@@ -9,7 +9,11 @@ $ ->
 		$('#new_news').clear_form_fields()
 
 	$('#new_news').on 'ajax:error', (e, data, status, xhr) ->
-		$('#new_news').render_form_errors 'news', data.responseJSON
+		if data.status is 422 
+			$('#new_news').render_form_errors 'news', data.responseJSON
+		else
+			$('#new_news').clear_form_errors()
+			alert data.statusText
 
 	$('a[data-remote]').on 'ajax:success', (e, data, status, xhr) ->
 	$('a[data-remote]').on 'ajax:error', (e, data, status, xhr) ->
