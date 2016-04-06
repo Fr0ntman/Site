@@ -1,10 +1,15 @@
-= form_for news do |f|
+= form_for news, remote: true do |f|
 	- if news.errors.messages.any?
 		ul
 			- news.errors.messages.each do |attr, msg|
 				li= msg[0]
-	= f.label :title, 'Заголовок новости'
-	= f.text_field :title
-	= f.label :content, 'Текст новости'
-	= f.text_area :content
-	= f.submit 'Добавить новость'
+	.form-field			
+		= f.label :title, 'Заголовок новости'
+		= f.text_field :title
+	.form-field
+		= f.label :attachments, 'Выберите файлы'
+		= f.file_field :attachments, multiple: true
+	.form-field
+		= f.label :content, 'Текст новости'
+		= f.text_area :content
+	= f.submit

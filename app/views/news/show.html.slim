@@ -1,3 +1,21 @@
 = content_for :title, @news.title
 h2= @news.title
+- @news.attachments.each do |img|
+	img src="#{img.url}" width="150"
 = @news.content.html_safe
+#disqus_thread
+javascript:
+  var disqus_config = function () {
+	  this.page.url = "#{request.url}";
+	  this.page.identifier = "#{@news.id}";
+  };
+
+  (function() {
+	  var d = document, s = d.createElement('script');  
+	  s.src = '//kursomir.disqus.com/embed.js';  
+	  s.setAttribute('data-timestamp', +new Date());
+	  (d.head || d.body).appendChild(s);
+  })();
+noscript
+  | Please enable JavaScript to view the
+  a href="https://disqus.com/?ref_noscript" rel="nofollow"  comments powered by Disqus.
