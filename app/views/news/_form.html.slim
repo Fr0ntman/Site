@@ -6,6 +6,9 @@
 	.form-field			
 		= f.label :title, 'Заголовок новости'
 		= f.text_field :title
+	.form-field			
+		= f.label :description, 'Описание новости'
+		= f.text_field :description
 	.form-field
 		= f.label :attachments, 'Выберите файлы'
 		= f.file_field :attachments, multiple: true

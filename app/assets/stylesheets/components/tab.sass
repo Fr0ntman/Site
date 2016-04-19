@@ -1,0 +1,42 @@
+.tab
+  display: inline-block
+  padding: 10px 0 8px
+  font-size: 14px
+  border-bottom: 2px solid transparent
+  @include transition()
+  cursor: pointer
+
+  & + &
+    margin-left: 20px
+
+  &:not(.tab_state_active):hover
+    border-color: rgba($color-red, .3)
+
+  &_state_active
+    color: $color-red
+    border-color: $color-red
+    cursor: default
+
+  &_size_big
+    padding: 20px 10px 17px
+    font-size: 16px
+    line-height: 20px
+    border-bottom-width: 3px
+
+    & + &
+      margin-left: 40px
+
+  &-panel
+    font-size: 0
+    line-height: 1.15
+    border-bottom: 1px solid $color-light-gray
+
+    &_align_center
+      text-align: center
+
+
+  &-display
+    display: none
+
+    &_state_active
+      display: block

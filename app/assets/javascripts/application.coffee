@@ -8,6 +8,23 @@
 #= require spin
 #= require jquery.spin
 
+window = $ window
+scrollTop =
+	duration: 300
+	button: $ '#js-go-top'
+	toggleBtn: ->
+		if window.scrollTop() > 150
+			@button.addClass 'top_state_active'
+		else
+			@button.removeClass 'top_state_active'
+
+	scroll: ->
+		$('body, html').animate(scrollTop: 0, @duration)
+
+
+window.scroll($.proxy(scrollTop, 'toggleBtn'))
+scrollTop.button.on('click', $.proxy(scrollTop, 'scroll'))
+
 $.fn.clear_form_errors = ->
 	@find('.form-filed').removeClass 'has-error'
 	@find('span.help-block').remove()

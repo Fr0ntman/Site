@@ -1,8 +1,18 @@
 = content_for :title, 'Новости'
+.content-header
+	.container
+		h1 Наши новости
+		.content-header__subtitle Переводы. Анонсы. События
 = render 'form', news: @news_init
 - unless @news.size == 0
-	ul.news
-		- @news.each do |item|
-			= render 'news_el', item: item
+	.content.container.container_mt_40
+		.content-col
+			- @news.each do |item|
+				- if item.attachments.empty?
+					= render 'news_el_without_img', item: item
+				- else
+					= render 'news_el_with_img', item: item
 - else
 	p.news-empty Нет новостей
+.content-more.container
+	button.button type="button"  Показать еще

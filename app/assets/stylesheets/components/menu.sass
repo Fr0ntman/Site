@@ -1,0 +1,47 @@
+.menu
+  font-family: $font-roboto
+  font-size: 0
+
+  &__item
+    position: relative
+    display: inline-block
+    padding: 0 3px 0 28px
+    line-height: 60px
+    font-size: 16px
+    font-weight: 400
+    color: #fff
+    text-decoration: none
+    @include transition(color)
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      @include size(100%, 3px)
+      content: ''
+      background-color: $color-red
+      transform: scale(0)
+      opacity: 0
+      @include transition(opacity transform)
+
+    .icon
+      position: absolute
+      fill: #fff
+      top: 50%
+      left: 3px
+      transform: translateY(-50%)
+
+    &:hover,
+    &_state_active
+      color: $color-red
+
+      &:before
+        transform: scale(1)
+        opacity: 1
+
+      .icon
+        fill: $color-red
+
+
+    & + &
+      margin-left: 24px

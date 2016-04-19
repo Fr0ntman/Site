@@ -1,0 +1,18 @@
+.avatar
+  position: relative
+  display: inline-block
+  @include size(50px)
+  border-radius: 50%
+  overflow: hidden
+  background-color: #ececec
+
+  .icon
+    bottom: 0
+    fill: #ccc
+    @extend %h-align
+
+  img
+    position: absolute
+    top: 0
+    left: 0
+    @include size(100%, auto)

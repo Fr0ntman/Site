@@ -1,0 +1,31 @@
+.button
+  cursor: pointer
+  padding: 0 20px
+  display: inline-block
+  line-height: 48px
+  color: $color-text
+  font-size: 16px
+  letter-spacing: -.53px
+  background-color: transparent
+  text-transform: uppercase
+  text-decoration: none
+  border: 1px solid $color-light-gray
+  border-radius: 40px
+  @include transition(border-color color background-color)
+
+  &:hover
+    border-color: $color-red
+    color: $color-red
+
+  &_size_big
+    line-height: 43px
+
+  &_color_red
+    background-color: $color-red
+    border-color: $color-red
+    color: #fff
+
+    &:hover
+      background-color: #bd2519
+      border-color: #bd2519
+      color: #fff

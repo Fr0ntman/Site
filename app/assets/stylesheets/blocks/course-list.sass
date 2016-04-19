@@ -1,0 +1,76 @@
+.course-list
+  padding: 0
+  overflow: hidden
+
+  & + &
+    margin-top: 20px
+
+  &__title
+    position: relative
+    height: 200px
+
+    &:before
+      position: absolute
+      bottom: 0
+      left: 0
+      @include size(100%, 50px)
+      content: ''
+      background-image: linear-gradient(to top, rgba(#000, .7), rgba(#000, 0))
+
+    span
+      position: absolute
+      bottom: 15px
+      left: 15px
+      font-weight: 700
+      font-size: 20px
+      line-height: 1.15
+      color: #fff
+
+  &__order
+    padding: 15px
+
+  &__item
+    position: relative
+    padding-left: 12px
+
+    a
+      font-size: 13px
+      line-height: 20px
+
+
+    & + &
+      margin-top: 5px
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      line-height: 20px
+      content: '•'
+      color: $color-red
+      font-size: 20px
+
+  &.architecture
+
+    .course-list__title
+      background-image: url(asset-path('building.jpg'))
+
+  &.engineering
+
+    .course-list__title
+      background-image: url(asset-path('engineering.jpg'))
+
+  &.other
+
+    .course-list__title
+      background-image: url(asset-path('other.jpg'))
+
+  &.art
+
+    .course-list__title
+      background-image: url(asset-path('art.jpg'))
+
+  &.natural
+
+    .course-list__title
+      background-image: url(asset-path('natural.jpg'))
