@@ -14,5 +14,6 @@
 		= f.file_field :attachments, multiple: true
 	.form-field
 		= f.label :content, 'Текст новости'
-		= f.text_area :content
+		= f.text_area :content, class: 'tinymce'
+		= tinymce
 	= f.submit
