@@ -2,9 +2,9 @@
   width: $width
   height: $height
 
-@mixin transition($rules: "all", $duration: 0.3)
+@mixin transition($rules: all, $duration: 0.3)
 
-  @if $rules == "all"
+  @if $rules == all
     transition: $rules #{$duration}s ease
   @else
     $transitions: ()

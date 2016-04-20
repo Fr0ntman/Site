@@ -7,6 +7,7 @@ class NewsController < ApplicationController
 	end
 
 	def show
+		@last_news = News.last 4
 	end
 
 	def new

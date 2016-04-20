@@ -24,18 +24,10 @@
 	.content.content-sidebar
 		.sidebar
 			h3.sidebar-title Из недавнего
-			.text-news
-				.text-news__date 3 апреля 2016
-				a.text-news__title.text-news__title_fs_14 href="javascript: void(0)"  Телескоп впервые снял ударную вспышку сверхновой в видимом диапазоне
-			.text-news
-				.text-news__date 3 апреля 2016
-				a.text-news__title.text-news__title_fs_14 href="javascript: void(0)"  Телескоп впервые снял ударную вспышку сверхновой в видимом диапазоне
-			.text-news
-				.text-news__date 3 апреля 2016
-				a.text-news__title.text-news__title_fs_14 href="javascript: void(0)"  Телескоп впервые снял ударную вспышку сверхновой в видимом диапазоне
-			.text-news
-				.text-news__date 3 апреля 2016
-				a.text-news__title.text-news__title_fs_14 href="javascript: void(0)"  Телескоп впервые снял ударную вспышку сверхновой в видимом диапазоне
+			- @last_news.each do |news|
+				.text-news
+					.text-news__date= l news.updated_at.localtime, format: :default
+					= link_to news.title, news, {class: 'text-news__title text-news__title_fs_14'}
 	.content.content-main
 		.content-inner
 			= item.content.html_safe
