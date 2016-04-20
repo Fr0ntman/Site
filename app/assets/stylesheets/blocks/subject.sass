@@ -1,0 +1,87 @@
+.subject
+  display: table
+  width: 100%
+  font:
+    size: 14px
+    weight: 300
+  border-collapse: collapse
+  text-align: left
+  color: #808080
+
+  &__header
+    border-bottom: 1px solid $color-light-gray
+
+  th
+    padding-top: 10px
+    padding-bottom: 10px
+
+  &__cell
+    padding: 25px 10px
+    display: table-cell
+    vertical-align: middle
+    line-height: 1.25
+
+  &__item
+    display: table-row
+    border-bottom: 1px solid $color-light-gray
+    @include transition(border-bottom-color)
+
+    &:hover
+      border-bottom-color: transparent
+
+      & + .subject__progress-row
+        opacity: 1
+
+  &__row
+    display: table-row
+
+  &__title
+    display: inline-block
+    padding-bottom: 3px
+    font:
+      size: 16px
+      weight: 400
+    color: $color-text
+    line-height: 1.15
+    cursor: pointer
+    @include transition(color)
+
+    &:hover
+      color: $color-red
+
+  &__progress-row
+    opacity: 0
+    @include transition(opacity)
+
+    td
+      position: relative
+
+  &__progress
+    position: absolute
+    top: -5px
+    left: 0
+    @include size(100%, 5px)
+    background-color: $color-light-gray
+    border-radius: 2px
+
+    span
+      position: absolute
+      top: 0
+      left: 0
+      @include size(50%, 5px)
+      background-color: $color-red
+      border-radius: 2px
+
+
+  &_accent
+    color: $color-red
+    font:
+      size: 16px
+      weight: 400
+
+  &_center
+    text-align: center
+
+  &_w_50p
+    width: 50%
+    max-width: 50%

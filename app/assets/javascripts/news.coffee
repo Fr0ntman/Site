@@ -1,5 +1,15 @@
 $ ->
-	$('#news_content').summernote()
+
+	$('.js-news-container').hover	->
+			$title = $ '.js-news-title', @
+			$date = $(@).parent().find '.js-news-date'
+			topBound = $date.offset().top + $date.innerHeight() + 15 # 15px вниз от даты
+			titleTop = $title.offset().top
+
+			$(@).css 'transform', "translateY(-#{titleTop - topBound}px)"
+		,->
+			$(@).css 'transform', 'translateY(0)'
+
 
 	$(document).ajaxStart -> $('.spin').spin()
 	$(document).ajaxStop -> $('.spin').spin false

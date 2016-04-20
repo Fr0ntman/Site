@@ -7,6 +7,7 @@ class NewsController < ApplicationController
 	end
 
 	def show
+		@last_news = News.last 4
 	end
 
 	def new
@@ -52,7 +53,7 @@ class NewsController < ApplicationController
 	private
 
 		def news_params
-			params.require(:news).permit(:title, :content, {attachments: []})			
+			params.require(:news).permit(:title, :content, :description, {attachments: []})			
 		end
 
 		def news_item

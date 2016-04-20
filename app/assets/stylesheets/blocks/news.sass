@@ -1,0 +1,27 @@
+.news
+
+  &-descr
+    font-style: italic
+    color: #fff
+    height: 350px
+    font-size: 16px
+    line-height: 1.25
+
+  &-img
+    margin: 0
+    height: 350px
+
+  &-bg
+    position: absolute
+    z-index: 3
+    top: 0
+    left: 0
+    overflow: hidden
+    @include size(100%)
+
+    img
+      position: absolute
+      top: -20%
+      left: 0
+      filter: grayscale(100%)
+      @include size(100%, auto)

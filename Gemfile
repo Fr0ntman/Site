@@ -10,14 +10,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails', '~> 3.0', '>= 3.0.1'
 gem 'passenger', '~> 5.0', '>= 5.0.26'
 gem 'pg'
-gem 'summernote-rails'
-gem 'bootstrap-sass'
-gem 'bootswatch-rails'
+gem 'sass-globbing'
 gem 'vkontakte_api'
 gem 'figaro'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'spinjs-rails'
 gem 'remotipart'
+gem 'tinymce-rails'
 group :development, :test do
   gem 'byebug'
 end

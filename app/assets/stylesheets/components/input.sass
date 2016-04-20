@@ -1,0 +1,10 @@
+input,
+textarea
+
+  &::placeholder
+    color: #808080
+    font-weight: 300
+    @include transition(opacity)
+
+  &:focus::placeholder
+    opacity: .5

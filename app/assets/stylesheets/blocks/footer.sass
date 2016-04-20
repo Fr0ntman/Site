@@ -1,0 +1,35 @@
+.footer
+  position: absolute
+  bottom: 0
+  left: 0
+  line-height: 30px
+  background-color: #ffffff
+  @include size(100%, 60px)
+
+  &_bg_tr
+    background-color: transparent
+
+  &__note
+    display: inline-block
+    font:
+      weight: 300
+      size: 14px
+    color: rgba(#fff, .5)
+
+  &__logo
+    padding: 15px 0
+    line-height: 0
+
+    .icon
+      fill: $color-gray
+
+      &:hover
+        fill: $color-red
+
+  &__copyright
+    font:
+      weight: 300
+      size: 14px
+    line-height: 60px
+    color: $color-gray
+    text-align: center

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406170431) do
+ActiveRecord::Schema.define(version: 20160419164705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160406170431) do
     t.datetime "updated_at",  null: false
     t.integer  "vk_post_id"
     t.json     "attachments"
+    t.string   "description"
   end
 
   create_table "tasks", force: :cascade do |t|

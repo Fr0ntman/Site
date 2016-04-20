@@ -1,0 +1,46 @@
+.top
+  position: fixed
+  z-index: 10
+  right: 50px
+  bottom: 200px
+  @include size(48px)
+  border-radius: 50%
+  background-color: $color-red
+  cursor: pointer
+  opacity: 0
+  visibility: hidden
+  transition: opacity .3s ease, transform .3s ease, visibility 0s ease .3s
+  will-change: opacity, transform
+
+  &:before
+    @include vh-align(rotate(-45deg))
+    @include size(10px)
+    content: ''
+    border-top: 2px solid #fff
+    border-right: 2px solid #fff
+    top: 56%
+
+  &:after
+    position: absolute
+    top: 0
+    left: 0
+    @include size(100%)
+    content: ''
+    border-radius: 50%
+    border: 1px solid rgba($color-red, .5)
+    @include transition(transform border-color)
+
+  &_state_active
+    opacity: 1
+    visibility: visible
+    transition-delay: 0s
+
+  &:hover
+    transform: rotate(360deg)
+
+    &:after
+      transform: scale(1.5)
+      border-color: rgba($color-red, 0)
+
+
+
