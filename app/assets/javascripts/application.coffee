@@ -7,43 +7,45 @@
 #= require spin
 #= require jquery.spin
 
-$window = $ window
-scrollTop =
-	duration: 300
-	$button: $ '#js-go-top'
-	toggleBtn: ->
-		if $window.scrollTop() > 150
-			@$button.addClass 'top_state_active'
-		else
-			@$button.removeClass 'top_state_active'
+$(document).on 'page:change', ->
 
-	scroll: ->
-		$('body, html').animate(scrollTop: 0, @duration)
+	$window = $ window
+	scrollTop =
+		duration: 300
+		$button: $ '#js-go-top'
+		toggleBtn: ->
+			if $window.scrollTop() > 150
+				@$button.addClass 'top_state_active'
+			else
+				@$button.removeClass 'top_state_active'
 
-$window.scroll($.proxy(scrollTop, 'toggleBtn'))
-scrollTop.$button.on('click', $.proxy(scrollTop, 'scroll'))
+		scroll: ->
+			$('body, html').animate(scrollTop: 0, @duration)
 
-$.fn.clear_form_errors = ->
-	@find('.form-filed').removeClass 'has-error'
-	@find('span.help-block').remove()
+	$window.scroll($.proxy(scrollTop, 'toggleBtn'))
+	scrollTop.$button.on('click', $.proxy(scrollTop, 'scroll'))
 
-$.fn.clear_form_fields = ->
-	@find(':input, textarea', @)
-		.not(':button, :submit, :reset, :hidden')
-		.val('')
-		.removeAttr('checked')
-		.removeAttr('selected')
-	$('#news_content').summernote 'code', ''
+	$.fn.clear_form_errors = ->
+		@find('.form-filed').removeClass 'has-error'
+		@find('span.help-block').remove()
 
-$.fn.render_form_errors = (model_name, errors) ->
-	form = this
-	@clear_form_errors()
+	$.fn.clear_form_fields = ->
+		@find(':input, textarea', @)
+			.not(':button, :submit, :reset, :hidden')
+			.val('')
+			.removeAttr('checked')
+			.removeAttr('selected')
+		$('#news_content').summernote 'code', ''
 
-	$.each errors, (field, messages) ->
-		input = form.find('input, select, textarea').filter ->
-			name = $(this).attr 'name'
-			regex = new RegExp model_name + '\\[' + field + '\\(?'
-			if name then name.match regex
+	$.fn.render_form_errors = (model_name, errors) ->
+		form = this
+		@clear_form_errors()
 
-		input.closest('.form-field').addClass 'has-error'
-		input.parent().append '<span class="help-block">' + $.map(messages, (m) -> m.charAt(0).toUpperCase() + m.slice(1)).join('<br />') + '</span>'
+		$.each errors, (field, messages) ->
+			input = form.find('input, select, textarea').filter ->
+				name = $(this).attr 'name'
+				regex = new RegExp model_name + '\\[' + field + '\\(?'
+				if name then name.match regex
+
+			input.closest('.form-field').addClass 'has-error'
+			input.parent().append '<span class="help-block">' + $.map(messages, (m) -> m.charAt(0).toUpperCase() + m.slice(1)).join('<br />') + '</span>'

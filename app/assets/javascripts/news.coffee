@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'page:change', ->
 
 	$('.js-news-container').hover	->
 			$title = $ '.js-news-title', @
