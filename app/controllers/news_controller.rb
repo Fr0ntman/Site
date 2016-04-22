@@ -53,7 +53,7 @@ class NewsController < ApplicationController
 	private
 
 		def news_params
-			params.require(:news).permit(:title, :content, :description, {attachments: []})			
+			params.require(:news).permit(:title, :content, :description, {attachments: []})
 		end
 
 		def news_item

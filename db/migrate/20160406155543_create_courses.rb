@@ -13,7 +13,7 @@ class CreateCourses < ActiveRecord::Migration
 			t.string   :sub_category, null: false
 			t.string   :speciality
 			t.datetime :created_date, null: false
-			
+
 			t.timestamps null: false
 		end
 	end
