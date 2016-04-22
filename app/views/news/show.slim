@@ -1,7 +1,7 @@
 = content_for :title, @news.title
 - if @news.attachments.empty?
   = render 'show_el_without_img', item: @news
--else
+- else
   = render 'show_el_with_img', item: @news
 
 javascript:

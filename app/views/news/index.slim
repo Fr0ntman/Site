@@ -4,7 +4,7 @@
     h1 Наши новости
     .content-header__subtitle Переводы. Анонсы. События
 /= render 'form', news: @news_init
-- unless @news.size == 0
+- if @news.any?
   .content.container.container_mt_40
     .content-col
       - @news.each.with_index do |item, index|
@@ -21,6 +21,6 @@
           - else
             = render 'news_el_with_img', item: item
   .content-more.container
-    button.button type="button"  Показать еще
+    button.button type='button' Показать еще
 - else
   p.news-empty Нет новостей

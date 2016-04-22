@@ -2,7 +2,7 @@
   - if news.errors.messages.any?
     ul
       - news.errors.messages.each do |attr, msg|
-        li= msg[0]
+        li = msg[0]
   .form-field
     = f.label :title, 'Заголовок новости'
     = f.text_field :title
