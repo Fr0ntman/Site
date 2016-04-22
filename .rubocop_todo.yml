@@ -39,13 +39,6 @@ Style/ClassAndModuleChildren:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
-Style/ExtraSpacing:
-  Exclude:
-    - 'app/controllers/news_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 # Configuration parameters: MaxLineLength.
 Style/IfUnlessModifier:
   Exclude:
@@ -92,17 +85,3 @@ Style/RedundantBegin:
 Style/RedundantSelf:
   Exclude:
     - 'app/models/news.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment.
-Style/SpaceBeforeFirstArg:
-  Exclude:
-    - 'app/controllers/news_controller.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForEmptyBraces, SupportedStyles.
-# SupportedStyles: space, no_space
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space

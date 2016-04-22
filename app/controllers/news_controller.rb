@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action  :news_item, only: [:show, :edit, :update, :destroy]
+  before_action :news_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @news = News.order(created_at: :desc).all
@@ -53,7 +53,7 @@ class NewsController < ApplicationController
   private
 
     def news_params
-      params.require(:news).permit(:title, :content, :description, {attachments: []})
+      params.require(:news).permit(:title, :content, :description, { attachments: [] })
     end
 
     def news_item
