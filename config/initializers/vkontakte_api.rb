@@ -26,3 +26,5 @@ end
 
 # create a short alias VK for VkontakteApi module
 VkontakteApi.register_alias
+
+VK_CLIENT = VK::Client.new ENV['vk_access_token']
