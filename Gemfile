@@ -17,6 +17,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'spinjs-rails'
 gem 'remotipart'
 gem 'tinymce-rails'
+gem 'figaro'
 group :development, :test do
   gem 'byebug'
 end

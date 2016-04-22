@@ -1,0 +1,12 @@
+development:
+  DB_USERNAME: mixty
+  DB_PASSWORD: 548259
+  DB_HOST: localhost
+production:
+  DB_USERNAME: kursomir
+  DB_PASSWORD: <REPLACE WITH ENV['KURSOMIR_DATABASE_PASSWORD']>
+  DB_HOST:
+test:
+  DB_USERNAME:
+  DB_PASSWORD:
+  DB_HOST:
