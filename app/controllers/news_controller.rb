@@ -29,12 +29,12 @@ class NewsController < ApplicationController
   end
 
   def update
-      if @news.update_attributes news_params
-        redirect_to @news
-      end
+    if @news.update_attributes news_params
+      redirect_to @news
+    end
   rescue
-      flash.now[:error] = "Ошибка сервера, попробуйте изменить новость позднее или обратитесь к администратору"
-      render :edit
+    flash.now[:error] = "Ошибка сервера, попробуйте изменить новость позднее или обратитесь к администратору"
+    render :edit
   end
 
   def destroy
@@ -50,11 +50,11 @@ class NewsController < ApplicationController
 
   private
 
-    def news_params
-      params.require(:news).permit(:title, :content, :description, { attachments: [] })
-    end
+  def news_params
+    params.require(:news).permit(:title, :content, :description, { attachments: [] })
+  end
 
-    def news_item
-      @news = News.find params[:id]
-    end
+  def news_item
+    @news = News.find params[:id]
+  end
 end

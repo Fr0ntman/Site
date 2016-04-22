@@ -15,13 +15,6 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Max: 15
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: outdent, indent
-Style/AccessModifierIndentation:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
@@ -43,33 +36,3 @@ Style/ClassAndModuleChildren:
 Style/IfUnlessModifier:
   Exclude:
     - 'app/controllers/news_controller.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: normal, rails
-Style/IndentationConsistency:
-  Exclude:
-    - 'app/controllers/news_controller.rb'
-    - 'app/models/news.rb'
-    - 'db/migrate/20160323083639_create_news.rb'
-    - 'db/migrate/20160406170411_create_tasks.rb'
-    - 'db/migrate/20160406170431_create_exams.rb'
-
-# Offense count: 39
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Exclude:
-    - 'app/controllers/news_controller.rb'
-    - 'app/models/course.rb'
-    - 'app/models/exam.rb'
-    - 'app/models/lecture.rb'
-    - 'app/models/news.rb'
-    - 'app/models/task.rb'
-    - 'config/environment.rb'
-    - 'db/migrate/20160323083639_create_news.rb'
-    - 'db/migrate/20160406155543_create_courses.rb'
-    - 'db/migrate/20160406170356_create_lectures.rb'
-    - 'db/migrate/20160406170411_create_tasks.rb'
-    - 'db/migrate/20160406170431_create_exams.rb'
