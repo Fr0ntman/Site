@@ -4,8 +4,6 @@
 *.sublime-workspace
 .bundle
 .DS_Store
-.rubocop.yml
-.rubocop_todo.yml
 /config/application.yml
 /log/*
 /public/assets
