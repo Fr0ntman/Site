@@ -106,20 +106,3 @@ Style/SpaceBeforeFirstArg:
 # SupportedStyles: space, no_space
 Style/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
-
-# Offense count: 133
-# Cop supports --auto-correct.
-Style/Tab:
-  Exclude:
-    - 'app/controllers/news_controller.rb'
-    - 'app/models/course.rb'
-    - 'app/models/exam.rb'
-    - 'app/models/lecture.rb'
-    - 'app/models/news.rb'
-    - 'app/models/task.rb'
-    - 'config/environment.rb'
-    - 'db/migrate/20160323083639_create_news.rb'
-    - 'db/migrate/20160406155543_create_courses.rb'
-    - 'db/migrate/20160406170356_create_lectures.rb'
-    - 'db/migrate/20160406170411_create_tasks.rb'
-    - 'db/migrate/20160406170431_create_exams.rb'
