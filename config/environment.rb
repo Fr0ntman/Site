@@ -20,5 +20,6 @@ def get_attachments(files)
 	end
 	attachments
 end
+
 # Initialize the Rails application.
 Rails.application.initialize!
