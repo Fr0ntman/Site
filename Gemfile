@@ -22,9 +22,15 @@ gem 'vkontakte_api'
 
 group :development, :test do
   gem 'byebug'
+  gem 'spring'
 end
 
 group :development do
+  gem 'annotate'
+  gem 'bullet'
+  gem 'rails_best_practices', require: false
+  gem 'rubocop', require: false
+  gem 'rubycritic', require: false
+  gem 'traceroute'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
 end
