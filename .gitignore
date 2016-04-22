@@ -11,5 +11,6 @@
 /public/assets
 /public/uploads/
 /tmp
+passenger.3000.*
 rails_best_practices_output.html
 REVISION
