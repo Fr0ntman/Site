@@ -1,0 +1,21 @@
+= content_for :title, @news.title
+- if @news.attachments.empty?
+  = render 'show_el_without_img', item: @news
+- else
+  = render 'show_el_with_img', item: @news
+
+javascript:
+  var disqus_config = function () {
+    this.page.url = "#{request.url}";
+    this.page.identifier = "#{@news.id}";
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//kursomir.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+noscript
+  | Please enable JavaScript to view the
+  a href="https://disqus.com/?ref_noscript" rel="nofollow"  comments powered by Disqus.

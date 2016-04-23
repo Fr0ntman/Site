@@ -1,0 +1,7 @@
+.card-news
+  .card-news__date.js-news-date
+    .label = l item.updated_at.localtime, format: :default_card
+  = image_tag item.attachments[0].url, class: 'card-news__image'
+  = link_to item, class: 'card-news-container js-news-container' do
+    .card-news__title.js-news-title = item.title
+    .card-news__descr.js-news-descr = item.description

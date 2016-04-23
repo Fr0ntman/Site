@@ -1,26 +1,35 @@
 source 'https://rubygems.org'
-gem 'rails', '4.2.5.1'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
+gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'slim-rails', '~> 3.0', '>= 3.0.1'
+gem 'jquery-rails'
 gem 'passenger', '~> 5.0', '>= 5.0.26'
 gem 'pg'
-gem 'sass-globbing'
-gem 'vkontakte_api'
-gem 'figaro'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'spinjs-rails'
+gem 'rails', '4.2.5.1'
 gem 'remotipart'
+gem 'sass-rails', '~> 5.0'
+gem 'sass-globbing'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'slim-rails', '~> 3.0', '>= 3.0.1'
+gem 'spinjs-rails'
 gem 'tinymce-rails'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
+gem 'vkontakte_api'
+
 group :development, :test do
   gem 'byebug'
-end
-group :development do
-  gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :development do
+  gem 'annotate'
+  gem 'bullet'
+  gem 'rails_best_practices', require: false
+  gem 'rubocop', require: false
+  gem 'rubycritic', require: false
+  gem 'traceroute'
+  gem 'web-console', '~> 2.0'
 end
