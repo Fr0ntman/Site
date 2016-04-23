@@ -3,7 +3,6 @@ class NewsController < ApplicationController
 
   def index
     @news = News.order(created_at: :desc).all
-    @news_init = News.new
   end
 
   def show
@@ -11,7 +10,7 @@ class NewsController < ApplicationController
   end
 
   def new
-    render file: 'public/404'
+    @news = News.new
   end
 
   def create

@@ -3,23 +3,9 @@
   .container
     h1 Наши новости
     .content-header__subtitle Переводы. Анонсы. События
-/= render 'form', news: @news_init
 - if @news.any?
   .content.container.container_mt_40
-    .content-col
-      - @news.each.with_index do |item, index|
-        - if index.even?
-          - if item.attachments.empty?
-            = render 'news_el_without_img', item: item
-          - else
-            = render 'news_el_with_img', item: item
-    .content-col
-      - @news.each.with_index do |item, index|
-        - if index.odd?
-          - if item.attachments.empty?
-            = render 'news_el_without_img', item: item
-          - else
-            = render 'news_el_with_img', item: item
+    == print_news @news
   .content-more.container
     button.button type='button' Показать еще
 - else

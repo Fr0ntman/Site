@@ -6,7 +6,6 @@
 .DS_Store
 /config/application.yml
 /log/*
-/public/assets
 /public/uploads/
 /tmp
 passenger.3000.*
