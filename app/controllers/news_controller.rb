@@ -17,9 +17,9 @@ class NewsController < ApplicationController
     @news = News.new news_params
     respond_to do |format|
       if @news.save
-        format.js
+        format.html { redirect_to @news }
       else
-        format.json { render json: @news.errors, status: :unprocessable_entity }
+        format.html { render :new }
       end
     end
   end

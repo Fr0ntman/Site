@@ -26,7 +26,7 @@
           .text-news__date = l news.updated_at.localtime, format: :default
           = link_to news.title, news, {class: 'text-news__title text-news__title_fs_14'}
   .content.content-main
-    .content-inner = item.content.html_safe
+    .content-inner== item.content.html_safe
   .content.content-main
     .content-inner
       #disqus_thread

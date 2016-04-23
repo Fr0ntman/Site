@@ -1,4 +1,4 @@
-= form_for news, remote: true do |f|
+= form_for news do |f|
   - if news.errors.messages.any?
     ul
       - news.errors.messages.each do |attr, msg|
