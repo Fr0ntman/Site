@@ -1,13 +1,13 @@
 module NewsHelper
-	attr_accessor :news
+	attr_reader :news, :cls
 
-	def print_news(news)
+	def print_news(news, cls='content-col')
 		@news = news
 		content =<<EOS
-			.content-col
+			.#{cls}
 				- news.each.with_index do |item, index|
 					= news_el item if index.even?
-			.content-col
+			.#{cls}
 				- news.each.with_index do |item, index|
 					= news_el item if index.odd?
 EOS
