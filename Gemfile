@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave', git: 'https://github.com/carrierwaveuploader/carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'

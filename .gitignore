@@ -7,8 +7,9 @@
 /config/application.yml
 /log/*
 /public/assets/
+/public/uploads/tmp/
 /tmp
 Gemfile.lock
-passenger.3000.*
+passenger.*.*
 rails_best_practices_output.html
 REVISION
