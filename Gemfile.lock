@@ -51,6 +51,8 @@ GEM
       rake (>= 0.8.7)
     arel (6.0.3)
     ast (2.2.0)
+    autoprefixer-rails (6.3.4)
+      execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -276,6 +278,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  autoprefixer-rails
   bullet
   byebug
   carrierwave!

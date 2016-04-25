@@ -6,7 +6,6 @@
 .DS_Store
 /config/application.yml
 /log/*
-/public/uploads/
 /public/assets/
 /tmp
 Gemfile.lock
