@@ -1,4 +1,4 @@
 class ExamFile < ActiveRecord::Base
 	belongs_to :exam
-	has_one    :answe_file
+	has_one    :answer_file
 end
