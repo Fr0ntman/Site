@@ -3,14 +3,14 @@ module NewsHelper
 
 	def print_news(news, cls='content-col')
 		@news = news
-		content =<<EOS
+		content =<<TPL
 			.#{cls}
 				- news.each.with_index do |item, index|
 					= news_el item if index.even?
 			.#{cls}
 				- news.each.with_index do |item, index|
 					= news_el item if index.odd?
-EOS
+TPL
 
 		Slim::Template.new { content }.render self
 	end
