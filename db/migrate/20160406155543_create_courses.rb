@@ -3,7 +3,7 @@ class CreateCourses < ActiveRecord::Migration
     create_table :courses do |t|
       t.string   :title, null: false
       t.string   :bg_img, null: false
-      t.string   :color
+      t.string   :color, null: false
       t.text     :description, null: false
       t.string   :number, null: false
       t.string   :level, null: false
@@ -12,7 +12,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string   :category, null: false
       t.string   :sub_category, null: false
       t.string   :speciality
-      t.datetime :created_date, null: false
+      t.datetime :date_of_creating, null: false
 
       t.timestamps null: false
     end
