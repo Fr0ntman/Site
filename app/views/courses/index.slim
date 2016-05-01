@@ -1,0 +1,11 @@
+= content_for :title, 'Курсы'
+.content-header
+  .container
+    h1 Переводы лекций
+    .content-header__subtitle Массачусетского технологического института
+- if @courses.any?
+  .content.container.container_mt_40
+    
+  .content-more.container
+- else
+  p.news-empty Нет курсов
