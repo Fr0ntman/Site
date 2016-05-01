@@ -14,4 +14,6 @@
 
 class Task < ActiveRecord::Base
   belongs_to :course
+  has_many   :task_files
+  has_many   :solution_files
 end
