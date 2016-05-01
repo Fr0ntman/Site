@@ -1,6 +1,6 @@
 development:
-  DB_USERNAME: mixty
-  DB_PASSWORD: 548259
+  DB_USERNAME: login
+  DB_PASSWORD: pass
   DB_HOST: localhost
 production:
   DB_USERNAME: kursomir
