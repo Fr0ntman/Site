@@ -137,13 +137,13 @@ ActiveRecord::Schema.define(version: 20160501154538) do
   add_index "task_files", ["task_id"], name: "index_task_files_on_task_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
-    t.integer  "course_id"
+    t.integer  "lecture_id"
     t.string   "title",      null: false
     t.integer  "number",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "tasks", ["course_id"], name: "index_tasks_on_course_id", using: :btree
+  add_index "tasks", ["lecture_id"], name: "index_tasks_on_lecture_id", using: :btree
 
 end

@@ -5,7 +5,8 @@
     .content-header__subtitle Массачусетского технологического института
 - if @courses.any?
   .content.container.container_mt_40
-    
+    - @courses.each do |course|
+			= course.title
   .content-more.container
 - else
   p.news-empty Нет курсов
