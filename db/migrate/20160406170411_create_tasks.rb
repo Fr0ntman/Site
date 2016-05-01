@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.belongs_to :course, index: true
       t.string     :title, null: false
       t.integer    :number, null: false
+      
       t.timestamps null: false
     end
   end
