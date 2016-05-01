@@ -13,6 +13,6 @@
 #
 
 class Task < ActiveRecord::Base
-  belongs_to :course
+  belongs_to :lecture
   has_many   :task_files
 end
