@@ -30,7 +30,7 @@ class Course < ActiveRecord::Base
   					uniqueness: { case_sensitive: false }, 
   					format: { 
   						with: /\A(#[0-9a-fA-F]{3,6}|rgb\s?\((?:\d{1,3}\,?\s?){3}\))\z/, 
-  						message: 'неверный формат цвета' 
+  						message: 'неверный формат цвета'
   					}
   validates :description, presence: true, length: { in: 50..500 }
   validates :number, presence: true

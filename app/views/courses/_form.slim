@@ -6,6 +6,8 @@
 					ul
 						- msg.each do |item|
 							li= item
+				- else
+					li= msg[0]
 	.form-filed
 		= f.label :title, 'Название курса'
 		= f.text_field :title
