@@ -19,19 +19,19 @@ body
           svg.icon.icon-logo-action.logo__action role='img' title='logo-action'
             use xlink:href=image_path('icons.svg#icon-logo-action')
         nav.menu.right
-          = link_to 'javascript:;', class: 'menu__item' do
+          = link_to courses_path, class: "menu__item #{active_class courses_path}" do
             | Курсы
             svg.icon.icon-glass role='img' title='glass'
               use xlink:href=image_path('icons.svg#icon-glass')
-          = link_to news_index_path, class: 'menu__item menu__item_state_active' do
+          = link_to news_index_path, class: "menu__item #{active_class news_index_path}" do
             | Новости
             svg.icon.icon-news role='img' title='news'
               use xlink:href=image_path('icons.svg#icon-news')
-          = link_to 'javascript:;', class: 'menu__item' do
+          = link_to 'javascript:;', class: "menu__item" do
             | О проекте
             svg.icon.icon-info role='img' title='info'
               use xlink:href=image_path('icons.svg#icon-info')
-          = link_to 'javascript:;', class: 'menu__item' do
+          = link_to 'javascript:;', class: "menu__item" do
             | Команда
             svg.icon.icon-team role='img' title='team'
               use xlink:href=image_path('icons.svg#icon-team')
