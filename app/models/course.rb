@@ -22,4 +22,27 @@
 class Course < ActiveRecord::Base
   has_many :lectures
   has_many :exams
+
+  validates :title, presence: true
+  validates :bg_img, presence: true
+  validates :color, 
+  					presence: true, 
+  					uniqueness: { case_sensitive: false }, 
+  					format: { 
+  						with: /^(#[0-9a-fA-F]{3,6}|rgb\s?\((?:\d{1,3}\,?\s?){3}\))$/, 
+  						message: 'неверный формат цвета' 
+  					}
+  validates :description, presence: true, length: { in: 50..500 }
+  validates :number, presence: true
+  validates :level, presence: true
+  validates :original_course_link, 
+  					presence: true
+  					format: { 
+  						with: /^(https?:\/\/)?([\w\.]+)\.([a-z]{2,6}\.?)(\/[\w\.]*)*\/?$/, 
+  						message: 'неверный формат адреса'
+  					}
+  validates :teacher, presence: true
+  validates :category, presence: true
+  validates :sub_category, presence: true
+  validates :date_of_creating, presence: true, numericality: true, length: { is: 4 }
 end
