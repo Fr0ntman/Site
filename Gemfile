@@ -19,6 +19,7 @@ gem 'tinymce-rails'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'vkontakte_api'
+gem 'trumbowyg_rails'
 
 group :development, :test do
   gem 'byebug'
