@@ -9,6 +9,9 @@ class CoursesController < ApplicationController
 
 	def new
 		@course = Course.new
+		@categories = Category.all
+		@sub_categories = SubCategory.all
+		@specialities = Speciality.all
 	end
 
 	def create
