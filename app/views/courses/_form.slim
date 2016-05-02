@@ -1,4 +1,8 @@
 = form_for @course do |f|
+	- if @course.errors.messages.any?
+    ul
+      - @course.errors.messages.each do |attr, msg|
+        li = msg[0]
 	.form-filed
 		= f.label :title, 'Название курса'
 		= f.text_field :title
@@ -22,13 +26,13 @@
 		= f.text_field :original_course_link
 	.form-filed
 		= f.label :category, 'Категория'
-		= f.collection_select :category, @categories, :id, :name
+		= f.collection_select :category, @categories, :id, :title
 	.form-filed
 		= f.label :sub_category, 'Подкатегория'
-		= f.collection_select :sub_category, @sub_categories, :id, :name
+		= f.collection_select :sub_category, @sub_categories, :id, :title
 	.form-filed
 		= f.label :speciality, 'Специальность'
-		= f.collection_select :speciality, @specialities, :id, :name
+		= f.collection_select :speciality, @specialities, :id, :title
 	.form-filed
 		= f.label :date_of_creating, 'Дата появления курса'
 		= f.text_field :date_of_creating
