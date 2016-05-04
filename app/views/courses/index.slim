@@ -3,10 +3,10 @@
   .container
     h1 Переводы лекций
     .content-header__subtitle Массачусетского технологического института
-- if @courses.any?
-  .content.container.container_mt_40
-    - @courses.each do |course|
-			= course.title
-  .content-more.container
-- else
-  p.news-empty Нет курсов
+.container.container_mt_40
+  .course-list.content
+    .course-list__title style=("background:url(#{image_path('temp.jpg')}) no-repeat 50% 82%;background-size:cover") 
+    ul.course-list__order style=("padding:15px 60px") 
+      li.course-list__item
+        = link_to  'Левитт - чтение и написание коротких рассказов', 'levitt_-_chtenie_i_napisanie_korotkikh_rasskazov.pdf'
+.content-more.container
