@@ -1,0 +1,61 @@
+.dropdown
+  position: absolute
+  z-index: 5
+  top: calc(100% + 3px)
+  right: 0
+  min-width: 160px
+  max-width: 250px
+  border-radius: 0 0 4px 4px
+  overflow: hidden
+  box-shadow: 2px 2px 5px 1px rgba(#000, .2)
+  opacity: 0
+  visibility: hidden
+  transform: translateY(-10px)
+  transition: opacity .3s ease, visibility 0s ease .3s, transform .3s ease
+
+  &-toggle
+    cursor: pointer
+    fill: $color-dark-gray
+
+  &-container
+    position: relative
+
+    &:before
+      position: absolute
+      top: 100%
+      left: 0
+      @include size(100%, 3px)
+      content: ''
+      display: none
+
+    &:hover
+
+      &:before
+        display: block
+
+      .icon
+        fill: $color-red
+
+      .dropdown
+        opacity: 1
+        visibility: visible
+        transform: translateY(0)
+        transition-delay: 0s
+
+  &__item
+    display: inline-block
+    width: 100%
+    padding: 0 15px
+    text-decoration: none
+    line-height: 40px
+    background-color: #ffffff
+    color: $color-text
+    border: none
+    cursor: pointer
+    font-size: 14px
+    text-align: right
+    @include transition(color background-color)
+
+    &:hover
+      background-color: $color-red
+      color: #fff
