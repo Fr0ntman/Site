@@ -27,7 +27,7 @@ body
             | Новости
             svg.icon.icon-news role='img' title='news'
               use xlink:href=image_path('icons.svg#icon-news')
-          = link_to 'javascript:;', class: "menu__item" do
+          = link_to page_path('about'), class: "menu__item #{active_class page_path('about')}" do
             | О проекте
             svg.icon.icon-info role='img' title='info'
               use xlink:href=image_path('icons.svg#icon-info')
