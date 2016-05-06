@@ -1,0 +1,47 @@
+= form_for @course do |f|
+	- if @course.errors.messages.any?
+		ul
+			- @course.errors.messages.each do |attr, msg|
+				- if msg.size > 1
+					ul
+						- msg.each do |item|
+							li= item
+				- else
+					li= msg[0]
+	.form-filed
+		= f.label :title, 'Название курса'
+		= f.text_field :title
+	.form-filed
+		= f.label :bg_img, 'Картинка шапки курса'
+		= f.file_field :bg_img
+	.form-filed
+		= f.label :color, 'Цветовая схема'
+		= f.text_field :color
+	.form-filed
+		= f.label :description, 'Описание курса'
+		= f.text_field :description
+	.form-filed
+		= f.label :number, 'Номер курса'
+		= f.text_field :number
+	.form-filed
+		= f.label :level, 'Уровень сложности'
+		= f.text_field :level
+	.form-filed
+		= f.label :original_course_link, 'Оригинал курса на MIT'
+		= f.text_field :original_course_link
+	- unless @categories.nil?
+		.form-filed
+			= f.label :category, 'Категория'
+			= f.collection_select :category, @categories, :id, :title
+	- unless @sub_categories.nil?
+		.form-filed
+			= f.label :sub_category, 'Подкатегория'
+			= f.collection_select :sub_category, @sub_categories, :id, :title
+	- unless @specialities.nil?
+		.form-filed
+			= f.label :speciality, 'Специальность'
+			= f.collection_select :speciality, @specialities, :id, :title
+	.form-filed
+		= f.label :date_of_creating, 'Дата появления курса'
+		= f.text_field :date_of_creating
+	= f.submit

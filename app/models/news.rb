@@ -18,9 +18,9 @@ class News < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
 
-  after_create :vk_wall_post
-  after_update :vk_wall_edit
-  after_destroy :vk_wall_delete
+  # after_create :vk_wall_post
+  # after_update :vk_wall_edit
+  # after_destroy :vk_wall_delete
 
   private
 
@@ -48,7 +48,7 @@ class News < ActiveRecord::Base
   def get_attachments
     upload_url = VK_CLIENT.photos.get_wall_upload_server(group_id: ENV['vk_group_id']).upload_url
     files = []
-    attachments.each do |file|
+    self.attachments.each do |file|
       mime_type = MIME::Types.type_for(file.current_path).first.content_type
       vk_response = VK.upload url: upload_url, file: [file.current_path, mime_type]
       vk_response.group_id = ENV['vk_group_id']
