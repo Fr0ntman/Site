@@ -28,10 +28,13 @@ class NewsController < ApplicationController
   end
 
   def update
-    redirect_to @news if @news.update_attributes news_params
-  rescue
-    flash.now[:error] = "Ошибка сервера, попробуйте изменить новость позднее или обратитесь к администратору"
-    render :edit
+    respond_to do |format| 
+      if @news.update_attributes news_params
+        format.html { redirect_to @news }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
