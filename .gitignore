@@ -7,7 +7,7 @@
 /config/application.yml
 /log/*
 /public/assets/
-/public/uploads/tmp/
+/public/uploads/
 /tmp
 Gemfile.lock
 passenger.*.*
