@@ -1,5 +1,6 @@
 module ApplicationHelper
-	def active_class(controller)
-		controller.include?(params[:controller]) ? "menu__item_state_active" : ""
-	end
+	def current_class?(path)
+    return 'active' if request.path == path
+    ''
+  end
 end
