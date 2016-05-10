@@ -1,0 +1,6 @@
+.sidebar
+  h3.sidebar-title Из недавнего
+  - last_news.each do |news|
+    .text-news
+      .text-news__date= l news.updated_at.localtime, format: :default
+      = link_to news.title, news, {class: 'text-news__title text-news__title_fs_14'}

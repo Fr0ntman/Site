@@ -1,8 +1,8 @@
 .content-header.description
   .container
     .content-main.left
-      .description__label.label = l item.updated_at.localtime, format: :default_card
-      h1.font-40 = item.title
+      .description__label.label= l item.updated_at.localtime, format: :default_card
+      h1.font-40= item.title
     .content-sidebar
       .social.social_p_0
         = link_to 'javascript:;',
@@ -19,12 +19,7 @@
             use xlink:href=image_path('icons.svg#icon-vk')
 .container.container_mt_40
   .content.content-sidebar
-    .sidebar
-      h3.sidebar-title Из недавнего
-      - @last_news.each do |news|
-        .text-news
-          .text-news__date = l news.updated_at.localtime, format: :default
-          = link_to news.title, news, {class: 'text-news__title text-news__title_fs_14'}
+    = render 'shared/sidebar', last_news: @last_news
   .content.content-main
     .content-inner== item.content.html_safe
   .content.content-main
