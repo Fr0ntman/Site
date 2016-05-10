@@ -19,15 +19,15 @@ body
           svg.icon.icon-logo-action.logo__action role='img' title='logo-action'
             use xlink:href=image_path('icons.svg#icon-logo-action')
         nav.menu.right
-          = link_to courses_path, class: "menu__item #{active_class courses_path}" do
+          = link_to courses_path, class: "menu__item #{current_class? courses_path}" do
             | Курсы
             svg.icon.icon-glass role='img' title='glass'
               use xlink:href=image_path('icons.svg#icon-glass')
-          = link_to news_index_path, class: "menu__item #{active_class news_index_path}" do
+          = link_to news_index_path, class: "menu__item #{current_class? news_index_path}" do
             | Новости
             svg.icon.icon-news role='img' title='news'
               use xlink:href=image_path('icons.svg#icon-news')
-          = link_to page_path('about'), class: "menu__item #{active_class page_path('about')}" do
+          = link_to page_path('about'), class: "menu__item #{current_class? page_path('about')}" do
             | О проекте
             svg.icon.icon-info role='img' title='info'
               use xlink:href=image_path('icons.svg#icon-info')
