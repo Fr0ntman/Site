@@ -1,6 +1,5 @@
 module ApplicationHelper
 	def current_class?(path)
-    return 'menu__item_state_active' if request.path == path
-    ''
+    'menu__item_state_active' if request.url.include?(path)
   end
 end
