@@ -3,4 +3,4 @@
     use xlink:href=image_path('icons.svg#icon-logo-mit') 
   h2.title__label Массачусетский технологический институт
   h1.title__heading На русском. Бесплатно. Навсегда.
-  a.button.button_size_big.button_color_red href=("javascript: void(0)") style=("margin-top: 50px")  Перейти к курсам →
+  = link_to 'Перейти к курсам →', courses_path, class: 'button button_size_big button_color_red', style: 'margin-top: 50px'  

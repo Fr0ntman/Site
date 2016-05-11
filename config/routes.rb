@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   	resources :exams
   	resources :tasks
   end
-  root 'news#index'
+  root to: 'high_voltage/pages#show', id: 'home'
 end
