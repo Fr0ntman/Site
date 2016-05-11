@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   	resources :exams
   	resources :tasks
   end
-  root 'news#index'
+
+  get "/pages/*id" => 'pages#show', as: :page, format: false
+  root to: 'pages#show', id: 'home'
 end

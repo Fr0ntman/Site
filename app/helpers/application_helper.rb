@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def active_class(controller)
-		controller.include?(params[:controller]) ? "menu__item_state_active" : ""
-	end
+	def current_class?(path)
+    'menu__item_state_active' if request.url.include?(path)
+  end
 end
