@@ -1,0 +1,49 @@
+.collaborator
+  padding: 0
+  font-size: 14px
+  font-size: 1rem
+
+  & + &
+    margin-top: 20px
+
+  &__container
+    padding: 20px
+
+  &__avatar
+    display: block
+    margin: 0 auto 20px
+    @include size(120px)
+
+  &__name
+    color: $color-red
+    font-size: 20px
+    line-height: 1.25
+    text-align: center
+
+  &__post
+    padding-top: 5px
+    color: $color-text
+    font-weight: 700
+    line-height: 1.25
+    text-align: center
+
+  &__descr
+    position: relative
+    padding: 20px
+    border-top: 1px solid #dcdcdc
+    font-weight: 300
+    line-height: 1.5
+    text-align: justify
+    color: #808080
+
+    &:before
+      position: absolute
+      top: -8px
+      left: 50%
+      margin-left: -8px
+      @include size(16px)
+      content: ''
+      background-color: #ffffff
+      border-bottom: 1px solid #dcdcdc
+      border-right: 1px solid #dcdcdc
+      transform: rotate(45deg)
