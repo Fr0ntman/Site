@@ -9,6 +9,8 @@ class PagesController < ApplicationController
 			case params[:id]
 			when 'home'
 				'home'
+			when 'team_admins', 'team_translators'
+				'team'
 			else
 				'application'
 			end
