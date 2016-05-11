@@ -22,7 +22,8 @@
       background-color: $color-red
       transform: scale(0)
       opacity: 0
-      @include transition(opacity transform)
+      will-change: opacity, transform
+      transition: opacity .3s ease, transform .3s ease
 
     .icon
       position: absolute

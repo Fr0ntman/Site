@@ -1,28 +1,30 @@
 @keyframes rotate
   from
+    -webkit-transform: rotate3d(-.67, 1, 0, 0deg)
     transform: rotate3d(-.67, 1, 0, 0deg)
-    
+
   to
+    -webkit-transform: rotate3d(-.67, 1, 0, 360deg)
     transform: rotate3d(-.67, 1, 0, 360deg)
 
 .logo
   position: relative
   margin: 15px 0
-  
+
   &__action
     position: absolute
     top: 0
     right: 41px
-    will-change: transform
     backface-visibility: visible
-    
+    will-change: transform
+
   .icon
     fill: #fff
-    
+
   &:hover
 
     .logo__static
       fill: $color-red
-    
+
     .logo__action
       animation: rotate 1s infinite
