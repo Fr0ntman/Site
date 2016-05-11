@@ -6,7 +6,7 @@
   .container
     = link_to 'Администрация', 'javascript:;', class: 'tab tab_state_active tab_size_big', data: { template: Base64.encode64(render('team_admins')) }
     = link_to 'Разработчики', 'javascript:;', class: 'tab tab_size_big'
-    = link_to 'Переводчики', 'javascript:;', class: 'tab tab_size_big' #, data: { template: Base64.encode64(render('team_translators')) }
+    = link_to 'Переводчики', 'javascript:;', class: 'tab tab_size_big'
     = link_to 'Редакторы', 'javascript:;', class: 'tab tab_size_big'
 .container.container_mt_40
 	= render 'team_admins'
