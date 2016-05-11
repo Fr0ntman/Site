@@ -40,10 +40,10 @@ body
         h1 Наша команда
     .tab-panel.tab-panel_align_center
       .container
-        .tab.tab_state_active.tab_size_big= link_to 'Администрация', page_path('team_admins')
-        .tab.tab_size_big Разработчики
-        .tab.tab_size_big= link_to 'Переводчики', page_path('team_translators') 
-        .tab.tab_size_big Редакторы
+        = link_to 'Абминистрация', 'javascript:;', class: 'tab tab_state_active tab_size_big'
+        = link_to 'Разработчики', 'javascript:;', class: 'tab tab_size_big'
+        = link_to 'Переводчики', 'javascript:;', class: 'tab tab_size_big' 
+        = link_to 'Редакторы', 'javascript:;', class: 'tab tab_size_big'
     = yield
     footer.footer
       .container
