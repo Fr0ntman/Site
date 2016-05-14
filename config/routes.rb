@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   	resources :tasks
   end
 
-  get "/pages/*id" => 'pages#show', as: :page, format: false
+  get "/*id" => 'pages#show', as: :page, format: false
   root to: 'pages#show', id: 'home'
 end
