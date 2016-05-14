@@ -1,3 +1,5 @@
+- content_for :image, item.attachments[0].url
+- content_for :description, item.description
 .content-header.description
   .news-bg= image_tag item.attachments[0].url
   .description__header.container
@@ -7,16 +9,13 @@
     .content-sidebar
       .news-descr= item.description
       .description__social.social.social_p_0
-        = link_to 'javascript:;',
-                  class: 'social__twitter social__link social__link_type_round' do
+        = link_to 'javascript:;', class: 'social__twitter social__link social__link_type_round' do
           svg.icon.icon-twitter role="img" title="twitter"
             use xlink:href=image_path('icons.svg#icon-twitter')
-        = link_to 'javascript:;',
-                  class: 'social__facebook social__link social__link_type_round' do
+        = link_to "http://www.facebook.com/share.php?u=#{request.original_url}&title=#{item.title}", class: 'social__facebook social__link social__link_type_round' do
           svg.icon.icon-facebook role="img" title="facebook"
             use xlink:href=image_path('icons.svg#icon-facebook')
-        = link_to 'javascript:;',
-                  class: 'social__vk social__link social__link_type_round' do
+        = link_to 'javascript:;', class: 'social__vk social__link social__link_type_round' do
           svg.icon.icon-vk role="img" title="vk"
             use xlink:href=image_path('icons.svg#icon-vk')
     .content-main
