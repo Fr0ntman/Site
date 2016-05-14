@@ -4,6 +4,13 @@ html
     meta charset='utf-8'
     meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimal-ui'
     meta content='IE=edge' http-equiv='X-UA-Compatible'
+    meta property="og:url"           content="#{request.original_url}"
+    meta property="og:type"          content="website"
+    meta property="og:title"         content="#{yield :title}"
+    - if content_for? :description
+      meta property="og:description"   content="#{yield :description}"
+    - if content_for? :image
+      meta property="og:image"         content="#{yield :image}"
     link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,700,700italic' rel='stylesheet'
     title= yield :title
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
