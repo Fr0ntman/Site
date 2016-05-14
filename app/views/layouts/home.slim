@@ -53,3 +53,39 @@ body
             = link_to 'https://telegram.me/translate_mit', class: 'social__link', target: 'blank'
               svg.icon.icon-telegram role="img" title="telegram" 
                 use xlink:href=image_path('icons.svg#icon-telegram')
+    / /! Yandex.Metrika informer
+    / a href="https://metrika.yandex.ru/stat/?id=37344280&amp;from=informer" rel="nofollow" target="_blank" 
+    /   img alt="Яндекс.Метрика" onclick="try{Ya.Metrika.informer({i:this,id:37344280,lang:'ru'});return false}catch(e){}" src="https://informer.yandex.ru/informer/37344280/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" title="Яндекс.Метрика: данные за сегодня (просмотры), визиты и уникальные посетители)"
+    / /! Yandex.Metrika informer
+    /! Yandex.Metrika counter
+    coffee:
+      ((d, w, c) ->
+        (w[c] = w[c] or []).push ->
+          try
+            w.yaCounter37344280 = new (Ya.Metrika)(
+              id: 37344280
+              clickmap: true
+              trackLinks: true
+              accurateTrackBounce: true
+              webvisor: true)
+          catch e
+          return
+        n = d.getElementsByTagName('script')[0]
+        s = d.createElement('script')
+
+        f = ->
+          n.parentNode.insertBefore s, n
+          return
+
+        s.type = 'text/javascript'
+        s.async = true
+        s.src = 'https://mc.yandex.ru/metrika/watch.js'
+        if w.opera == '[object Opera]'
+          d.addEventListener 'DOMContentLoaded', f, false
+        else
+          f()
+        return
+      ) document, window, 'yandex_metrika_callbacks'
+    noscript
+      div
+        img alt="" src="https://mc.yandex.ru/watch/37344280" style="position:absolute; left:-9999px;"
