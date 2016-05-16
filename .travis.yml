@@ -8,6 +8,7 @@ services:
  - postgresql
 before_script:
  - psql -c 'create database travis_ci_test;' -U postgres
+ - bundle install
  - bundle exec rake db:migrate
 install: true
 script: "bundle exec rails"
