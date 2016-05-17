@@ -25,6 +25,7 @@ gem 'high_voltage', '~> 3.0.0'
 group :development, :test do
   gem 'byebug'
   gem 'spring'
+  gem 'rspec-rails'
 end
 
 group :development do
