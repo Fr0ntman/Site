@@ -15,3 +15,5 @@ install: true
 script: "bundle exec rspec"
 addons:
   postgresql: "9.4"
+notifications:
+  slack: openmit:hbb8Q8oTnkdqeWXIDa3p7wwY
