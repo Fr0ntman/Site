@@ -9,9 +9,9 @@ before_script:
  - psql -c 'create database travis_ci_test;' -U postgres
  - bundle install
  - bundle exec rake db:migrate
+ - bundle exec rake assets:clobber
+ - bundle exec rake assets:precompile
 install: true
-script: "bundle exec rails s"
+script: "bundle exec rspec"
 addons:
-  postgres: "9.4"
-  code_climate:
-      repo_token: 75408d377a0b3c1ab512bf3fb634617bccf2a1065f8c513e352139427ec8e1fb
+  postgresql: "9.4"
