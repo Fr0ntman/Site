@@ -11,8 +11,8 @@ development:
   database: kursomir_development
 
 test:
-  <<: *default
-  database: kursomir_test
+  adapter: postgresql
+  database: travis_ci_test
 
 production:
   <<: *default
