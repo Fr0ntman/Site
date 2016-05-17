@@ -1,14 +1,15 @@
 language: ruby
 rvm:
   - 2.2
+addons:
+  postgres: "9.4"
 branches:  
  only:
  - develop
-services:
- - postgresql: "9.4"
 before_script:
+ - psql --version
  - psql -c 'create database travis_ci_test;' -U postgres
  - bundle install
  - bundle exec rake db:migrate
 install: true
-script: "bundle exec rails"
+script: "bundle exec rails s"
