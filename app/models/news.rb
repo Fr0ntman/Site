@@ -18,9 +18,9 @@ class News < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
 
-  after_create :vk_wall_post
-  after_update :vk_wall_edit
-  after_destroy :vk_wall_delete
+  # after_create :vk_wall_post
+  # after_update :vk_wall_edit
+  # after_destroy :vk_wall_delete
 
   private
 
