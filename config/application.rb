@@ -7,5 +7,10 @@ module Kursomir
     config.active_record.default_timezone = :local
     config.active_record.raise_in_transactional_callbacks = true
     config.i18n.default_locale = :ru
+    config.generators do |g|
+		  g.test_framework  :rspec, :fixture => false
+	    g.view_specs      false
+	    g.helper_specs    false
+		end
   end
 end
