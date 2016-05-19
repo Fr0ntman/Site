@@ -6,7 +6,7 @@ branches:
  - develop
 before_script:
  - psql --version
- - psql -c 'create database travis_ci_test;' -U postgres
+ - psql -c 'create database kursomir_test;' -U postgres
  - bundle install
  - bundle exec rake db:migrate
  - bundle exec rake assets:clobber
