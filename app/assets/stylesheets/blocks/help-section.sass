@@ -1,0 +1,65 @@
+.help-section
+	border-bottom: 1px solid #E6E6E6
+
+	&__title
+		font-size: 3em
+		text-align: center
+		margin: 20px 0 40px
+		color: #575757
+		text-transform: lowercase
+
+	&__image
+		display: block
+		width: 100%
+		border-radius: 5px
+	
+		img
+			width: 50%
+			display: block
+			margin: 0 auto
+
+	.red
+		background: #FF7272
+
+	.blue
+		background: #B3B9FD
+
+	.light-green
+		background: #B6DCCB
+
+	.light-green
+		background: #BAEC9B
+
+	.appeal
+		padding: 20px 30px
+		margin-top: 40px
+
+		&__text
+			color: $color-text
+	
+	.description
+		padding: 20px 30px
+		margin-bottom: 20px
+		background: #eee
+		border-radius: 5px
+
+		&__subtitle
+			font-size: 1.3em
+			margin-bottom: 10px
+			color: $color-text
+
+		&__text
+			color: $color-text
+
+		&__link
+			color: #fff
+			display: inline-block
+			padding: 5px 10px
+			background: $color-red
+			text-decoration: none
+			border-radius: 3px
+			font-weight: bold
+
+			&:hover
+				background: lighten($color-red, 10)
+				color: darken(#fff, 5)
