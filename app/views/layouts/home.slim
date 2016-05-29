@@ -44,6 +44,10 @@ html
               | Команда
               svg.icon.icon-team role="img" title="team" 
                 use xlink:href=image_path('icons.svg#icon-team')
+            = link_to page_path('wanna-help'), class: 'menu__item' do
+              | Хочу помочь
+              svg.icon.icon-team role="img" title="team" 
+                use xlink:href=image_path('icons.svg#icon-team')
       = yield
       footer.footer.footer_bg_tr
         .container.container_full
