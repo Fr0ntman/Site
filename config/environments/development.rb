@@ -11,7 +11,7 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.raise_runtime_errors = true
   config.cache_classes = false
-  config.consider_all_requests_local = false
+  config.consider_all_requests_local = true
   config.eager_load = false
   config.sass.preferred_syntax = :sass
 end
