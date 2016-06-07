@@ -1,0 +1,8 @@
+- content_for :title, 'Страница не найдена'
+
+.error-description
+	.error-description__image
+		img src=image_path('404.png')
+	h1.error-description__title Ой. Такой страницы не существует.
+	p.error-description__status Ошибка 404
+	= link_to '← ВЕРНУТЬСЯ НА ГЛАВНУЮ', root_path, class: 'button button_size_big button_color_white'

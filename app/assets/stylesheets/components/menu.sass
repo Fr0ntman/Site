@@ -32,6 +32,7 @@
       left: 3px
       transform: translateY(-50%)
 
+
     .icon-wanna-help
       stroke: #fff
       fill: none
@@ -50,7 +51,19 @@
       .icon-wanna-help
         stroke: $color-red
         fill: none
-
-
+    
     & + &
       margin-left: 24px
+    
+    &_black:hover
+      color: #000
+
+      .icon
+        fill: #000
+
+      .icon-wanna-help
+        stroke: #000
+        fill: none
+
+      &:before
+        background: #000

@@ -1,0 +1,92 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta name='yandex-verification' content='503d8909f76eb7ce'
+    meta name='google-site-verification' content='w3xT4haMqIDKUGh6FQvWDSkPFwCsRMC0Xe4gzOZhLqQ'
+    meta name='viewport' content='width=960px, initial-scale=1, maximum-scale=1, minimal-ui'
+    meta content='IE=edge' http-equiv='X-UA-Compatible'
+    link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,700,700italic' rel='stylesheet'
+    title= yield :title
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .main.error-bg
+      header.header.js-header
+        .container.container_full
+          = link_to root_path, class: 'logo left dark-logo'  do
+            svg.icon.icon-logo-static.logo__static role="img" title="logo-static" 
+              use xlink:href=image_path('icons.svg#icon-logo-static') 
+            svg.icon.icon-logo-action.logo__action role="img" title="logo-action" 
+              use xlink:href=image_path('icons.svg#icon-logo-action') 
+          nav.menu.right
+            = link_to courses_path, class: 'menu__item menu__item_black' do 
+              | Курсы
+              svg.icon.icon-glass role="img" title="glass" 
+                use xlink:href=image_path('icons.svg#icon-glass')
+            = link_to news_index_path, class: 'menu__item menu__item_black' do
+              | Новости
+              svg.icon.icon-news role="img" title="news" 
+                use xlink:href=image_path('icons.svg#icon-news')
+            = link_to page_path('about'), class: 'menu__item menu__item_black' do
+              | О проекте
+              svg.icon.icon-info role="img" title="info" 
+                use xlink:href=image_path('icons.svg#icon-info')
+            = link_to page_path('team'), class: 'menu__item menu__item_black' do
+              | Команда
+              svg.icon.icon-team role="img" title="team" 
+                use xlink:href=image_path('icons.svg#icon-team')
+            = link_to page_path('wanna-help'), class: 'menu__item menu__item_black' do
+              | Хочу помочь
+              svg.icon.icon-wanna-help role="img" title="wanna-help" 
+                use xlink:href=image_path('icons.svg#icon-wanna-help')
+      = yield
+      footer.footer.footer_bg_tr
+        .container.container_full
+          .footer__note * Massachusetts Institute of Technology
+          .footer__social.right
+            .social
+              = link_to 'https://twitter.com/kursomir', class: 'social__link social__link_black', target: 'blank'
+                svg.icon.icon-twitter role="img" title="twitter" 
+                  use xlink:href=image_path('icons.svg#icon-twitter')
+              = link_to 'https://www.facebook.com/groups/kursomir/', class: 'social__link social__link_black', target: 'blank'
+                svg.icon.icon-facebook role="img" title="facebook" 
+                  use xlink:href=image_path('icons.svg#icon-facebook') 
+              = link_to 'https://vk.com/kursomir', class: 'social__link social__link_black', target: 'blank'
+                svg.icon.icon-vk role="img" title="vk" 
+                  use xlink:href=image_path('icons.svg#icon-vk')
+              = link_to 'https://telegram.me/translate_mit', class: 'social__link social__link_black', target: 'blank'
+                svg.icon.icon-telegram role="img" title="telegram" 
+                  use xlink:href=image_path('icons.svg#icon-telegram')
+      coffee:
+        ((d, w, c) ->
+          (w[c] = w[c] or []).push ->
+            try
+              w.yaCounter37344280 = new (Ya.Metrika)(
+                id: 37344280
+                clickmap: true
+                trackLinks: true
+                accurateTrackBounce: true
+                webvisor: true)
+            catch e
+            return
+          n = d.getElementsByTagName('script')[0]
+          s = d.createElement('script')
+
+          f = ->
+            n.parentNode.insertBefore s, n
+            return
+
+          s.type = 'text/javascript'
+          s.async = true
+          s.src = 'https://mc.yandex.ru/metrika/watch.js'
+          if w.opera == '[object Opera]'
+            d.addEventListener 'DOMContentLoaded', f, false
+          else
+            f()
+          return
+        ) document, window, 'yandex_metrika_callbacks'
+      noscript
+        div
+          img alt="" src="https://mc.yandex.ru/watch/37344280" style="position:absolute; left:-9999px;"
