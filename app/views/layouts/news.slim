@@ -48,11 +48,6 @@ html
               | Хочу помочь
               svg.icon.icon-wanna-help role='img' title='wanna-help'
                 use xlink:href=image_path('icons.svg#icon-wanna-help')
-      .content-header
-        .container
-          h1= yield :title
-          - if content_for? :subtitle
-            .content-header__subtitle= yield :subtitle
       = yield
       footer.footer
         .container

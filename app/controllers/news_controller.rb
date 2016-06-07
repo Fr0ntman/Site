@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   before_action :news_item, only: [:show, :edit, :update, :destroy]
   rescue_from VkontakteApi::Error, with: :vk_error_handler
+  layout :resolve_layout
 
   def index
     @news = News.order(created_at: :desc).all
@@ -64,5 +65,14 @@ class NewsController < ApplicationController
 
     def news_item
       @news = News.find params[:id]
+    end
+
+    def resolve_layout
+      case action_name
+      when "show"
+        "news"
+      else
+        "application"
+      end
     end
 end

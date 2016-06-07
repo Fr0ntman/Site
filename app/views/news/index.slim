@@ -1,8 +1,6 @@
-= content_for :title, 'Новости'
-.content-header
-  .container
-    h1 Наши новости
-    .content-header__subtitle Переводы. Анонсы. События
+- content_for :title, 'Новости'
+- content_for :subtitle, 'Переводы. Анонсы. События'
+
 - if @news.any?
   .content.container.container_mt_40
     == print_news @news
