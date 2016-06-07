@@ -1,13 +1,8 @@
 class ErrorsController < ApplicationController
-	layout "error"
+	include Gaffe::Errors
+  layout 'error'
 
-	def show
-		render status_code.to_s, status: status_code
+  def show
+    render "errors/#{@status_code}", status: @status_code
   end
-
-  private
-
-  	def status_code
-  		params.permit(:code) || 500
-  	end
 end
