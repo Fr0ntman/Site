@@ -1,74 +1,74 @@
 - content_for :title, 'Хочу помочь'
 
-.content.container.container_mt_40
+.container.container_mt_40
   .content-inner
-    section.help-section
-      h2.help-section__title Хочу переводить
-      .help-section__image.blue
-        img src=image_path("3.png") /
-      .appeal
-        p.appeal__text Нужно кратко написать о себе и своем образовании в дискуссии и написать куратору направления, также в каждой из дискуссий есть сообщение от сообщества, в котором указывается кто куратор того или иного направления.
-      .description
-        h4.description__subtitle Хотите помочь с переводом курсов?
-        p.description__text
-          | Тогда вы можете написать куратору одного из направлений &mdash; 
-          a.description__link href="https://new.vk.com/topic-115460783_33748334" target="blank"  Список курсов и контакты руководителей направлений
-    section.help-section
-      h2.help-section__title Хочу заниматься разработкой
-      .help-section__image.light-green
-        img src=image_path("1.png") /
-      .appeal
-        p.appeal__text Нужно кратко написать о себе и своих навыках. Напишите нам(адрес указан ниже) письмо и укажите, чем вы хотите заниматься.
-      .description
-        h4.description__subtitle Хотите помочь с разработкой сайта или сервисов?
-        p.description__text
-          | Тогда вы можете обратиться к команде разработчиков по адресу &mdash; 
-          a.description__link href="mailto:devops@kursomir.ru"  devops@kursomir.ru
-    section.help-section
-      h2.help-section__title Хочу верстать переведенные лекции
-      .help-section__image.blue
-        img src=image_path("3.png") /
-      .appeal
-        p.appeal__text Ты любишь верстать и LaTeX, а LaTeX любит тебя?
-      .description
-        h4.description__subtitle Скорее пиши нам! Мы в тебе нуждаемся!
-        p.description__text
-          | Контакты для связи &mdash; 
-          a.description__link href="https://vk.com/nkryazhev" target="blank"  Никита
-    section.help-section
-      h2.help-section__title Хочу заниматься дизайном
-      .help-section__image.red
-        img src=image_path("2.png") /
-      .appeal
-        p.appeal__text Расскажите о себе, покажите портфолио, мы будем рады!
-      .description
-        h4.description__subtitle Хотите помочь с дизайном сайта, презентаций или стилистики?
-        p.description__text
-          | Тогда вы можете обратиться к команде дизайнеров по адресу &mdash; 
-          a.description__link href="mailto:design@kursomir.ru"  design@kursomir.ru
-    section.help-section
-      h2.help-section__title Хочу редактировать переведенные лекции
-      .help-section__image.blue
-        img src=image_path("3.png") /
-      .appeal
-        p.appeal__text В тебе живет маленький граммар-наци?
-      .description
-        h4.description__subtitle Пиши, редактируй и снова пиши.
-        p.description__text
-          | Без ошибок и опечаток сюда &mdash; 
-          a.description__link href="https://vk.com/ancientellada" target="blank"  Ксении Корнеевой (она прекрасна)
-    section.help-section
-      h2.help-section__title Другое
-      .help-section__image.light-blue
-        img src=image_path("4.png") /
-      .appeal
-        p.appeal__text Напишите о вашем предложении. Мы обязательно с вами свяжемся.
-      .description
-        h4.description__subtitle Другое?
-        p.description__text
-          | Вы можете написать координатору нашего проекта &mdash; 
-          a.description__link href="https://vk.com/zverart" target="blank"  Артему
-        p.description__text
-          | Или вы можете написать основателю нашего проекта &mdash; 
-          a.description__link href="https://vk.com/le_chaton" target="blank"  Александру
+    section.help-section.help-section-red
+      .help-section__left-container
+        .help-section__left-container__image
+          img src=image_path("mac1.svg") /
+      .help-section__right-container
+        .help-section__right-container__title
+          h1 Хочу переводить
+        p.help-section__right-container__subtitle
+          | Нужно кратко написать о себе и своем образовании в дискуссии и написать куратору направления, также в каждой из дискуссий есть сообщение от сообщества, в котором указывается кто куратор того или иного направления.
+        = link_to 'https://new.vk.com/topic-115460783_33748334', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank' do
+          | Контакты для связи
+          svg
+            use xlink:href=image_path("right_arrow.svg") role="img"
+    section.help-section.help-section-purple
+      .help-section__left-container
+        .help-section__left-container__image
+          img src=image_path("mac2.svg") /
+      .help-section__right-container
+        .help-section__right-container__title
+          h2 Хочу редактировать переведенные лекции
+        p.help-section__right-container__subtitle
+          | В тебе живет маленький граммар-наци?
+          br
+          | Пиши, редактируй и снова пиши.куратор того или иного направления.
+        = link_to 'Контакты для связи', 'https://vk.com/ancientellada', class: 'button button_size_big button_color_white button_text_size_normal button_text_purple', target: 'blank'
+    section.help-section.help-section-vinous
+      .help-section__left-container
+        .help-section__left-container__image
+          img src=image_path("mac3.svg") /
+      .help-section__right-container
+        .help-section__right-container__title
+          h1 Хочу верстать переведенные лекции
+        p.help-section__right-container__subtitle
+          | Ты любишь верстать и LaTeX, а LaTeX любит тебя?
+          br
+          | Скорее пиши нам! Мы в тебе нуждаемся!
+        = link_to 'Контакты для связи', 'https://vk.com/nkryazhev', class: 'button button_size_big button_color_white button_text_size_normal button_text_vinous', target: 'blank'
+    section.help-section.help-section-dark-pink
+      .help-section__left-container
+        .help-section__left-container__image
+          img src=image_path("mac4.svg") /
+      .help-section__right-container
+        .help-section__right-container__title
+          h1 Хочу заниматься разработкой
+        p.help-section__right-container__subtitle
+          | Нужно кратко написать о себе и своих навыках. Напишите нам(адрес указан ниже) письмо и укажите, чем вы хотите заниматься.
+        = link_to 'Контакты для связи', 'mailto:devops@kursomir.ru', class: 'button button_size_big button_color_white button_text_size_normal button_text_dark_pink'
+    section.help-section.help-section-purple
+      .help-section__left-container
+        .help-section__left-container__image
+          img src=image_path("mac5.svg") /
+      .help-section__right-container
+        .help-section__right-container__title
+          h1 Хочу заниматься дизайном
+        p.help-section__right-container__subtitle
+          | Расскажите о себе, покажите портфолио, мы будем рады!
+        = link_to 'Контакты для связи', 'mailto:design@kursomir.ru', class: 'button button_size_big button_color_white button_text_size_normal button_text_purple'
+    section.help-section.help-section-red
+      .help-section__left-container
+        .help-section__left-container__image
+          img src=image_path("robot.svg") height="300" /
+      .help-section__right-container
+        .help-section__right-container__title
+          h1 Другое
+        p.help-section__right-container__subtitle
+          | Напишите о вашем предложении. Мы обязательно с вами свяжемся.
+        = link_to 'Координатор проекта', 'https://vk.com/zverart', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank', style: 'margin-bottom: 20px'
+        br
+        = link_to 'Основатель проекта', 'https://vk.com/le_chaton', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank'
 .content-more.container

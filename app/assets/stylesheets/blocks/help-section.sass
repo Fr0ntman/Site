@@ -1,65 +1,72 @@
 .help-section
-	border-bottom: 1px solid #E6E6E6
+	padding: 90px 50px
+	position: relative
+	@extend %clearfix
 
-	&__title
-		font-size: 3em
+	&__left-container
+		width: 50%
+		float: left
 		text-align: center
-		margin: 20px 0 40px
-		color: #575757
 
-	&__image
-		display: block
-		width: 100%
-		border-radius: 5px
-	
-		img
-			width: 50%
-			display: block
-			margin: 0 auto
+		&__image
+			width: 90%
 
-	.red
-		background: #FF7272
+	&__right-container
+		width: 50%
+		margin-left: 50%
 
-	.blue
-		background: #B3B9FD
+		&__title
+			margin-bottom: 30px
 
-	.light-blue
-		background: #B6DCCB
-
-	.light-green
-		background: #BAEC9B
-
-	.appeal
-		padding: 20px 30px
-		margin-top: 40px
-
-		&__text
-			color: $color-text
-	
-	.description
-		padding: 20px 30px
-		margin-bottom: 20px
-		background: #eee
-		border-radius: 5px
+			h2
+				color: #fff
+				font-size: 3em
 
 		&__subtitle
-			font-size: 1.3em
-			margin-bottom: 10px
-			color: $color-text
-
-		&__text
-			color: $color-text
-			margin-top: 10px
-
-		&__link
+			margin-bottom: 30px
+			font-size: 14px
 			color: #fff
-			display: inline-block
-			padding: 5px 10px
-			background: $color-red
-			text-decoration: none
-			border-radius: 3px
-			font-weight: bold
+			text-align: justify
 
-			&:hover
-				background: lighten($color-red, 10)
-				color: darken(#fff, 5)
+	&:before
+		content: ''
+		display: block
+		width: 50px
+		height: 50px
+		border-radius: 25px
+		position: absolute
+		top: 100%
+		left: 50%
+		transform: translate(-50%, -50%)
+		z-index: 5
+	
+	&:first-child
+		border-radius: 5px 5px 0 0
+
+	&:last-child
+		border-radius: 0 0 5px 5px
+
+		&:before
+			display: none
+
+.help-section-red
+	&,
+	&:before
+		background: $color-another-red
+
+.help-section-purple
+	&,
+	&:before
+		background: $color-purple
+
+.help-section-vinous
+	&,
+	&:before
+		background: $color-vinous
+
+.help-section-dark-pink
+	&,
+	&:before
+		background: $color-dark-pink
+
+
