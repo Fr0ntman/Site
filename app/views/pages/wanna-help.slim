@@ -1,71 +1,70 @@
 - content_for :title, 'Хочу помочь'
 
 .container.container_mt_40
-  .content-inner
-    section.help-section.help-section-red
-      .help-section__left-container
-        .help-section__left-container__image
-          img src=image_path("mac1.svg") /
-      .help-section__right-container
-        .help-section__right-container__title
-          h1 Хочу переводить
-        p.help-section__right-container__subtitle
-          | Нужно кратко написать о себе и своем образовании в дискуссии и написать куратору направления, также в каждой из дискуссий есть сообщение от сообщества, в котором указывается кто куратор того или иного направления.
-        = link_to 'Контакты для связи', 'https://new.vk.com/topic-115460783_33748334', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank'
-    section.help-section.help-section-purple
-      .help-section__left-container
-        .help-section__left-container__image
-          img src=image_path("mac2.svg") /
-      .help-section__right-container
-        .help-section__right-container__title
-          h2 Хочу редактировать переведенные лекции
-        p.help-section__right-container__subtitle
-          | В тебе живет маленький граммар-наци?
-          br
-          | Пиши, редактируй и снова пиши.куратор того или иного направления.
-        = link_to 'Контакты для связи', 'https://vk.com/ancientellada', class: 'button button_size_big button_color_white button_text_size_normal button_text_purple', target: 'blank'
-    section.help-section.help-section-vinous
-      .help-section__left-container
-        .help-section__left-container__image
-          img src=image_path("mac3.svg") /
-      .help-section__right-container
-        .help-section__right-container__title
-          h1 Хочу верстать переведенные лекции
-        p.help-section__right-container__subtitle
-          | Ты любишь верстать и LaTeX, а LaTeX любит тебя?
-          br
-          | Скорее пиши нам! Мы в тебе нуждаемся!
-        = link_to 'Контакты для связи', 'https://vk.com/nkryazhev', class: 'button button_size_big button_color_white button_text_size_normal button_text_vinous', target: 'blank'
-    section.help-section.help-section-dark-pink
-      .help-section__left-container
-        .help-section__left-container__image
-          img src=image_path("mac4.svg") /
-      .help-section__right-container
-        .help-section__right-container__title
-          h1 Хочу заниматься разработкой
-        p.help-section__right-container__subtitle
-          | Нужно кратко написать о себе и своих навыках. Напишите нам письмо и укажите, чем вы хотите заниматься.
-        = link_to 'Контакты для связи', 'mailto:devops@kursomir.ru', class: 'button button_size_big button_color_white button_text_size_normal button_text_dark_pink'
-    section.help-section.help-section-purple
-      .help-section__left-container
-        .help-section__left-container__image
-          img src=image_path("mac5.svg") /
-      .help-section__right-container
-        .help-section__right-container__title
-          h1 Хочу заниматься дизайном
-        p.help-section__right-container__subtitle
-          | Расскажите о себе, покажите портфолио, мы будем рады!
-        = link_to 'Контакты для связи', 'mailto:design@kursomir.ru', class: 'button button_size_big button_color_white button_text_size_normal button_text_purple'
-    section.help-section.help-section-red
-      .help-section__left-container
-        .help-section__left-container__image
-          img src=image_path("robot.svg") height="300" /
-      .help-section__right-container
-        .help-section__right-container__title
-          h1 Другое
-        p.help-section__right-container__subtitle
-          | Напишите о вашем предложении. Мы обязательно с вами свяжемся.
-        = link_to 'Координатор проекта', 'https://vk.com/zverart', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank', style: 'margin-bottom: 20px'
+  section.help-section.help-section-red
+    .help-section__left-container
+      .help-section__left-container__image
+        img src=image_path("mac1.svg") /
+    .help-section__right-container
+      .help-section__right-container__title
+        h1 Хочу переводить
+      p.help-section__right-container__subtitle
+        | Нужно кратко написать о себе и своем образовании в дискуссии и написать куратору направления, также в каждой из дискуссий есть сообщение от сообщества, в котором указывается кто куратор того или иного направления.
+      = link_to 'Контакты для связи', 'https://new.vk.com/topic-115460783_33748334', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank'
+  section.help-section.help-section-purple
+    .help-section__left-container
+      .help-section__left-container__image
+        img src=image_path("mac2.svg") /
+    .help-section__right-container
+      .help-section__right-container__title
+        h2 Хочу редактировать переведенные лекции
+      p.help-section__right-container__subtitle
+        | В тебе живет маленький граммар-наци?
         br
-        = link_to 'Основатель проекта', 'https://vk.com/le_chaton', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank'
+        | Пиши, редактируй и снова пиши.
+      = link_to 'Контакты для связи', 'https://vk.com/ancientellada', class: 'button button_size_big button_color_white button_text_size_normal button_text_purple', target: 'blank'
+  section.help-section.help-section-vinous
+    .help-section__left-container
+      .help-section__left-container__image
+        img src=image_path("mac3.svg") /
+    .help-section__right-container
+      .help-section__right-container__title
+        h1 Хочу верстать переведенные лекции
+      p.help-section__right-container__subtitle
+        | Ты любишь верстать и LaTeX, а LaTeX любит тебя?
+        br
+        | Скорее пиши нам! Мы в тебе нуждаемся!
+      = link_to 'Контакты для связи', 'https://vk.com/nkryazhev', class: 'button button_size_big button_color_white button_text_size_normal button_text_vinous', target: 'blank'
+  section.help-section.help-section-dark-pink
+    .help-section__left-container
+      .help-section__left-container__image
+        img src=image_path("mac4.svg") /
+    .help-section__right-container
+      .help-section__right-container__title
+        h1 Хочу заниматься разработкой
+      p.help-section__right-container__subtitle
+        | Нужно кратко написать о себе и своих навыках. Напишите нам письмо и укажите, чем вы хотите заниматься.
+      = link_to 'Контакты для связи', 'mailto:devops@kursomir.ru', class: 'button button_size_big button_color_white button_text_size_normal button_text_dark_pink'
+  section.help-section.help-section-purple
+    .help-section__left-container
+      .help-section__left-container__image
+        img src=image_path("mac5.svg") /
+    .help-section__right-container
+      .help-section__right-container__title
+        h1 Хочу заниматься дизайном
+      p.help-section__right-container__subtitle
+        | Расскажите о себе, покажите портфолио, мы будем рады!
+      = link_to 'Контакты для связи', 'mailto:design@kursomir.ru', class: 'button button_size_big button_color_white button_text_size_normal button_text_purple'
+  section.help-section.help-section-red
+    .help-section__left-container
+      .help-section__left-container__image
+        img src=image_path("robot.svg") height="300" /
+    .help-section__right-container
+      .help-section__right-container__title
+        h1 Другое
+      p.help-section__right-container__subtitle
+        | Напишите о вашем предложении. Мы обязательно с вами свяжемся.
+      = link_to 'Координатор проекта', 'https://vk.com/zverart', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank', style: 'margin-bottom: 20px'
+      br
+      = link_to 'Основатель проекта', 'https://vk.com/le_chaton', class: 'button button_size_big button_color_white button_text_size_normal button_text_red', target: 'blank'
 .content-more.container
