@@ -11,20 +11,9 @@ $(document).on 'page:change', ->
 			$(@).css 'transform', 'translateY(0)'
 
 
-	$(document).ajaxStart -> $('.spin').spin()
-	$(document).ajaxStop -> $('.spin').spin false
+	$('.social__link').click (e) ->
+		url = $(this).attr 'href'
+		window.open url,'sharer','toolbar=0,status=0,width=648,height=395'
 
-	$('#new_news').on 'ajax:success', (e, data, status, xhr) ->
-		$('#new_news').clear_form_errors()
-		$('#new_news').clear_form_fields()
-
-	$('#new_news').on 'ajax:error', (e, data, status, xhr) ->
-		if data.status is 422 
-			$('#new_news').render_form_errors 'news', data.responseJSON
-		else
-			$('#new_news').clear_form_errors()
-			alert data.statusText
-
-	$('a[data-remote]').on 'ajax:success', (e, data, status, xhr) ->
-	$('a[data-remote]').on 'ajax:error', (e, data, status, xhr) ->
-		console.log 'error'
+		do e.preventDefault
+		return false
