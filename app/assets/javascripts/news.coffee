@@ -11,7 +11,7 @@ $(document).on 'page:change', ->
 			$(@).css 'transform', 'translateY(0)'
 
 
-	$('.social__link').click (e) ->
+	$('.social__link_type_round').click (e) ->
 		url = $(this).attr 'href'
 		window.open url,'sharer','toolbar=0,status=0,width=648,height=395'
 
