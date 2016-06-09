@@ -1,4 +1,4 @@
-- content_for :image, item.attachments[0].url
+- content_for :image, request.protocol + request.host + item.attachments[0].url
 - content_for :description, item.description
 
 .content-header.description
