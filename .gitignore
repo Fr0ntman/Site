@@ -14,3 +14,5 @@ Gemfile.lock
 passenger.*.*
 rails_best_practices_output.html
 REVISION
+.ruby-gemset
+.ruby-version
