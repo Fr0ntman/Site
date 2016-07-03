@@ -2,3 +2,36 @@
 - content_for :subtitle, 'Массачусетского технологического института'
 
 = render 'tab_menu'
+
+.content.container.container_mt_40
+	.content-inner
+		ul.courses
+			li.course
+				.course__cover
+					img src=image_path('other.jpg') width="150" height="100"
+				.course__details
+					.course__details__top
+						=link_to '#6.02', 'javascript:;', class: 'course__details__top__number'
+						.dot-separator
+						.course__details__top__year 2008
+					.course__author Деннис Фримен
+					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'course__title'
+				.course__info
+					.course__info__level Сложность: Студент
+					.dot-separator
+					.course__info__lectures-count Лекций: 20
+			li.course
+				.course__cover
+					img src=image_path('other.jpg') width="150" height="100"
+				.course__details
+					.course__details__top
+						=link_to '#6.02', 'javascript:;', class: 'course__details__top__number'
+						.dot-separator
+						.course__details__top__year 2008
+					.course__author Деннис Фримен
+					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'course__title'
+				.course__info
+					.course__info__level Сложность: Студент
+					.dot-separator
+					.course__info__lectures-count Лекций: 20
+.content-more.container
