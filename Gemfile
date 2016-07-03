@@ -24,6 +24,8 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'gaffe'
 
 group :development, :test do
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'factory_girl_rails'
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
