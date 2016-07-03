@@ -1,6 +1,10 @@
 class CoursesController < ApplicationController
+	def specialities
+
+	end
+
 	def index
-		@courses = Course.find_each
+		redirect_to specialities_courses_path
 	end
 
 	def show
