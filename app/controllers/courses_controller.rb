@@ -3,6 +3,14 @@ class CoursesController < ApplicationController
 
 	end
 
+	def topics
+		
+	end
+
+	def mit_courses
+		
+	end
+
 	def index
 		redirect_to specialities_courses_path
 	end

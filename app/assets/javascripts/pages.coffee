@@ -1,6 +1,6 @@
 $(document).on 'page:change', ->
 
-	$('.tab').each ->
+	$('.team-tab').each ->
 		$(this).click (e) ->
 			e.preventDefault()
 			$(this).addClass 'tab_state_active'

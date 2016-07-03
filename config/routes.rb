@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   	resources :tasks
   	collection do
   		get 'specialities'
-  		get 'topcis'
+  		get 'topics'
   		get 'mit_courses'
   	end 
   end
