@@ -5,6 +5,9 @@
 
 .content.container.container_mt_40
 	.content-inner
+		.sort
+			.sort__label Сортировать по:
+			= link_to 'Название курса', 'javascript:;', class: 'sort__type'
 		ul.courses
 			li.course
 				.course__cover

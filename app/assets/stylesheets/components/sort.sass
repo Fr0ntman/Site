@@ -1,0 +1,22 @@
+.sort
+	padding: 0 0 15px
+
+	&__label
+		display: inline-block
+		color: $color-another-gray
+		font-size: 14px
+		margin-right: 5px
+
+	&__type
+		color: $color-red
+		text-decoration: none
+		font-size: 14px
+		position: relative
+
+		&:after
+			content: ''
+			@extend %v-align
+			left: 105%
+			border-top: 7px solid $color-red
+			border-left: 4px solid transparent
+			border-right: 4px solid transparent
