@@ -14,7 +14,7 @@ $(document).on 'turbolinks:load', ->
 			do e.preventDefault
 			return false
 
-		$options.click (e) ->
+		$options.on 'mousedown', (e) ->
 			do e.stopPropagation
 			
 		$value.click (e) ->
