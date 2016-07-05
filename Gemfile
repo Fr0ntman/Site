@@ -11,6 +11,8 @@ gem 'rails', '4.2.5.1'
 gem 'remotipart'
 gem 'sass-rails', '~> 5.0'
 gem 'sass-globbing'
+gem 'breakpoint', '~> 2.5'
+gem 'compass-rails'
 gem 'autoprefixer-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails', '~> 3.0', '>= 3.0.1'

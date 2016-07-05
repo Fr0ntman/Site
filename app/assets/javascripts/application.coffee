@@ -3,6 +3,7 @@
 #= require jquery.remotipart
 #= require turbolinks
 #= require base64
+#= require selector
 #= require_tree .
 #= require tinymce
 #= require spin

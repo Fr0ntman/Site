@@ -1,5 +1,56 @@
-@import "helpers/*"
-@import "base/*"
-@import "blocks/*"
-@import "components/*"
+@import "compass"
+@import "breakpoint"
+
+@include breakpoint-set('to ems', true)
+@include breakpoint-set('base font size', 14px)
+@include breakpoint-set('default media', screen)
+
+//$base-font-size: 14px
+
+@import "helpers/mixins"
+@import "helpers/variables"
+@import "helpers/svg-sprite"
+@import "helpers/optimize"
+
+@import "base/fonts"
+@import "base/index"
+
+// Импорты в порядке увеличения специфичности
+
+@import "components/icons"
+@import "components/logo"
+@import "components/button"
+@import "components/social"
+@import "components/title"
+@import "components/heading"
+@import "components/top"
+@import "components/label"
+@import "components/text"
+@import "components/tab"
+@import "components/avatar"
+@import "components/input"
+@import "components/link"
+@import "components/dropdown"
+@import "components/collaborator"
+@import "components/order"
+@import "components/menu"
+@import "components/sort"
+@import "components/selector"
+
+@import "blocks/header"
+@import "blocks/footer"
+@import "blocks/content"
+@import "blocks/card-news"
+@import "blocks/card"
+@import "blocks/text-news"
+@import "blocks/news"
+@import "blocks/description"
+@import "blocks/sidebar"
+@import "blocks/comment"
+@import "blocks/course-list"
+@import "blocks/courses"
+@import "blocks/subject"
+@import "blocks/help-section"
+@import "blocks/error-description"
+
 @import "*"

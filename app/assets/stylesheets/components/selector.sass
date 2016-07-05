@@ -1,0 +1,59 @@
+.selector
+	font-size: inherit
+	background: $color-red
+	border-radius: 5px
+	padding: 10px
+
+	.section
+		width: 32.6%		
+		float: left
+		margin-right: 10px
+		position: relative
+
+		&:last-child
+			margin-right: 0
+
+		&__value
+			width: 100%
+			background: #fff
+			border-radius: 3px
+			padding: 10px
+			color: $color-another-gray
+			position: relative
+			cursor: pointer
+
+			&:after
+				content: ''
+				width: 10px
+				height: 7px
+				background: url(asset-path('arrow_down.svg')) no-repeat
+				@extend %v-align
+				right: 10px
+
+		&__options
+			display: none
+			height: 0
+			width: 100%
+			position: absolute
+			top: 102%
+			left: 0
+			z-index: 10
+			list-style: none
+			background: #fff
+			border-radius: 3px
+			padding: 0
+			margin: 0
+			margin-right: 10px
+
+			.option
+				color: $color-text
+				padding: 10px
+
+				&:first-child
+					border-radius: 3px 3px 0 0
+
+				&:last-child
+					border-radius: 0 0 3px 3px
+
+				&:hover
+					background: #FCDFDD
