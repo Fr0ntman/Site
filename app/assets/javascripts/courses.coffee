@@ -23,20 +23,31 @@ $(document).on 'turbolinks:load', ->
 				$(this).removeClass 'opened'
 				$options.slideUp()
 			else
+				$section.siblings().find('.section__value').removeClass 'opened'
+				$section.siblings().find('.section__options').slideUp()
 				$(this).addClass 'opened'
 				$options.slideDown()
 
-		$(document).click (e) =>
+		$(document).on 'mousedown', (e) =>
 			if $options.is ':visible'
 				$value.removeClass 'opened'
 				$options.slideUp()
 
 		$(this).find('.option').each ->
 
+			if $(this).hasClass 'selected'
+				text = $(this).text()
+				font_color_cls = 'text_standart'
+				$value.addClass font_color_cls unless $value.hasClass font_color_cls
+				$value.text(text)
+
 			$(this).click (e) ->
+				unless $(this).hasClass 'selected'
+					$(this).addClass 'selected'
+					$(this).siblings().removeClass 'selected'
 				text = $(this).text()
 				font_color_cls = 'text_standart'
 				$value.text(text)
-				$value.removeClass 'opened'
 				$value.addClass font_color_cls unless $value.hasClass font_color_cls
+				$value.removeClass 'opened'
 				$options.slideUp()
