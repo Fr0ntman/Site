@@ -18,6 +18,12 @@ body
   min-height: 100%
   background-color: #efefef
 
+.wrapper
+  margin: 0 auto
+  max-width: 960px
+  width: 100%
+  @extend %clearfix
+
 .container
   position: relative
   z-index: 4
@@ -72,3 +78,8 @@ em
 
 strong
   font-weight: 700
+
+.mCSB_dragger_bar
+  width: 5px !important
+  box-shadow: none !important
+  background: rgba(0,0,0,.3) !important

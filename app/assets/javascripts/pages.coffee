@@ -1,4 +1,4 @@
-$(document).on 'page:change', ->
+$(document).on 'turbolinks:load', ->
 
 	$('.team-tab').each ->
 		$(this).click (e) ->

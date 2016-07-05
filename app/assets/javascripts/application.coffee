@@ -2,14 +2,14 @@
 #= require jquery_ujs
 #= require jquery.remotipart
 #= require turbolinks
-#= require base64
-#= require selector
-#= require_tree .
 #= require tinymce
 #= require spin
 #= require jquery.spin
+#= require jquery.mCustomScrollbar.concat.min
+#= require_self
+#= require_tree .
 
-$(document).on 'page:change', ->
+$(document).on 'turbolinks:load', ->
 
 	$window = $ window
 	scrollTop =

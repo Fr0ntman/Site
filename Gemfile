@@ -24,6 +24,7 @@ gem 'vkontakte_api'
 gem 'trumbowyg_rails'
 gem 'high_voltage', '~> 3.0.0'
 gem 'gaffe'
+gem 'scrollbar-rails'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
