@@ -9,6 +9,7 @@ $(document).on 'turbolinks:load', ->
 		$options.mCustomScrollbar
 			axis: "y"
 			theme: "minimal-dark"
+			scrollInertia: 300
 
 		$value.on 'mousedown', (e) ->
 			do e.preventDefault
