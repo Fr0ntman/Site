@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta name='yandex-verification' content='503d8909f76eb7ce'
+    meta name='google-site-verification' content='w3xT4haMqIDKUGh6FQvWDSkPFwCsRMC0Xe4gzOZhLqQ'
+    meta name='viewport' content='width=960px, initial-scale=1, maximum-scale=1, minimal-ui'
+    meta content='IE=edge' http-equiv='X-UA-Compatible'
+    meta itemprop="name" content="Курсомир"
+    meta itemprop="image" content=image_url("kursomir.png")
+    meta name="twitter:card" content="summary"
+    meta name="twitter:site" content="Курсомир"
+    meta name="twitter:title" content="#{yield :title}"
+    meta name="twitter:domain" content="kursomir.ru"
+    meta property="og:site_name" content="Курсомир"
+    meta property="og:url" content="#{request.original_url}"
+    meta property="og:type" content="website"
+    meta property="og:title" content="#{yield :title}"
+    - if content_for? :description
+      meta property="og:description" content="#{yield :description}"
+      meta name="twitter:description" content="#{yield :description}"
+      meta itemprop="description" content="#{yield :description}"
+    - else
+      meta property="og:description" content="Мы - сообщество людей, желающих сделать перевод лекций MIT на русский язык"
+      meta name="twitter:description" content="Мы - сообщество людей, желающих сделать перевод лекций MIT на русский язык"
+      meta itemprop="description" content="Мы - сообщество людей, желающих сделать перевод лекций MIT на русский язык"
+    - if content_for? :image
+      meta name="twitter:image:src" content="#{yield :image}"
+      meta property="og:image" content="#{yield :image}"
+    - else
+      meta property="og:image" content=image_url("kursomir.png")
+      meta name="twitter:image:src" content=image_url("kursomir.png")
+    link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,700,700italic' rel='stylesheet'
+    title= yield :title
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .main
+      == render 'shared/header'
+      .content-header
+        .container
+          .container.container-main
+            = link_to '← Электротехника и вычислительная техника', 'http://kursomir.ru', class:'button button_color_red button_size_little', target: 'self'
+            h1.font-40.mt-15.mb-15 Сигналы и системы
+            p.text.text_white
+              | 6,003 охватывает основы сигнала и систменого анализа, сосредоточившись на представлениях с дискретным временем сигналов (функций сингулярности, комплексных экспонент и геометрических параметров, представлений Фурье, Лапласа и Z-преобразований, выборки) и представления линейных, инвариантных по времени систем (разница и дифференциальных уравнений, блок-схема, системные функции, полюсов и нулей, свертка, импульсные и ступенчатые ответы, ответы и частоты). Заявки оформляются в широком смысле от проектирования и физики, в том числе обратной связи и контроля, связи и обработки сигналов.
+          .container.container-sidebar
+            p.text.text_white
+              span.text.text_red Преподаватель:
+              br/
+              | Профессор Деннис Фримен 
+            p.text.text_white
+              span.text.text_red Номер курса MIT:
+              br/
+              | 6,003
+            p.text.text_white
+              span.text.text_red Дата появления курса:
+              br/
+              | Осень 2011
+            p.text.text_white
+              span.text.text_red Уровень сложности:
+              br/
+              | Студент
+            = link_to 'Оригинал курса на MIT', 'http://web.mit.edu', class:'button button_color_red button_size_big button_text_size_normal button_ttrans_none', target: 'blank', style: "margin: 15px 0"
+          
+      = yield
+      == render 'shared/footer'
+      #js-go-top.top
+      coffee:
+        ((d, w, c) ->
+          (w[c] = w[c] or []).push ->
+            try
+              w.yaCounter37344280 = new (Ya.Metrika)(
+                id: 37344280
+                clickmap: true
+                trackLinks: true
+                accurateTrackBounce: true
+                webvisor: true)
+            catch e
+            return
+          n = d.getElementsByTagName('script')[0]
+          s = d.createElement('script')
+
+          f = ->
+            n.parentNode.insertBefore s, n
+            return
+
+          s.type = 'text/javascript'
+          s.async = true
+          s.src = 'https://mc.yandex.ru/metrika/watch.js'
+          if w.opera == '[object Opera]'
+            d.addEventListener 'DOMContentLoaded', f, false
+          else
+            f()
+          return
+        ) document, window, 'yandex_metrika_callbacks'
+      noscript
+        div
+          img alt="" src="https://mc.yandex.ru/watch/37344280" style="position:absolute; left:-9999px;"
+      script#dsq-count-scr src='//kursomir.disqus.com/count.js' async='true'
