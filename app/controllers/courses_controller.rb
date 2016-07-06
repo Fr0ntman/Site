@@ -1,14 +1,22 @@
 class CoursesController < ApplicationController
 	def specialities
-
+		@specialities = {}
+		@categories = Category.all
+		@categories.each do |category|
+			@specialities[:"#{category.id}"] = {title: category.title, specialities: []}
+			category.sub_categories.each do |sub_category|
+				sub_category.specialities.each do |speciality|
+					@specialities[:"#{category.id}"][:specialities] << speciality.title
+				end
+			end
+		end
+		@specialities.delete_if { |k, v| v[:specialities].empty? }
 	end
 
-	def topics
-		
+	def topics		
 	end
 
 	def mit_courses
-		
 	end
 
 	def index
@@ -22,8 +30,6 @@ class CoursesController < ApplicationController
 	def new
 		@course = Course.new
 		@categories = Category.all
-		@sub_categories = SubCategory.all
-		@specialities = Speciality.all
 	end
 
 	def create

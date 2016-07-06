@@ -1,0 +1,7 @@
+.course-list.content
+  .course-list__title style=("background:url(#{image_path('temp.jpg')}) no-repeat 50% 82%;background-size:cover")
+    span= title
+  ul.course-list__order
+    - specialities.each do |speciality|
+      li.course-list__item
+        = link_to speciality, 'javascript:;', class: 'link'
