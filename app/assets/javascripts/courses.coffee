@@ -2,9 +2,10 @@ $(document).on 'turbolinks:load', ->
 
 	$('.section').each ->
 
-		$section = $(this)
-		$value = $(this).find('.section__value')
-		$options = $section.find('.section__options')
+		$section = $ this
+		$value = $(this).find '.section__value'
+		$options = $section.find '.section__options'
+		$selected = $options.find '.selected'
 
 		$options.mCustomScrollbar
 			axis: "y"
@@ -21,6 +22,7 @@ $(document).on 'turbolinks:load', ->
 			
 		$value.click (e) ->
 			do e.stopPropagation
+
 			if $(this).hasClass 'opened'
 				$(this).removeClass 'opened'
 				$options.slideUp()
@@ -41,7 +43,7 @@ $(document).on 'turbolinks:load', ->
 				text = $(this).text()
 				font_color_cls = 'text_standart'
 				$value.addClass font_color_cls unless $value.hasClass font_color_cls
-				$value.text(text)
+				$value.text text
 
 			$(this).click (e) ->
 				unless $(this).hasClass 'selected'
@@ -49,7 +51,7 @@ $(document).on 'turbolinks:load', ->
 					$(this).siblings().removeClass 'selected'
 				text = $(this).text()
 				font_color_cls = 'text_standart'
-				$value.text(text)
+				$value.text text
 				$value.addClass font_color_cls unless $value.hasClass font_color_cls
 				$value.removeClass 'opened'
 				$options.slideUp()

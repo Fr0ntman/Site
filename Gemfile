@@ -25,6 +25,7 @@ gem 'trumbowyg_rails'
 gem 'high_voltage', '~> 3.0.0'
 gem 'gaffe'
 gem 'scrollbar-rails'
+gem 'rails-i18n', '~> 4.0.0'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
@@ -32,6 +33,7 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :development do
