@@ -4,4 +4,4 @@
   ul.course-list__order
     - specialities.each do |speciality|
       li.course-list__item
-        = link_to speciality, 'javascript:;', class: 'link'
+        = link_to speciality.title, speciality_courses_path(speciality), class: 'link'

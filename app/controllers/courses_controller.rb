@@ -6,11 +6,15 @@ class CoursesController < ApplicationController
 			@specialities[:"#{category.id}"] = {title: category.title, specialities: []}
 			category.sub_categories.each do |sub_category|
 				sub_category.specialities.each do |speciality|
-					@specialities[:"#{category.id}"][:specialities] << speciality.title
+					@specialities[:"#{category.id}"][:specialities] << speciality
 				end
 			end
 		end
 		@specialities.delete_if { |k, v| v[:specialities].empty? }
+	end
+
+	def speciality
+		@courses = Course.where speciality: params[:speciality_id]
 	end
 
 	def topics		

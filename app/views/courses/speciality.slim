@@ -1,0 +1,27 @@
+- content_for :title, 'Переводы лекций'
+- content_for :subtitle, 'Массачусетского технологического института'
+
+- unless @courses.blank?
+	.content.container.container_mt_40
+		.content-inner
+			.sort
+				.sort__label Сортировать по:
+				= link_to 'Название курса', 'javascript:;', class: 'sort__type'
+			ul.courses
+				- @courses.each do |course|
+					li.course
+						.course__cover
+							img src=image_path('other.jpg') width="150" height="100"
+						.course__details
+							.course__details__top
+								= link_to course.number, 'javascript:;', class: 'course__details__top__number'
+								.dot-separator
+								.course__details__top__year= course.date_of_creating
+							.course__author= course.teacher
+							= link_to course.title, 'javascript:;', class: 'course__title'
+						.course__info
+							.course__info__level Сложность: #{course.level}
+							.dot-separator
+							.course__info__lectures-count Лекций: 20
+	.content-more.container
+		button.button type='button' Показать еще

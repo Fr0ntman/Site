@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   		get 'specialities'
   		get 'topics'
   		get 'mit_courses'
+      get '/speciality/:speciality_id' => :speciality, as: :speciality
   	end 
   end
 
