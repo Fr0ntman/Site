@@ -2,6 +2,7 @@
   cursor: pointer
   padding: 0 20px
   display: inline-block
+  text-align: center
   line-height: 48px
   color: $color-text
   font-size: 16px
@@ -16,9 +17,27 @@
   &:hover
     border-color: $color-red
     color: $color-red
+  
+  &_size_little
+    font-size: 14px
+    line-height: 16px
+    padding: 0 8px
+    text-transform: none
 
   &_size_big
     line-height: 43px
+
+  &_circle
+    border-radius: 50%
+    padding: 0
+    height: 30px
+    width: 30px
+    line-height: 25px
+    text-align: center
+
+  &-content
+    border-radius: 10px
+    padding: 15px 0
 
   &_color_white
     background: transparent
@@ -45,6 +64,20 @@
   &_text_size_normal
     font-size: 13px
 
+  &_ttrans_none
+    text-transform: none
+
+  &_color_green
+    background-color: $color-green
+    border-color: $color-green
+    color: #fff
+
+    &:hover
+      background-color: #339350
+      border-color: #339350
+      color: #fff
+
+
   &_color_red
     background-color: $color-red
     border-color: $color-red
@@ -54,3 +87,6 @@
       background-color: #bd2519
       border-color: #bd2519
       color: #fff
+
+  &_mr_15
+    margin-right: 15px
