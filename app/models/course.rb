@@ -44,5 +44,5 @@ class Course < ActiveRecord::Base
   validates :teacher, presence: true
   validates :category, presence: true
   validates :sub_category, presence: true
-  validates :date_of_creating, presence: true, numericality: true, length: { is: 4 }
+  #validates :date_of_creating, presence: true, numericality: true, length: { is: 4 }
 end
