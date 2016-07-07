@@ -1,7 +1,7 @@
 .content-header
   .container.container_pb_40.course-head
     .content-main.left
-      = link_to 'Электротехника и вычислительная техника', 'javascript:;', class: 'label course-head__label'
+      = link_to @speciality.title, speciality_courses_path(@speciality), class: 'label course-head__label'
       h1.font-35.course-head__title= @course.title
       .course-head__description= @course.description
     .content-sidebar
@@ -18,7 +18,7 @@
         .course-info__item
           .course-info__label Уровень сложности:
           .course-info__data= @course.level
-      = link_to 'Оригинал курса на MIT', @course.original_course_link, class: 'button button_color_red button_original_course_link'
+      = link_to 'Оригинал курса на MIT', @course.original_course_link, class: 'button button_color_red button_original_course_link', target: '_blank'
       .social.social_p_0
         = link_to "http://twitter.com/home?status=#{@course.title}+#{request.original_url}", class: 'social__twitter social__link social__link_type_round' do
           svg.icon.icon-twitter role='img' title='twitter'

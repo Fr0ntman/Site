@@ -1,2 +1,13 @@
 - content_for :title, @course.title
 - content_for :description, @course.description
+
+.container.container_mt_40
+  .content.content-sidebar
+    
+  .content.content-main
+    .content-inner
+    	/- unless @course.lectures.blank?
+  .content.content-main
+    .content-inner
+      #disqus_thread
+.container.content-more

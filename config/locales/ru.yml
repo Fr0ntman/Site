@@ -1,10 +1,11 @@
 ru:
   defaults: &defaults
     month_names: [~, Января, Февраля, Марта, Апреля, Мая, Июня, Июля, Августа, Сентября, Октября, Ноября, Декабря]
+    month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
     formats:
       default: "%-d %B %Y"
       default_card: "%-d %B"
-      course_date: "%B %-d"
+      course_date: "%B %Y"
   date:
     <<: *defaults
   time:

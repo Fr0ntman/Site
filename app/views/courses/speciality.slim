@@ -7,21 +7,21 @@
 			.sort
 				.sort__label Сортировать по:
 				= link_to 'Название курса', 'javascript:;', class: 'sort__type'
-			ul.courses
+			ul.list
 				- @courses.each do |course|
-					li.course
-						.course__cover
+					li.list__item
+						.list__item__cover
 							img src=image_path('other.jpg') width="150" height="100"
-						.course__details
-							.course__details__top
-								= link_to course.number, 'javascript:;', class: 'course__details__top__number'
+						.list__item__details
+							.list__item__details__top
+								= link_to '#' + course.number, 'javascript:;', class: 'list__item__details__top__item'
 								.dot-separator
-								.course__details__top__year= course.date_of_creating
-							.course__author= course.teacher
-							= link_to course.title, course, class: 'course__title'
-						.course__info
-							.course__info__level Сложность: #{course.level}
+								.list__item__details__top__item-more= course.date_of_creating.strftime("%Y")
+							.list__item__details__mid= course.teacher
+							= link_to course.title, course_path(course), class: 'list__item__details__title'
+						.list__item__more-details
+							.list__item__more-details__mid Сложность: #{course.level}
 							.dot-separator
-							.course__info__lectures-count Лекций: 20
+							.list__item__more-details__mid Лекций: #{course.lectures.count}
 	.content-more.container
 		button.button type='button' Показать еще

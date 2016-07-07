@@ -47,34 +47,20 @@
 		.sort
 			.sort__label Сортировать по:
 			= link_to 'Название курса', 'javascript:;', class: 'sort__type'
-		ul.courses
-			li.course
-				.course__cover
+		ul.list
+			li.list__item
+				.list__item__cover
 					img src=image_path('other.jpg') width="150" height="100"
-				.course__details
-					.course__details__top
-						=link_to '#6.02', 'javascript:;', class: 'course__details__top__number'
+				.list__item__details
+					.list__item__details__top
+						=link_to '#6.02', 'javascript:;', class: 'list__item__details__top__item'
 						.dot-separator
-						.course__details__top__year 2008
-					.course__author Деннис Фримен
-					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'course__title'
-				.course__info
-					.course__info__level Сложность: Студент
+						.list__item__details__top__item-more 2008
+					.list__item__details__mid Деннис Фримен
+					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'list__item__details__title'
+				.list__item__more-details
+					.list__item__more-details__mid Сложность: Студент
 					.dot-separator
-					.course__info__lectures-count Лекций: 20
-			li.course
-				.course__cover
-					img src=image_path('other.jpg') width="150" height="100"
-				.course__details
-					.course__details__top
-						=link_to '#6.02', 'javascript:;', class: 'course__details__top__number'
-						.dot-separator
-						.course__details__top__year 2008
-					.course__author Деннис Фримен
-					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'course__title'
-				.course__info
-					.course__info__level Сложность: Студент
-					.dot-separator
-					.course__info__lectures-count Лекций: 20
+					.list__item__more-details__mid Лекций: 20
 .content-more.container
 	button.button type='button' Показать еще

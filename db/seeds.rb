@@ -19,3 +19,6 @@
 # 	SubCategory.create! title: Faker::Lorem.word
 # 	Speciality.create! title: Faker::Lorem.word
 # end
+10.times do |i|
+	
+end
