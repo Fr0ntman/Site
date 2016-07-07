@@ -18,7 +18,7 @@
 								.dot-separator
 								.course__details__top__year= course.date_of_creating
 							.course__author= course.teacher
-							= link_to course.title, 'javascript:;', class: 'course__title'
+							= link_to course.title, course, class: 'course__title'
 						.course__info
 							.course__info__level Сложность: #{course.level}
 							.dot-separator

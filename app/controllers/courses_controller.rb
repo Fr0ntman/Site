@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+	layout :resolve_layout
+
 	def specialities
 		@specialities = {}
 		@categories = Category.all
@@ -65,4 +67,13 @@ class CoursesController < ApplicationController
 				:date_of_creating
 			)
 		end
+
+		def resolve_layout
+      case action_name
+      when "show"
+        "course"
+      else
+        "application"
+      end
+    end
 end

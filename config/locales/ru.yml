@@ -4,6 +4,7 @@ ru:
     formats:
       default: "%-d %B %Y"
       default_card: "%-d %B"
+      course_date: "%B %-d"
   date:
     <<: *defaults
   time:
