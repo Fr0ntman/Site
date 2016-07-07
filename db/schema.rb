@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501154538) do
+ActiveRecord::Schema.define(version: 20160707182717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,28 +63,37 @@ ActiveRecord::Schema.define(version: 20160501154538) do
 
   create_table "exams", force: :cascade do |t|
     t.integer  "course_id"
-    t.integer  "number",     null: false
-    t.string   "title",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      default: "Экзамен"
+    t.integer  "number",                         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "exams", ["course_id"], name: "index_exams_on_course_id", using: :btree
 
   create_table "lectures", force: :cascade do |t|
     t.integer  "course_id"
-    t.string   "title",       default: "Лекция", null: false
+    t.string   "title",                          null: false
+    t.string   "type_title",  default: "Лекция"
     t.text     "description",                    null: false
     t.integer  "number",                         null: false
-    t.string   "video"
-    t.string   "audio"
+    t.string   "multimedia"
     t.string   "materials"
-    t.string   "slides"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
 
   add_index "lectures", ["course_id"], name: "index_lectures_on_course_id", using: :btree
+
+  create_table "materials", force: :cascade do |t|
+    t.integer  "lecture_id"
+    t.string   "title"
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "materials", ["lecture_id"], name: "index_materials_on_lecture_id", using: :btree
 
   create_table "news", force: :cascade do |t|
     t.string   "title",       null: false
@@ -138,12 +147,13 @@ ActiveRecord::Schema.define(version: 20160501154538) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "lecture_id"
-    t.string   "title",      null: false
-    t.integer  "number",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      default: "Задание"
+    t.integer  "number",                         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "tasks", ["lecture_id"], name: "index_tasks_on_lecture_id", using: :btree
 
+  add_foreign_key "materials", "lectures"
 end

@@ -3,10 +3,18 @@
 
 .container.container_mt_40
   .content.content-sidebar
-    
   .content.content-main
     .content-inner
-    	/- unless @course.lectures.blank?
+    	- unless @course.lectures.blank?
+		    ul.list
+		    	- @course.lectures.each do |lecture|
+						li.list__item
+							.list__item__cover
+								img src=image_path('other.jpg') width="150" height="100"
+							.list__item__details
+								.list__item__details__top
+									= link_to lecture.type_title + ' ' + lecture.number.to_s, [@course, lecture], class: 'list__item__details__top__item'
+								= link_to lecture.title, [@course, lecture], class: 'list__item__details__title'
   .content.content-main
     .content-inner
       #disqus_thread
