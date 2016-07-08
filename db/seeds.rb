@@ -19,7 +19,7 @@
 	Speciality.create! title: Faker::Lorem.word
 
 	Lecture.create! title: Faker::Name.title, description: Faker::Lorem.paragraph, number: i
-	Task.create! title: Faker::Name.title, number: i
+	Task.create! number: i
 	Exam.create! number: i
 		
 	News.create! title: Faker::Name.title, content: Faker::Lorem.paragraph(5)
