@@ -23,7 +23,11 @@
 			img
 				display: block
 
+			&_small
+				margin-right: 10px
+
 		&__details
+			width: 60%
 			float: left
 
 			&__top
@@ -40,10 +44,16 @@
 					&:hover
 						border-bottom: 1px solid $color-red
 
+					&_small
+						font-size: 12px
+
 				&__item-more
 					color: $color-another-gray
 					font-size: 14px
 					display: inline-block
+
+			&_small
+				width: 68%
 		
 			&__mid
 				color: $color-another-gray
@@ -60,6 +70,9 @@
 				&:hover
 					border-bottom: 1px solid $color-red
 					color: $color-red
+
+				&_small
+					font-size: 14px
 		
 		&__more-details
 			position: absolute
