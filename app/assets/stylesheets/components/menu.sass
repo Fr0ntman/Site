@@ -55,6 +55,32 @@
     & + &
       margin-left: 24px
     
+    &_white
+      color: #fff
+
+      .icon
+        fill: #fff
+
+      .icon-wanna-help
+        stroke: #fff
+        fill: none
+
+      &:before
+        background: #fff
+
+      &:hover
+        color: #fff
+
+        .icon
+          fill: #fff
+
+        .icon-wanna-help
+          stroke: #fff
+          fill: none
+
+        &:before
+          background: #fff
+
     &_black:hover
       color: #000
 
@@ -67,3 +93,41 @@
 
       &:before
         background: #000
+
+.sub-menu
+  font-family: $font-roboto
+  margin: 0 auto
+  text-align: center
+
+  &__item
+    position: relative
+    display: inline-block
+    line-height: 60px
+    font-size: 16px
+    font-weight: 400
+    color: #000
+    text-decoration: none
+    @include transition(color)
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 0
+      @include size(100%, 3px)
+      content: ''
+      background-color: $color-red
+      transform: scale(0)
+      opacity: 0
+      will-change: opacity, transform
+      transition: opacity .3s ease, transform .3s ease
+    
+    &:hover
+      color: $color-red
+
+      &:after
+        transform: scale(1)
+        opacity: 1
+
+    & + &
+      margin-left: 24px
+    
