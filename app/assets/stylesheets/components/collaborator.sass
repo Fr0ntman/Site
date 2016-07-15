@@ -1,67 +1,50 @@
-.collaborator
+.collabs
   padding: 0
+  width: 75%
   font-size: 14px
   font-size: 1rem
+  display: flex
+  justify-content: space-between
+  align-items: stretch
+  flex-wrap: wrap
 
-  & + &
-    margin-top: 20px
+  .collab
+    background-color: #FFF
+    border-radius: 5px
+    padding: 15px
+    min-width: 180px
 
-  &__container
-    padding: 20px
+    & + &
+      margin-top: 20px
 
-  &__avatar
-    display: block
-    margin: 0 auto 20px
-    @include size(120px)
+    &__avatar
+      display: block
+      margin: 0 auto 20px
+      @include size(90px)
 
-  &__name
-    color: $color-red
-    font-size: 20px
-    line-height: 1.25
-    text-align: center
-  
-    &_ta_l
-      text-align: left
-
-    a
+    &__name
       color: $color-red
-      text-decoration: none
-      
-      &:hover
-        text-decoration: underline
+      font-size: 18px
+      line-height: 1.25
+      text-align: center
 
-  &__post
-    padding-top: 5px
-    color: $color-text
-    font-weight: 700
-    line-height: 1.25
-    text-align: center
+      a
+        color: $color-red
+        text-decoration: none
+        
+        &:hover
+          text-decoration: underline
 
-  &__descr
-    position: relative
-    padding: 20px
-    border-top: 1px solid #dcdcdc
-    font-weight: 300
-    line-height: 1.5
-    text-align: justify
+    &__post
+      padding-top: 5px
+      color: $color-text
+      line-height: 1.25
+      text-align: center
+      font-weight: 300
 
-    &_inline
-      text-align: left
-      border-top: none
-      padding: 15px 0 5px
-      color: #808080
-
-      &:before
-        display: none
-
-    &:before
-      position: absolute
-      top: -8px
-      left: 50%
-      margin-left: -8px
-      @include size(16px)
-      content: ''
-      background-color: #ffffff
-      border-bottom: 1px solid #dcdcdc
-      border-right: 1px solid #dcdcdc
-      transform: rotate(45deg)
+    &__descr
+      position: relative
+      padding: 20px
+      font-weight: 300
+      line-height: 1.5
+      text-align: center
