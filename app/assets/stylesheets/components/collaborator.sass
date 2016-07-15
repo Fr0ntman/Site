@@ -1,3 +1,12 @@
+
+%red-link a
+  color: $color-red
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+
 .collabs
   padding: 0
   width: 75%
@@ -7,44 +16,100 @@
   justify-content: space-between
   align-items: stretch
   flex-wrap: wrap
+  position: relative
 
-  .collab
-    background-color: #FFF
+  &__header
+    float: left
+    margin: 15px 0
+    display: block
+    width: 75%
+
+.collab
+  position: relative
+  background-color: #FFF
+  border-radius: 5px
+  padding: 15px
+  margin-bottom: 20px
+  width: 23%
+  height: 250px
+
+  &__avatar
+    display: block
+    margin: 0 auto 20px
+    @include size(90px)
+
+  &__name
+    color: $color-red
+    font-size: 18px
+    line-height: 1.25
+    text-align: center
+    @extend %red-link
+
+  &__post
+    padding-top: 5px
+    color: $color-text
+    line-height: 1.25
+    text-align: center
+    font-weight: 300
+
+  &__descr
+    padding-top: 20px
+    display: block
+    position: absolute
+    bottom: 15px
+    left: 0
+    width: 100%
+    text-align: center
+    font-weight: 300
+    line-height: 1.5
+    @extend %red-link
+
+.tlate
+  width: 75%
+  float: left
+  display: flex
+  justify-content: space-between
+
+  &__col
+    width: 48.5%
+    position: relative
+
+  &__group
     border-radius: 5px
+    background-color: #FFF
     padding: 15px
-    min-width: 180px
 
     & + &
       margin-top: 20px
 
     &__avatar
-      display: block
-      margin: 0 auto 20px
-      @include size(90px)
+      float: left
+      @include size(50px)
+      margin-right: 10px
+
+    &__mini-avatar
+      float: left
+      @include size(40px)
+      margin-right: 10px
 
     &__name
       color: $color-red
-      font-size: 18px
-      line-height: 1.25
-      text-align: center
+      @extend %red-link
 
-      a
-        color: $color-red
-        text-decoration: none
-        
-        &:hover
-          text-decoration: underline
+      &--fs_16
+        font-size: 16px
+
+      &--fs_14
+        font-size: 14px
+        line-height: 40px
 
     &__post
-      padding-top: 5px
       color: $color-text
+      font-size: 14px
+      margin-top: 5px
       line-height: 1.25
-      text-align: center
       font-weight: 300
 
-    &__descr
-      position: relative
-      padding: 20px
-      font-weight: 300
-      line-height: 1.5
-      text-align: center
+.translator
+  height: 60px
+  padding: 10px 0
