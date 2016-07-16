@@ -27,6 +27,30 @@
   &--div li
     border-top: 1px solid $color-light-gray
   
+  &--lborder 
+    position: relative
+
+    li 
+      cursor: pointer
+
+      a:hover
+        color: $color-red
+
+        &:before
+          content: ''
+          width: 3px
+          height: calc(100% + 6px)
+          background-color: $color-red
+          position: absolute
+          top: -3px
+          left: 0
+
+  &--float-nav
+    width: 25%
+    margin-top: 38px
+    padding-left: 40px
+    text-align: left 
+
   &--red li
     list-style-type: none
 
