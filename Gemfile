@@ -27,6 +27,7 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
+  gem 'ffaker'
 end
 
 group :development do
@@ -37,4 +38,9 @@ group :development do
   gem 'rubycritic', require: false
   gem 'traceroute'
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end

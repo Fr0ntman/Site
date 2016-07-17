@@ -15,8 +15,13 @@
 class News < ActiveRecord::Base
   mount_uploaders :attachments, NewsAttachmentUploader
 
+  belongs_to :category, class_name: 'NewsCategory'
+
   validates :title, presence: true
   validates :content, presence: true
+
+  scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
 
   # after_create :vk_wall_post
   # after_update :vk_wall_edit
