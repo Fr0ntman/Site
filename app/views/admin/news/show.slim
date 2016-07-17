@@ -1,0 +1,19 @@
+- content_for :title, @news_item.title
+- content_for :description, @news_item.description
+
+.content-header.description
+  - if @news_item.attachments.present?
+    .news-bg= image_tag @news_item.attachments[0].url
+  .description__header.container
+    .description__title.content-main
+      .description__label.label= l @news_item.updated_at.localtime, format: :default_card
+      h1.font-40= @news_item.title
+    .content-sidebar
+      .news-descr= @news_item.description
+    - if @news_item.attachments.present?
+      .content-main
+        .news-img.card-news
+          = image_tag @news_item.attachments[0].url, class: 'card-news__image'
+.container.container_mt_40
+  .content.content-main
+    .content-inner= @news_item.content.html_safe

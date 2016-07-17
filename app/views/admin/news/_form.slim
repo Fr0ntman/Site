@@ -1,0 +1,28 @@
+- url = @news_item.new_record? ? admin_news_index_path : admin_news_path(@news_item)
+
+= flash[:error]
+= form_for @news_item, url: url do |f|
+  - if @news_item.errors.messages.any?
+    ul
+      - @news_item.errors.messages.each do |attr, msg|
+        li= msg[0]
+  .form-field
+    = f.label :title, 'Заголовок новости'
+    = f.text_field :title
+  .form-field
+    = f.label :source, 'Источник новости'
+    = f.text_field :source
+  .form-field
+    = f.label :category_id, 'Категория новости'
+    = f.select :category_id, options_for_select(NewsCategory.options_for_select)
+  .form-field
+    = f.label :description, 'Описание новости'
+    = f.text_field :description
+  .form-field
+    = f.label :attachments, 'Выберите файлы'
+    = f.file_field :attachments, multiple: true
+  .form-field
+    = f.label :content, 'Текст новости'
+    = f.text_area :content, class: 'tinymce'
+    = tinymce
+  = f.submit

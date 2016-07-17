@@ -1,0 +1,13 @@
+- content_for :title, 'Новости'
+- content_for :subtitle, 'Переводы. Анонсы. События'
+
+- if @news.any?
+  .content.container.container_mt_40
+    ul style='font-size: 14px;'
+      - @news.each do |item|
+        li
+          = item.title
+          a class='button' href=admin_news_path(item) data-method='DELETE' Удалить
+          a class='button' href=edit_admin_news_path(item) Редактировать
+- else
+  p.news-empty Нет новостей
