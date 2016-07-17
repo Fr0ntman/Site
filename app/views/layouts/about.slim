@@ -40,10 +40,10 @@ html
       header.header.js-header
         .container
           = link_to root_url, class: 'logo left' do
-            svg.icon.icon-logo-static.logo__static--red role='img' title='logo-static'
-              use xlink:href=image_path('icons.svg#icon-logo-static')
-            svg.icon.icon-logo-action.logo__action role='img' title='logo-action'
-              use xlink:href=image_path('icons.svg#icon-logo-action')
+            svg.icon.icon-logo-static role="img" title="logo-static" 
+              use xlink:href=image_path('icons.svg#icon-logo-static') 
+            svg.icon.icon-logo-action.logo__action role="img" title="logo-action" 
+              use xlink:href=image_path('icons.svg#icon-logo-action') 
           nav.menu.right
             = link_to courses_path, class: "menu__item menu__item_white #{current_class? courses_path}" do
               | Курсы
@@ -58,14 +58,14 @@ html
               svg.icon.icon-info role='img' title='info'
                 use xlink:href=image_path('icons.svg#icon-info')
       .content-robot_header
-      .sub-menu
-        = link_to page_path('about'), class: "sub-menu__item" do
+      .tab-panel.tab-panel_align_center.conatainer
+        = link_to page_path('about'), class: "tab tab_size_big" do
           | О проекте
-        = link_to page_path('team'), class: "sub-menu__item" do
+        = link_to page_path('team'), class: "tab tab_size_big" do
           | Команда
-        = link_to page_path('wanna-help'), class: "sub-menu__item" do
+        = link_to page_path('wanna-help'), class: "tab tab_size_big" do
           | Хочу помочь
-        = link_to page_path('partners'), class: "sub-menu__item" do
+        = link_to page_path('partners'), class: "tab tab_size_big" do
           | Наши партнеры
       hr.hr-div
       = yield
