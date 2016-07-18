@@ -22,8 +22,11 @@ gem 'vkontakte_api'
 gem 'trumbowyg_rails'
 gem 'high_voltage', '~> 3.0.0'
 gem 'gaffe'
+gem 'mini_magick'
 
 group :development, :test do
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'factory_girl_rails'
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
@@ -41,6 +44,5 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails'
   gem 'database_cleaner'
 end

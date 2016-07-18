@@ -24,7 +24,7 @@ class Admin::NewsController < Admin::ApplicationController
 
   def update
     if @news_item.update_attributes news_params
-      redirect_to admin_news_path(@news_item)
+      redirect_to admin_news_index_path(@news_item)
     else
       render :edit
     end
@@ -36,14 +36,14 @@ class Admin::NewsController < Admin::ApplicationController
     redirect_to admin_news_index_path
   end
 
-private
+  private
 
-  def news_params
-    params.require(:news).permit(:title, :source, :category_id, :content, :description, :published, {attachments: []})
-  end
+    def news_params
+      params.require(:news).permit(:title, :source, :category_id, :content, :description, :published, {attachments: []})
+    end
 
-  def load_news_item
-    @news_item = News.find params[:id]
-  end
+    def load_news_item
+      @news_item = News.find params[:id]
+    end
 
 end

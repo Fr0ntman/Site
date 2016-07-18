@@ -68,6 +68,7 @@ GEM
       sexp_processor
     codeclimate-engine-rb (0.3.1)
       virtus (~> 1.0)
+    coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.1.1)
@@ -133,7 +134,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.99.1)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -155,6 +158,12 @@ GEM
       rake (>= 0.8.1)
     pg (0.18.4)
     powerpack (0.1.1)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -257,6 +266,7 @@ GEM
       activesupport (>= 3.1, < 5.0)
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
+    slop (3.6.0)
     spinjs-rails (1.4)
       rails (>= 3.1)
     spring (1.6.4)
@@ -323,8 +333,10 @@ DEPENDENCIES
   high_voltage (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mini_magick
   passenger (~> 5.0, >= 5.0.26)
   pg
+  pry-rails (~> 0.3.4)
   rails (= 4.2.5.1)
   rails_best_practices
   remotipart

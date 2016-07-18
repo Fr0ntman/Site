@@ -10,11 +10,11 @@
 /public/assets/
 /public/uploads/
 /public/*.pdf
+/db/seed_files/
 /tmp
 Gemfile.lock
 passenger.*.*
 rails_best_practices_output.html
-REVISION
-.ruby-version
 .ruby-gemset
+.ruby-version
 .generators

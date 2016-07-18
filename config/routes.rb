@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :news
+    resources :news, except: :show
   end
 
-  resources :news
+  resources :news, only: [:show, :index]
   resources :courses do
   	resources :lectures
   	resources :exams

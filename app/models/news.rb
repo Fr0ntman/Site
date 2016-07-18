@@ -17,8 +17,9 @@ class News < ActiveRecord::Base
 
   belongs_to :category, class_name: 'NewsCategory'
 
-  validates :title, presence: true
+  validates :title, presence: true#, length: { maximum: 100 }
   validates :content, presence: true
+  validates :description, length: { maximum: 220 }
 
   scope :published, -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }

@@ -8,7 +8,7 @@
       .description__label.label= l item.updated_at.localtime, format: :default_card
       h1.font-40= item.title
     .content-sidebar
-      .news-descr= item.description
+      .news-descr= item.description 
       .description__social.social.social_p_0
         = link_to "http://twitter.com/home?status=#{item.title}+#{request.original_url}", class: 'social__twitter social__link social__link_type_round' do
           svg.icon.icon-twitter role="img" title="twitter"
@@ -21,7 +21,7 @@
             use xlink:href=image_path('icons.svg#icon-vk')
     .content-main
       .news-img.card-news
-        = image_tag item.attachments[0].url, class: 'card-news__image'
+        = image_tag item.attachments[0].header_thumb.url, class: 'card-news__image'
 .container.container_mt_40
   .content.content-sidebar
     = render 'shared/sidebar', last_news: @last_news

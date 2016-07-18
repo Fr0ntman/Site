@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717154700) do
+ActiveRecord::Schema.define(version: 20160717161155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,16 @@ ActiveRecord::Schema.define(version: 20160717154700) do
 
   add_index "answer_files", ["exam_file_id"], name: "index_answer_files_on_exam_file_id", using: :btree
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "course_categories", force: :cascade do |t|
+    t.string   "category",     null: false
+    t.string   "sub_category", null: false
+    t.string   "speciality"
+    t.string   "ancestry"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "course_categories", ["ancestry"], name: "index_course_categories_on_ancestry", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",                null: false
@@ -115,24 +120,6 @@ ActiveRecord::Schema.define(version: 20160717154700) do
   end
 
   add_index "solution_files", ["task_file_id"], name: "index_solution_files_on_task_file_id", using: :btree
-
-  create_table "specialities", force: :cascade do |t|
-    t.integer  "sub_category_id"
-    t.string   "title",           null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "specialities", ["sub_category_id"], name: "index_specialities_on_sub_category_id", using: :btree
-
-  create_table "sub_categories", force: :cascade do |t|
-    t.integer  "category_id"
-    t.string   "title",       null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id", using: :btree
 
   create_table "task_files", force: :cascade do |t|
     t.integer  "task_id"
