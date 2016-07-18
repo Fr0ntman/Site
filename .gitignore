@@ -9,6 +9,7 @@
 /public/assets/
 /public/uploads/
 /public/*.pdf
+/db/seed_files/
 /tmp
 Gemfile.lock
 passenger.*.*
