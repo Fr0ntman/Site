@@ -21,7 +21,6 @@ class Lecture < ActiveRecord::Base
 	mount_uploader :lecture, LectureUploader
 
   belongs_to :course
-  has_many   :tasks, :materials
-
-  accepts_nested_attributes_for :tasks
+  has_many   :tasks
+  has_many   :materials
 end

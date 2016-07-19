@@ -20,17 +20,15 @@
 #
 
 class Course < ActiveRecord::Base
-  moun_uploader :bg_img, CourseBgUploader
+  mount_uploader :bg_img, CourseBgUploader
 
-  has_many :lectures, :exmas
-  accepts_nested_attributes_for :lectures
-  accepts_nested_attributes_for :exams
+  has_many :lectures
+  has_many :exams
 
   validates :title, presence: true
   validates :bg_img, presence: true
   validates :color, 
-  					presence: true, 
-  					uniqueness: { case_sensitive: false }, 
+  					presence: true,
   					format: { 
   						with: /\A(#[0-9a-fA-F]{3,6}|rgb\s?\((?:\d{1,3}\,?\s?){3}\))\z/, 
   						message: 'неверный формат цвета'

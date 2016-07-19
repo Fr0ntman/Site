@@ -3,7 +3,7 @@ class NewsAttachmentUploader < CarrierWave::Uploader::Base
   storage :file
 
   def extension_white_list
-    %w(jpg jpeg gif png mp4 mpeg avi flv webm mkv ogg gif mov)
+    /(image\/|video\/)/
   end
 
   def store_dir

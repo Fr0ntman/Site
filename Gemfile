@@ -26,6 +26,7 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'gaffe'
 gem 'scrollbar-rails'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'ancestry'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
