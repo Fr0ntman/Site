@@ -53,7 +53,7 @@
     .content-inner
       .lecture-info
         .lecture-info__cover
-          img src=asset_path('cover.svg') width="100%"
+          img src=@lecture.cover.thumb.url width="100%"
         .lecture-info__details
           .lecture-info__details__number= @lecture.type_title + ' ' + @lecture.number.to_s
           .lecture-info__details__title= @lecture.title
