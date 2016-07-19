@@ -11,7 +11,7 @@
 				- @courses.each do |course|
 					li.list__item
 						.list__item__cover
-							img src=image_path('other.jpg') width="150" height="100"
+							img src=course.bg_img.thumb.url width="150" height="100"
 						.list__item__details
 							.list__item__details__top
 								= link_to '#' + course.number, 'javascript:;', class: 'list__item__details__top__item'

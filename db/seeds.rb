@@ -26,21 +26,26 @@ end
 end
 
 5.times do |i|
-	category = Category.new title: FFaker::Lorem.word
+	Category.create! title: FFaker::Lorem.word
+end
+
+5.times do |i|
+	rand_int = rand(1..5)
 	sub_category = SubCategory.new title: FFaker::Lorem.word
-	category.sub_categories << sub_category
-	speciality = Speciality.create! title: FFaker::Lorem.word
-	sub_category.specialities << speciality
-	sub_category.save!
-	category.save!
+	Category.find(rand_int).sub_categories << sub_category
+end
+
+5.times do |i|
+	rand_int = rand(1..5)
+	speciality = Speciality.new title: FFaker::Lorem.word
+	SubCategory.find(rand_int).specialities << speciality
 end
 
 10.times do |i|
 	rand_int = rand(0..7)
 	rand_category = rand(1..5)
-	category = Category.find(rand_category)
-	sub_category = category.sub_categories.take
-	speciality = sub_category.specialities.take
+	rand_sub_category = rand(1..5)
+	rand_speciality = rand(1..5)
 	course = Course.new(
 		title: FFaker::CheesyLingo.title,
 		color: '#61CDAB',
@@ -49,9 +54,9 @@ end
 		level: FFaker::Lorem.word,
 		original_course_link: FFaker::Internet.http_url,
 		teacher: FFaker::NameRU.name,
-		category: category.id,
-		sub_category: sub_category.id,
-		speciality: speciality.id,
+		category: rand_category,
+		sub_category: rand_sub_category,
+		speciality: rand_speciality,
     date_of_creating: FFaker::Time.date
 	)
 	course.bg_img = Pathname.new(path_to_files + random_image[rand_int]).open

@@ -6,6 +6,6 @@ class TaskFileUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/#{model.task_type}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.task_type}/#{model.id}"
   end
 end

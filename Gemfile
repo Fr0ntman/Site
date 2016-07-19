@@ -27,6 +27,7 @@ gem 'gaffe'
 gem 'scrollbar-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'ancestry'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'
