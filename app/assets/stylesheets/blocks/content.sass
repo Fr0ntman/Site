@@ -4,6 +4,7 @@
   background-color: #ffffff
   border-radius: 10px
   font-size: 0
+  overflow: hidden
 
   &-inner
     padding: 0 10px
@@ -30,12 +31,21 @@
     margin: 45px auto
     text-align: center
 
+  &_p_0
+    padding: 0
+
   &_p_20
     padding: 20px
   
   &_p_40
     padding: 40px
 
+  &_br_5
+    border-radius: 5px
+
+  &_mt_20
+    margin-top: 20px
+    
   &-header
     position: relative
     min-height: 250px
@@ -81,5 +91,14 @@
 
     &_w_25p
       width: 25%
+    
+    &_w_32p
+      width: 32%
 
+      & + &
+        margin-left: 2%
 
+    &_p_0
+      padding: 0 
+
+    
