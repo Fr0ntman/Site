@@ -1,5 +1,7 @@
 - content_for :title, @course.title
 - content_for :description, @course.description
+- content_for :image, request.protocol + request.host + @course.bg_img.thumb.url
+- content_for :ref_link, speciality_courses_path(@speciality)
 
 .container.container_mt_40
   .content.content-main.left

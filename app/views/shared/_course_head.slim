@@ -1,7 +1,8 @@
 .content-header
+  .course-bg= image_tag @course.bg_img.url    
   .container.container_pb_40.course-head
     .content-main.left
-      = link_to @speciality.title, speciality_courses_path(@speciality), class: 'label course-head__label'
+      = link_to @speciality.title, yield(:ref_link), class: 'label course-head__label'
       h1.font-35.course-head__title= @course.title
       .course-head__description= @course.description
     .content-sidebar
