@@ -30,17 +30,9 @@ html
               svg.icon.icon-news role="img" title="news" 
                 use xlink:href=image_path('icons.svg#icon-news')
             = link_to page_path('about'), class: 'menu__item menu__item_black' do
-              | О проекте
+              | О нас
               svg.icon.icon-info role="img" title="info" 
                 use xlink:href=image_path('icons.svg#icon-info')
-            = link_to page_path('team'), class: 'menu__item menu__item_black' do
-              | Команда
-              svg.icon.icon-team role="img" title="team" 
-                use xlink:href=image_path('icons.svg#icon-team')
-            = link_to page_path('wanna-help'), class: 'menu__item menu__item_black' do
-              | Хочу помочь
-              svg.icon.icon-wanna-help role="img" title="wanna-help" 
-                use xlink:href=image_path('icons.svg#icon-wanna-help')
       = yield
       footer.footer.footer_bg_tr
         .container.container_full

@@ -1,95 +1,34 @@
 - content_for :title, 'О проекте'
-
-.content.container.container_mt_40
-  .content-inner
-    p.text.text_bold.text_italic style="font-size:18px;margin-bottom:50px"  Привет! Мы - сообщество людей, желающих сделать перевод лекций MIT на русский язык. Такие переводы уже сделаны на многие другие языки, как-то: китайский, турецкий, португальский, испанский, корейский и фарси. Теперь настала очередь русского.
-  .content-col
-    p.text Своей целью мы видим снижение барьера входа русскоязычных людей в науку и образовательные курсы на других языках.
-    p.text
-      | Про наше название: 
-      span.text_bold КУРСОМИР
-      br
-      | Очевидно, что есть две составляющие: 
-      span.text_bold КУРС 
-      | и 
-      span.text_bold МИР.
-      | У каждой из составляющих есть не одно, а множество значений, и сочетаясь вместе, они дают интересную игру смыслов. Разберем каждую из составляющих подробно.
-  .content-col
-    svg.icon.icon-logo role="img" style="width:100%;height:140px;fill:#ed4e42" title="logo" 
-      use xlink:href=image_path('icons.svg#icon-logo')
-  .content-inner style="margin-bottom:50px" 
-  .content-col
-    p.text
-      span.text_bold КУРС:
-    ul.order
-      li.order__item
-        .order__num> 1.
-        | Законченный цикл обучения, весь объём какого-либо обучения
-      li.order__item
-        .order__num> 2.
-        | Направление, какой-либо деятельности; установка на какую-либо цель в деятельности
-  .content-col
-    p.text
-      span.text_bold МИР:
-      br/
-      | Как известно,  мир до революции был в двух написаниях –
-      span.text_italic.text_bold «миръ» 
-      | и 
-      span.text_italic.text_bold «мiръ»
-      | .
-    ul.order
-      li.order__item
-        .order__num> 1.
-        | МИРЪ: Земной шар, Земля со всем существующим на ней, а также всё, реально существующее на Земле, проявляющееся в её жизни
-      li.order__item
-        .order__num> 2.
-        | MIРЪ: Окружающее общество, люди, а также сельская община и члены этой общины
-  .content-inner style="margin-bottom:50px" 
-  .content-col
-    .card-news
-      img.card-news__image src=image_path('sputnik.jpg')
-  .content-col
-    .card-news
-      p.text
-        | Другие плюсы использования слова МИР:
-        br
-      ul.order
-        li.order__item
-          .order__num> 1.
-          | МИР - одно из немногих русских слов (наряду с космонавт, спутник и перестройка), которое знают иностранцы
-        li.order__item
-          .order__num> 2.
-          | МИР - это слово есть во всех славянских языках (а мы переводим для русскоязычных)
-        li.order__item
-          .order__num> 3.
-          | МИР - это название российской космической станции и российской космической программы, долгие годы верой и правдой служившей для целей науки
-        li.order__item
-          .order__num> 4.
-          | МИР - всего лишь в одной букве отличается от МИТ (Массачусетский технологический институт)
-  .content-inner style="margin-bottom:50px" 
-  .content-col
-    p.text
+.content.container.content_p_40.container_mt_40
+  p.text_light.text_dgray style="font-size:18px;margin-bottom:20px"  Лекции MIT переводены уже на многие другие языки, как-то: китайский, турецкий, португальский, испанский, корейский и фарси. Теперь настала очередь русского. Своей целью мы видим снижение барьера входа русскоязычных людей в науку и образовательные курсы на других языках.
+  p.text style="line-height:22px"
+    | Про наше название: 
+    span.text_bold КУРСОМИР
+    br
+    | Очевидно, что есть две составляющие: 
+    span.text_bold КУРС 
+    | и 
+    span.text_bold МИР.
+    | У каждой из составляющих есть не одно, а множество значений, и сочетаясь вместе, они дают интересную игру смыслов. Разберем каждую из составляющих подробно.
+  img src=image_path("about.png") style="width:100%;margin:20px 0;"
+  .content-col.content-col_pl_0
+    p.text.text_bold
       | Все вместе: КУРСОМИР
       br
       | Это название, полученное через преломление основных смыслов слов, из которых оно состоит:
-    ul.order
+    ul.order.order_red_circle
       li.order__item
-        .order__num> 1.
         | Законченный цикл обучения о всем, существующим на Земле и всем том, что проявляется в ее жизни
       li.order__item
-        .order__num> 2.
         | Установка на создание более совершенного и цивилизованного общества, что нас окружает
-  .content-col
-    p.text
+  .content-col.content-col_pr_0
+    p.text.text_bold
       | Другие ассоциации и коннотации, связанные с названием КУРСОМИР:
-    ul.order
+    ul.order.order_red_circle
       li.order__item
-        .order__num> 1.
         | Сразу понятно, что это за сайт и про что там, причем как русскоязычным, так и иностранцам
       li.order__item
-        .order__num> 2.
         | Звучит очень по-славянски: ср. Владимир, Яромир, Велимир
       li.order__item
-        .order__num> 3.
         | Персонажи вселенной Толкиена: ср. Боромир, Фарамир
 .content-more.container

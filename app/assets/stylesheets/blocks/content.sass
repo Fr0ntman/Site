@@ -4,6 +4,7 @@
   background-color: #ffffff
   border-radius: 10px
   font-size: 0
+  overflow: hidden
 
   &-inner
     padding: 0 10px
@@ -21,6 +22,7 @@
   &-main
     position: relative
     width: calc(66.66% - 20px)
+    float: left
 
     &:not(:last-child)
       margin-bottom: 20px
@@ -29,31 +31,36 @@
     margin: 45px auto
     text-align: center
 
+  &_p_0
+    padding: 0
+
+  &_p_20
+    padding: 20px
+  
+  &_p_40
+    padding: 40px
+
+  &_br_5
+    border-radius: 5px
+
+  &_mt_20
+    margin-top: 20px
+    
   &-header
     position: relative
     min-height: 250px
     padding-top: 120px
     font-size: 1rem
+    background: transparent url(asset-path('bg-gears.jpg')) no-repeat 50% 70%
+    background-size: cover
 
     &:before
       position: absolute
-      z-index: 4
       top: 0
       left: 0
       @include size(100%)
       content: ''
       background-image: linear-gradient(to bottom, rgba(#000, 1) 0, rgba(#000, .5) 50%)
-
-    &:after
-      position: absolute
-      z-index: 1
-      top: 0
-      left: 0
-      @include size(100%)
-      background: transparent url(asset-path('bg-gears.jpg')) no-repeat 50% 70%
-      background-size: cover
-      filter: grayscale(100%)
-      content: ''
 
     &__subtitle
       padding-top: 5px
@@ -62,6 +69,12 @@
         weight: 300
       color: #fff
       letter-spacing: -.6px
+
+  &-robot-header
+    min-height: 300px
+    background: $color-red url(image_path('robot.png'))
+    background-position: 50% 100%
+    background-repeat: no-repeat
 
   &-col
     display: inline-block
@@ -76,8 +89,16 @@
     &_pr_0
       padding-right: 0
 
-    &_w_33p
-      width: 33.33%
+    &_w_25p
+      width: 25%
+    
+    &_w_32p
+      width: 32%
 
+      & + &
+        margin-left: 2%
 
+    &_p_0
+      padding: 0 
 
+    

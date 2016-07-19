@@ -1,67 +1,115 @@
-.collaborator
+
+%red-link a
+  color: $color-red
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+
+.collabs
   padding: 0
+  width: 75%
   font-size: 14px
   font-size: 1rem
+  display: flex
+  justify-content: space-between
+  align-items: stretch
+  flex-wrap: wrap
+  position: relative
 
-  & + &
-    margin-top: 20px
+  &__header
+    float: left
+    margin: 15px 0
+    display: block
+    width: 75%
 
-  &__container
-    padding: 20px
+.collab
+  position: relative
+  background-color: #FFF
+  border-radius: 5px
+  padding: 15px
+  margin-bottom: 20px
+  width: 23%
+  height: 250px
 
   &__avatar
     display: block
     margin: 0 auto 20px
-    @include size(120px)
+    @include size(90px)
 
   &__name
     color: $color-red
-    font-size: 20px
+    font-size: 18px
     line-height: 1.25
     text-align: center
-  
-    &_ta_l
-      text-align: left
-
-    a
-      color: $color-red
-      text-decoration: none
-      
-      &:hover
-        text-decoration: underline
+    @extend %red-link
 
   &__post
     padding-top: 5px
     color: $color-text
-    font-weight: 700
     line-height: 1.25
     text-align: center
+    font-weight: 300
 
   &__descr
-    position: relative
-    padding: 20px
-    border-top: 1px solid #dcdcdc
+    padding-top: 20px
+    display: block
+    position: absolute
+    bottom: 15px
+    left: 0
+    width: 100%
+    text-align: center
     font-weight: 300
     line-height: 1.5
-    text-align: justify
+    @extend %red-link
 
-    &_inline
-      text-align: left
-      border-top: none
-      padding: 15px 0 5px
-      color: #808080
+.tlate
+  width: 75%
+  float: left
+  display: flex
+  justify-content: space-between
 
-      &:before
-        display: none
+  &__col
+    width: 48.5%
+    position: relative
 
-    &:before
-      position: absolute
-      top: -8px
-      left: 50%
-      margin-left: -8px
-      @include size(16px)
-      content: ''
-      background-color: #ffffff
-      border-bottom: 1px solid #dcdcdc
-      border-right: 1px solid #dcdcdc
-      transform: rotate(45deg)
+  &__group
+    border-radius: 5px
+    background-color: #FFF
+    padding: 15px
+
+    & + &
+      margin-top: 20px
+
+    &__avatar
+      float: left
+      @include size(50px)
+      margin-right: 10px
+
+    &__mini-avatar
+      float: left
+      @include size(40px)
+      margin-right: 10px
+
+    &__name
+      color: $color-red
+      @extend %red-link
+
+      &_fs_16
+        font-size: 16px
+
+      &_fs_14
+        font-size: 14px
+        line-height: 40px
+
+    &__post
+      color: $color-text
+      font-size: 14px
+      margin-top: 5px
+      line-height: 1.25
+      font-weight: 300
+
+.translator
+  height: 60px
+  padding: 10px 0
