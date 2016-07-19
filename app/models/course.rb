@@ -20,8 +20,11 @@
 #
 
 class Course < ActiveRecord::Base
-  has_many :lectures
-  has_many :exams
+  moun_uploader :bg_img, CourseBgUploader
+
+  has_many :lectures, :exmas
+  accepts_nested_attributes_for :lectures
+  accepts_nested_attributes_for :exams
 
   validates :title, presence: true
   validates :bg_img, presence: true

@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
-  gem 'faker'
+  gem 'ffaker'
 end
 
 group :development do

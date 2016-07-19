@@ -6,6 +6,8 @@ class CreateLectures < ActiveRecord::Migration
       t.string     :type_title, default: 'Лекция'
       t.text       :description, null: false
       t.integer    :number, null: false
+      t.string     :lecture, null: false
+      t.string     :cover
       t.string     :multimedia
       t.string     :materials
 
