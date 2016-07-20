@@ -1,19 +1,82 @@
 .card
-  padding: 20px
-  width: 370px
-  background-color: #ffffff
-  border: 1px solid #e3e3e3
-  border-radius: 4px
-  box-shadow: 3px 3px 13px rgba(#000, .12)
-  
+  position: relative
+  margin: 20px 0
+  @include size(100%, 230px)
+  overflow: hidden
+  border-radius: 10px
+  will-change: transform
+
+  &-container
+    position: absolute
+    z-index: 1
+    top: 0
+    left: 0
+    @include size(100%)
+    background-image: linear-gradient(to top, rgba(#000, .7) 0, rgba(#000, 0) 50%)
+    @include transition(transform)
+
+    &:after
+      position: absolute
+      z-index: 1
+      top: 100%
+      left: 0
+      @include size(100%)
+      content: ''
+      background-color: rgba(#000, .7)
+
+    &:hover
+
+      .card-news__descr
+        transform: translateY(-15px)
+
+  &__image
+    @include size(100%, auto)
+
+  &__date
+    position: absolute
+    z-index: 2
+    top: 25px
+    left: 25px
+
+
   &__title
+    position: absolute
+    z-index: 3
+    bottom: 25px
+    left: 0
+    padding: 0 25px
     font:
-      size: 16px
-      weight: 500
-    color: $color-black
-    
-  &__subtitle
-    padding-top: 5px
+      weight: 700
+      size: 20px
+    color: #fff
+    line-height: 1.25
+
+  &__descr
+    position: absolute
+    z-index: 3
+    top: 100%
+    left: 0
+    padding: 0 25px
     font-size: 14px
-    color: #bdbdbd
-    
+    letter-spacing: -.3px
+    color: #fff
+    line-height: 1.5
+    transform: translateY(30px)
+    @include transition(transform)
+
+  &__menu
+    position: absolute
+    z-index: 2
+    top: 25px
+    right: 25px
+    background-color: rgba(#000, .5)
+    box-shadow: 0 0 20px 1px rgba(#000, .5)
+    cursor: pointer
+
+    .icon
+      fill: #fff
+
+    &:hover
+
+      .icon
+        fill: $color-red

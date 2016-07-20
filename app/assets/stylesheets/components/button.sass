@@ -17,7 +17,7 @@
     border-color: $color-red
     color: $color-red
 
-  &_original_course_link
+  &_size_medium
     line-height: 38px
     padding: 0 24px
     margin: 15px 0
@@ -61,6 +61,18 @@
       background-color: #bd2519
       border-color: #bd2519
       color: #fff
+  
+  &_icon_download
+    padding-left: 33px
+    position: relative
+
+    &:before
+      content: ''
+      @extend %v-align
+      left: 14px
+      width: 14px
+      height: 14px
+      background: url(asset-path('arrow_down_white.svg')) no-repeat
 
   &_big_green
     display: block
