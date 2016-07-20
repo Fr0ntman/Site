@@ -6,7 +6,7 @@ class CreateExamFiles < ActiveRecord::Migration
       t.string     :title, null: false, default: 'Экзамен'
       t.integer    :number, null: false
       t.string     :file, null: false
-      t.integer    :year, null: false
+      t.integer    :year
       t.string     :exam_type
 
       t.timestamps null: false

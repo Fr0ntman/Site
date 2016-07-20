@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160707182717) do
     t.string   "title",      default: "Экзамен", null: false
     t.integer  "number",                         null: false
     t.string   "file",                           null: false
-    t.integer  "year",                           null: false
+    t.integer  "year"
     t.string   "exam_type"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -122,12 +122,12 @@ ActiveRecord::Schema.define(version: 20160707182717) do
   create_table "task_files", force: :cascade do |t|
     t.integer  "task_id"
     t.string   "ancestry"
-    t.string   "title",      default: "Задание", null: false
-    t.integer  "number",                         null: false
-    t.string   "file",                           null: false
+    t.string   "title",      null: false
+    t.integer  "number",     null: false
+    t.string   "file",       null: false
     t.string   "task_type"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "task_files", ["ancestry"], name: "index_task_files_on_ancestry", using: :btree

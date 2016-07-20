@@ -60,6 +60,19 @@ end
     date_of_creating: FFaker::Time.date
 	)
 	course.bg_img = Pathname.new(path_to_files + random_image[rand_int]).open
+	exam = Exam.new number: 1
+	2.times do |j|
+		rand_int_for_zip = rand(0..7)
+		exam_file = ExamFile.new title: 'Экзамен', number: j, year: FFaker::Vehicle.year, exam_type: 'exam'
+		exam_file.file = Pathname.new(path_to_files + random_zip[rand_int_for_zip]).open
+		exam.exam_files << exam_file
+		exam_file.save!
+		solution_file = ExamFile.new title: 'Ответы', number: j, year: FFaker::Vehicle.year, exam_type: 'answer', parent: exam_file
+		solution_file.file = Pathname.new(path_to_files + random_zip[rand_int_for_zip]).open
+		exam.exam_files << solution_file
+		solution_file.save!
+	end
+	exam.save!
 	3.times do |j|
 		rand_int = rand(0..7)
 		rand_int_for_pdf = rand(0..13)
@@ -71,11 +84,11 @@ end
 			task = Task.new number: k
 			2.times do |l|
 				rand_int_for_pdf = rand(0..13)
-				task_file = TaskFile.new number: l, task_type: 'task'
+				task_file = TaskFile.new title: 'Задание', number: l, task_type: 'task'
 				task_file.file = Pathname.new(path_to_files + random_pdf[rand_int_for_pdf]).open
 				task.task_files << task_file
 				task_file.save!
-				task_solution = TaskFile.new number: l, task_type: 'solution', parent: task_file
+				task_solution = TaskFile.new title: 'Решение', number: l, task_type: 'solution', parent: task_file
 				task_solution.file = Pathname.new(path_to_files + random_pdf[rand_int_for_pdf]).open
 				task.task_files << task_solution
 				task_solution.save!
@@ -96,5 +109,6 @@ end
 		lecture.save!
 		course.lectures << lecture
 	end
+	course.exams << exam
 	course.save!
 end

@@ -7,48 +7,8 @@
   .container.content-main.left
     iframe width="100%" height="440" src="https://www.youtube.com/embed/4t0n5k0X7ow?list=PLTjRvDozrdlwn9IsHWEs9IQv3HQob4bH3" frameborder="0" allowfullscreen="true" style="border-radius: 5px"
   .content-sidebar
-    .content.content_mb_20
-      .content-inner
-        h2.font-20.mb_20 Список лекций
-        .fader
-        .lectures-list.content_fix_h
-          - unless @course.lectures.blank?
-            ul.list
-              - @course.lectures.each do |lecture|
-                li.list__item.list__item
-                  .list__item__cover.list__item__cover_small
-                    img src=image_path('other.jpg') width="75" height="50"
-                  .list__item__details.list__item__details_small
-                    .list__item__details__top
-                      = link_to lecture.type_title + ' ' + lecture.number.to_s, [@course, lecture], class: 'list__item__details__top__item list__item__details__top__item_small'
-                    = link_to lecture.title, [@course, lecture], class: "list__item__details__title list__item__details__title_small #{current_class? course_lecture_path(@course, lecture), 'list__item__details__title_active'}"
-                - unless lecture.tasks.blank?
-                  - lecture.tasks.each do |task|
-                    li.list__item
-                      .list__item__cover.list__item__cover_small
-                        img src=image_path('other.jpg') width="75" height="50"
-                      .list__item__details.list__item__details_small
-                        .list__item__details__top
-                          = link_to task.title + ' ' + task.number.to_s, [@course, task], class: 'list__item__details__top__item list__item__details__top__item_small'
-                        = link_to 'Задания и решения', [@course, task], class: "list__item__details__title list__item__details__title_small #{current_class? course_task_path(@course, task), 'list__item__details__title_active'}"
-              - unless @course.exams.blank?
-                - @course.exams.each do |exam|
-                  li.list__item
-                    .list__item__cover.list__item__cover_small
-                      img src=image_path('other.jpg') width="75" height="50"
-                    .list__item__details.list__item__details_small
-                      .list__item__details__top
-                        = link_to exam.title + ' ' + exam.number.to_s, [@course, exam], class: 'list__item__details__top__item list__item__details__top__item_small'
-                      = link_to 'Экзамены и ответы', [@course, exam], class: "list__item__details__title list__item__details__title_small #{current_class? course_exam_path(@course, exam), 'list__item__details__title_active'}"
-    = link_to 'javascript:;', class: 'button button_big_green' do
-      .button_big_green__title Нашли ошибку в переводе?
-      .button_big_green__subtitle Свяжитесь с нами
-    .content.content_mt_20
-      .content-inner
-        .tab-panel.sidebar-tab
-          .container
-            = link_to 'Похожие курсы', 'javascript:;', class: "tab tab_state_active"
-            = link_to 'Новые', 'javascript:;', class: "tab"
+    = render 'shared/lectures_list_sidebar'
+    = render 'shared/course_sidebar'
   .content.content-main.left
     .content-inner
       .lecture-info

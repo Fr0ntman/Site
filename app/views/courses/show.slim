@@ -23,8 +23,8 @@
                     img src=image_path('other.jpg') width="150" height="100"
                   .list__item__details
                     .list__item__details__top
-                      = link_to task.title + ' ' + task.number.to_s, [@course, task], class: 'list__item__details__top__item'
-                    = link_to 'Задания и решения', [@course, task], class: 'list__item__details__title'
+                      = link_to task.title + ' ' + task.number.to_s, [@course, lecture, task], class: 'list__item__details__top__item'
+                    = link_to 'Задания и решения', [@course, lecture, task], class: 'list__item__details__title'
           - unless @course.exams.blank?
             - @course.exams.each do |exam|
               li.list__item
@@ -35,17 +35,7 @@
                     = link_to exam.title + ' ' + exam.number.to_s, [@course, exam], class: 'list__item__details__top__item'
                   = link_to 'Экзамены и ответы', [@course, exam], class: 'list__item__details__title'
   .content-sidebar
-    = link_to 'javascript:;', class: 'button button_big_green' do
-      .button_big_green__title Нашли ошибку в переводе?
-      .button_big_green__subtitle Свяжитесь с нами
-    .content.content_mt_20
-      .content-inner
-        .tab-panel.sidebar-tab
-          .container
-            = link_to 'Похожие курсы', 'javascript:;', class: "tab tab_state_active"
-            = link_to 'Новые', 'javascript:;', class: "tab"
-        .container
-          
+    = render 'shared/course_sidebar'
   .content.content-main.left
     .content-inner
       #disqus_thread
