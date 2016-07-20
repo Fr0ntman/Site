@@ -80,11 +80,28 @@
 		&__more-details
 			position: absolute
 			right: 0
-			top: 50%
-			transform: translateY(-50%)
+			@extend %v-align
 
 			&__mid
 				display: inline-block
 				color: $color-another-gray
 				font-size: 14px
 
+	&-mini
+		
+		&__item
+			border-top: 1px solid #DCDCDC
+			padding: 15px 0
+			@extend %clearfix
+
+			&__first
+				float: left
+				margin-right: 10px
+
+			&__mid
+				margin: 8px 0
+				float: left
+
+			&__last
+				margin: 8px 0
+				float: right

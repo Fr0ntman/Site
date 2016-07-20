@@ -16,6 +16,23 @@
   &:hover
     border-color: $color-red
     color: $color-red
+  
+  &_circle-download
+    padding: 0
+    width: 30px
+    height: 30px
+    position: relative
+    @include transition(transform .5s)
+
+    &:before
+      content: ''
+      @extend %vh-align
+      width: 10px
+      height: 12px
+      background: url(asset-path('arrow_down_white.svg')) no-repeat
+
+    &:hover
+      transform: rotate(360deg)
 
   &_size_medium
     line-height: 38px
@@ -70,8 +87,8 @@
       content: ''
       @extend %v-align
       left: 14px
-      width: 14px
-      height: 14px
+      width: 12px
+      height: 12px
       background: url(asset-path('arrow_down_white.svg')) no-repeat
 
   &_big_green

@@ -53,15 +53,34 @@
     .content-inner
       .lecture-info
         .lecture-info__cover
-          img src=@lecture.cover.thumb.url width="100%"
+          img src= @lecture.cover.thumb.url width="100%"
         .lecture-info__details
           .lecture-info__details__number= @lecture.type_title + ' ' + @lecture.number.to_s
           .lecture-info__details__title= @lecture.title
           .lecture-info__details__description= @lecture.description
-      = link_to @lecture.lecture.url, class: 'button button_color_red button_size_medium button_text_size_normal button_icon_download' do
+      = link_to @lecture.lecture.url, class: 'button button_color_red button_size_medium button_text_size_normal button_icon_download', style: 'margin: 20px 0' do
         | Скачать в PDF 
         span.dot-separator •
         span style="font-weight: normal" #{number_to_human_size(@lecture.lecture.size)}
+      ul.list-mini
+        li.list-mini__item
+          .list-mini__item__first
+            = link_to '', 'javascript:;', class: 'button button_circle-download', style: "border-color: #{@course.color}; background: #{@course.color}; margin: 0"
+          .list-mini__item__mid
+            = link_to 'Скачать слайды', 'javascript:;', class: "list__item__details__title list__item__details__title_small"
+          .list-mini__item__last
+            span style="font-weight: normal" #{@lecture.lecture.file.extension.upcase}
+            span.dot-separator •
+            span style="font-weight: normal" #{number_to_human_size(@lecture.lecture.size)}
+        li.list-mini__item
+          .list-mini__item__first
+            = link_to '', 'javascript:;', class: 'button button_circle-download', style: "border-color: #{@course.color}; background: #{@course.color}; margin: 0"
+          .list-mini__item__mid
+            = link_to 'Скачать доп. материалы', 'javascript:;', class: "list__item__details__title list__item__details__title_small"
+          .list-mini__item__last
+            span= @lecture.lecture.file.extension.upcase
+            span.dot-separator •
+            span= number_to_human_size(@lecture.lecture.size)
   .content.content-main.left
     .content-inner
       #disqus_thread
