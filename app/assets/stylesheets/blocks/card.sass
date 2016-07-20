@@ -6,6 +6,13 @@
   border-radius: 10px
   will-change: transform
 
+  &_mini
+    border-radius: 4px
+    height: auto
+
+    &:last-child
+      margin-bottom: 0
+
   &-container
     position: absolute
     z-index: 1
@@ -38,6 +45,9 @@
     top: 25px
     left: 25px
 
+    &_mini
+      left: 15px
+      top: 15px
 
   &__title
     position: absolute
@@ -50,6 +60,11 @@
       size: 20px
     color: #fff
     line-height: 1.25
+
+    &_mini
+      bottom: 15px
+      padding: 0 15px
+      font-size: 14px
 
   &__descr
     position: absolute

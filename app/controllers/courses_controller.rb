@@ -32,6 +32,7 @@ class CoursesController < ApplicationController
 	def show
 		@course = Course.find params[:id]
 		@speciality = Speciality.find @course.speciality
+		@similar_courses = Course.where(speciality: @speciality.id).take(4)
 	end
 
 	def new

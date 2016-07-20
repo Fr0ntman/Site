@@ -15,4 +15,8 @@ class CourseBgUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [150, 100]
   end
 
+  version :card do
+    process resize_to_fill: [280, 150]
+  end
+
 end
