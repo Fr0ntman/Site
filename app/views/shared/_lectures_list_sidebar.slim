@@ -12,7 +12,7 @@
               .list__item__details.list__item__details_small
                 .list__item__details__top
                   = link_to lecture.type_title + ' ' + lecture.number.to_s, [@course, lecture], class: 'list__item__details__top__item list__item__details__top__item_small'
-                = link_to lecture.title, [@course, lecture], class: "list__item__details__title list__item__details__title_small #{current_class? course_lecture_path(@course, lecture), 'list__item__details__title_active'}"
+                = link_to lecture.title, [@course, lecture], class: "list__item__details__title list__item__details__title_small #{current_url? course_lecture_path(@course, lecture), 'list__item__details__title_active'}"
             - unless lecture.tasks.blank?
               - lecture.tasks.each do |task|
                 li.list__item
@@ -21,7 +21,7 @@
                   .list__item__details.list__item__details_small
                     .list__item__details__top
                       = link_to task.title + ' ' + task.number.to_s, [@course, lecture, task], class: 'list__item__details__top__item list__item__details__top__item_small'
-                    = link_to 'Задания и решения', [@course, lecture, task], class: "list__item__details__title list__item__details__title_small #{current_class? course_lecture_task_path(@course, lecture, task), 'list__item__details__title_active'}"
+                    = link_to 'Задания и решения', [@course, lecture, task], class: "list__item__details__title list__item__details__title_small #{current_url? course_lecture_task_path(@course, lecture, task), 'list__item__details__title_active'}"
           - unless @course.exams.blank?
             - @course.exams.each do |exam|
               li.list__item
@@ -30,4 +30,4 @@
                 .list__item__details.list__item__details_small
                   .list__item__details__top
                     = link_to exam.title + ' ' + exam.number.to_s, [@course, exam], class: 'list__item__details__top__item list__item__details__top__item_small'
-                  = link_to 'Экзамены и ответы', [@course, exam], class: "list__item__details__title list__item__details__title_small #{current_class? course_exam_path(@course, exam), 'list__item__details__title_active'}"
+                  = link_to 'Экзамены и ответы', [@course, exam], class: "list__item__details__title list__item__details__title_small #{current_url? course_exam_path(@course, exam), 'list__item__details__title_active'}"
