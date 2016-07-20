@@ -47,6 +47,21 @@
     padding-top: 120px
     font-size: 1rem
 
+    .custom-bg
+      position: absolute
+      z-index: 3
+      top: 0
+      left: 0
+      overflow: hidden
+      @include size(100%)
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        filter: grayscale(100%)
+        @include size(100%, auto)
+
     &:before
       position: absolute
       z-index: 4

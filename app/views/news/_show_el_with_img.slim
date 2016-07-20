@@ -2,7 +2,7 @@
 - content_for :description, item.description
 
 .content-header.description
-  .news-bg= image_tag item.attachments[0].url
+  .custom-bg= image_tag item.attachments[0].url
   .description__header.container
     .description__title.content-main
       .description__label.label= l item.updated_at.localtime, format: :default_card
