@@ -82,11 +82,11 @@ ActiveRecord::Schema.define(version: 20160707182717) do
 
   create_table "materials", force: :cascade do |t|
     t.integer  "lecture_id"
-    t.string   "title"
-    t.string   "file"
-    t.string   "type",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",         null: false
+    t.string   "file",          null: false
+    t.string   "material_type", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "materials", ["lecture_id"], name: "index_materials_on_lecture_id", using: :btree

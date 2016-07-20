@@ -83,6 +83,16 @@ end
 			task.save!
 			lecture.tasks << task
 		end
+		2.times do |l|
+			type = ['slides', 'materials']
+			title = ['Скачать слайды', 'Скачать доп. контент']
+			rand_int_for_zip = rand(0..7)
+			rand_type = rand(0..1)
+			material = Material.new title: title[rand_type], material_type: type[rand_type]
+			material.file = Pathname.new(path_to_files + random_zip[rand_int_for_zip]).open
+			material.save!
+			lecture.materials << material
+		end
 		lecture.save!
 		course.lectures << lecture
 	end
