@@ -68,7 +68,7 @@
             = link_to '', 'javascript:;', class: 'button button_circle-download', style: "border-color: #{@course.color}; background: #{@course.color}; margin: 0"
           .list-mini__item__mid
             = link_to 'Скачать слайды', 'javascript:;', class: "list__item__details__title list__item__details__title_small"
-          .list-mini__item__last
+          .list-mini__item__last.list__item__more-details__mid
             span style="font-weight: normal" #{@lecture.lecture.file.extension.upcase}
             span.dot-separator •
             span style="font-weight: normal" #{number_to_human_size(@lecture.lecture.size)}
@@ -77,7 +77,7 @@
             = link_to '', 'javascript:;', class: 'button button_circle-download', style: "border-color: #{@course.color}; background: #{@course.color}; margin: 0"
           .list-mini__item__mid
             = link_to 'Скачать доп. материалы', 'javascript:;', class: "list__item__details__title list__item__details__title_small"
-          .list-mini__item__last
+          .list-mini__item__last.list__item__more-details__mid
             span= @lecture.lecture.file.extension.upcase
             span.dot-separator •
             span= number_to_human_size(@lecture.lecture.size)
