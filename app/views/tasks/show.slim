@@ -9,6 +9,7 @@
     = render 'shared/course_sidebar'
   .content.content-main.left
     .content-inner
+      .list__item__details__top__item_static style="margin-bottom: 8px"= @task.title + ' ' + @task.number.to_s
       h2.font-20.mb_20 Задания и решения
       ul.list-mini
         - @task.task_files.each do |task_file|

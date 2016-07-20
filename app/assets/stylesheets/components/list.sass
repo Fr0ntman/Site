@@ -47,6 +47,13 @@
 					&_small
 						font-size: 12px
 
+					&_static
+						color: $color-red
+						text-decoration: none
+						font-size: 14px
+						border-bottom: 1px solid transparent
+						@include transition(border-color color)
+
 				&__item-more
 					color: $color-another-gray
 					font-size: 14px

@@ -9,6 +9,7 @@
     = render 'shared/course_sidebar'
   .content.content-main.left
     .content-inner
+      .list__item__details__top__item_static style="margin-bottom: 8px"= @exam.title
       h2.font-20.mb_20 Экзамены и ответы
       ul.list-mini
         - @exam.exam_files.each do |exam_file|
