@@ -1,13 +1,27 @@
 - content_for :title, 'Новости'
-- content_for :subtitle, 'Переводы. Анонсы. События'
+- content_for :subtitle, 'Содержимое:'
 
 - if @news.any?
   .content.container.container_mt_40
-    ul style='font-size: 14px;'
-      - @news.each do |item|
-        li
-          = item.title
-          a class='button' href=admin_news_path(item) data-method='DELETE' Удалить
-          a class='button' href=edit_admin_news_path(item) Редактировать
+    .content-inner
+      table.table-list
+        tr.table-list__row
+          th.table-list__head-col style="width: 400px" Заголовок
+          th.table-list__head-col style="width: 125px" Категория
+          th.table-list__head-col style="width: 165px" Дата
+          th.table-list__head-col style="width: 118px" Источник
+          th.table-list__head-col Статус
+        - @news.each do |news|
+          tr.table-list__row
+            td.table-list__col
+              = link_to news.title, admin_news_path(news), class: 'link'
+            td.table-list__col= news.category
+            td.table-list__col= news.created_at
+            td.table-list__col= news.source
+            - if news.published
+              td.table-list__col Опубликовано
+            - else
+              td.table-list__col Неопубликовано
+  .content-more.container
 - else
   p.news-empty Нет новостей
