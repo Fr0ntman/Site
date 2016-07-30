@@ -22,3 +22,12 @@ $(document).on 'page:change', ->
 
 		do e.preventDefault
 		return false
+
+	$('.check-all').click (e) ->
+		console.log 'ola'
+		unless $(this).is ':checked'
+			$('input[type="checkbox"]').each ->
+				$(this).prop 'checked', yes
+
+		do e.preventDefault
+		return false

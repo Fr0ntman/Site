@@ -6,15 +6,21 @@
     .content-inner
       table.table-list
         tr.table-list__row
+          th.table-list__head-col
+            input#checkbox.check-all type="checkbox"
+            label for="checkbox"
           th.table-list__head-col style="width: 400px" Заголовок
           th.table-list__head-col style="width: 125px" Категория
           th.table-list__head-col style="width: 165px" Дата
           th.table-list__head-col style="width: 118px" Источник
           th.table-list__head-col Статус
-        - @news.each do |news|
+        - @news.each.with_index do |news, i|
           tr.table-list__row
             td.table-list__col
-              = link_to news.title, admin_news_path(news), class: 'link'
+              input id="checkbox#{i}" type="checkbox"
+              label for="checkbox#{i}"
+            td.table-list__col
+              = link_to news.title, edit_admin_news_path(news), class: 'link'
             td.table-list__col= news.category
             td.table-list__col= news.created_at
             td.table-list__col= news.source

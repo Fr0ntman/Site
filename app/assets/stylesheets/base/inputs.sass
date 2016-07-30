@@ -1,0 +1,36 @@
+input[type="checkbox"]
+	
+	&:not(checked)
+		position: absolute
+		opacity: 0
+
+		& + label
+			position: relative
+			padding-left: 15px
+			margin-right: 10px
+			cursor: pointer
+
+			&:before
+				content: ''
+				width: 15px
+				height: 15px
+				background: #fff
+				border: 1px solid #ccc
+				border-radius: 3px
+				position: absolute
+				left: 0
+				@extend %v-align
+	
+	&:checked 
+
+		& + label:before
+			background: $color-red
+			border: none
+
+		& + label:after
+			content: ''
+			position: absolute
+			width: 11px
+			height: 9px
+			@extend %vh-align
+			background: url(asset-path('check.svg')) no-repeat
