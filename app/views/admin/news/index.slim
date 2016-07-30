@@ -20,7 +20,7 @@
               input id="checkbox#{i}" type="checkbox"
               label for="checkbox#{i}"
             td.table-list__col
-              = link_to news.title, edit_admin_news_path(news), class: 'link'
+              = link_to news.title, edit_admin_news_path(news)
             td.table-list__col= news.category
             td.table-list__col= news.created_at
             td.table-list__col= news.source

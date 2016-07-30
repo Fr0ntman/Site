@@ -1,4 +1,4 @@
-$(document).on 'turbolinks:load', ->
+$(document).on 'page:change', ->
 
 	$('.js-news-container').hover	->
 		$title = $ '.js-news-title', @
@@ -23,15 +23,9 @@ $(document).on 'turbolinks:load', ->
 		do e.preventDefault
 		return false
 
-	console.log 'ola'
-
 	$('.check-all').click (e) ->
-		unless $(this).is ':checked'
-			$('input[type="checkbox"]').each ->
-				$(this).prop 'checked', yes
-		else
-			$('input[type="checkbox"]').each ->
-				$(this).prop 'checked', no
+		$checkboxes = $('input[type="checkbox"]')
+		$checkboxes.prop 'checked', !$checkboxes.prop 'checked'
 
 		do e.preventDefault
 		return false
