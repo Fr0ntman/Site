@@ -2,7 +2,7 @@
 - content_for :subtitle, 'Содержимое:'
 
 - if @news.any?
-  .content.container.container_mt_40
+  .content.content_ptb15.container.container_mt_40
     .content-inner
       table.table-list
         tr.table-list__row
@@ -20,14 +20,14 @@
               input id="checkbox#{i}" type="checkbox"
               label for="checkbox#{i}"
             td.table-list__col
-              = link_to news.title, edit_admin_news_path(news)
+              = link_to news.title, edit_admin_news_path(news), class: 'link-red'
             td.table-list__col= news.category
-            td.table-list__col= news.created_at
+            td.table-list__col= news.created_at.strftime("%d.%m.%Y - %H:%M")
             td.table-list__col= news.source
             - if news.published
-              td.table-list__col Опубликовано
+              td.table-list__col.text_gray Опубликовано
             - else
-              td.table-list__col Неопубликовано
+              td.table-list__col.text_gray Неопубликовано
   .content-more.container
 - else
   p.news-empty Нет новостей
