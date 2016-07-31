@@ -1,17 +1,43 @@
 class CoursesController < ApplicationController
+	layout :resolve_layout
+
+	def specialities
+		@specialities = {}
+		@categories = Category.all
+		@categories.each do |category|
+			@specialities[:"#{category.id}"] = {title: category.title, specialities: []}
+			category.sub_categories.each do |sub_category|
+				sub_category.specialities.each do |speciality|
+					@specialities[:"#{category.id}"][:specialities] << speciality
+				end
+			end
+		end
+		@specialities.delete_if { |k, v| v[:specialities].empty? }
+	end
+
+	def speciality
+		@courses = Course.where speciality: params[:speciality_id]
+	end
+
+	def topics		
+	end
+
+	def mit_courses
+	end
+
 	def index
-		@courses = Course.find_each
+		redirect_to specialities_courses_path
 	end
 
 	def show
 		@course = Course.find params[:id]
+		@speciality = Speciality.find @course.speciality
+		@similar_courses = Course.where(speciality: @speciality.id).take(4)
 	end
 
 	def new
 		@course = Course.new
 		@categories = Category.all
-		@sub_categories = SubCategory.all
-		@specialities = Speciality.all
 	end
 
 	def create
@@ -43,4 +69,13 @@ class CoursesController < ApplicationController
 				:date_of_creating
 			)
 		end
+
+		def resolve_layout
+      case action_name
+      when "show"
+        "course"
+      else
+        "application"
+      end
+    end
 end

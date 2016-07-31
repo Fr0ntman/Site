@@ -1,0 +1,117 @@
+.list
+	padding: 0
+	margin: 0
+	list-style: 0
+
+	&__item
+		border-top: 1px solid #DCDCDC
+		padding: 15px 0
+		position: relative
+		@extend %clearfix
+
+		&:last-child
+			padding-bottom: 0
+
+		&:first-child
+			padding-top: 0
+			border-top: none
+
+		&__cover
+			float: left
+			margin-right: 15px
+
+			img
+				display: block
+
+			&_small
+				margin-right: 10px
+
+		&__details
+			width: 60%
+			float: left
+
+			&__top
+				@extend %clearfix
+				margin-bottom: 5px
+
+				&__item
+					color: $color-red
+					text-decoration: none
+					font-size: 14px
+					border-bottom: 1px solid transparent
+					@include transition(border-color color)
+
+					&:hover
+						border-bottom: 1px solid $color-red
+
+					&_small
+						font-size: 12px
+
+					&_static
+						color: $color-red
+						text-decoration: none
+						font-size: 14px
+						border-bottom: 1px solid transparent
+						@include transition(border-color color)
+
+				&__item-more
+					color: $color-another-gray
+					font-size: 14px
+					display: inline-block
+
+			&_small
+				width: 68%
+		
+			&__mid
+				color: $color-another-gray
+				font-size: 14px
+				margin-bottom: 5px
+
+			&__title
+				color: $color-text
+				text-decoration: none
+				font-size: 17px
+				border-bottom: 1px solid transparent
+				@include transition(border-color color)
+
+				&:hover
+					border-bottom: 1px solid $color-red
+					color: $color-red
+
+				&_small
+					font-size: 14px
+
+				&_active
+					color: $color-red
+		
+		&__more-details
+			position: absolute
+			right: 0
+			@extend %v-align
+
+			&__mid
+				display: inline-block
+				color: $color-another-gray
+				font-size: 14px
+
+	&-mini
+		
+		&__item
+			border-top: 1px solid #DCDCDC
+			padding: 15px 0
+			@extend %clearfix
+
+			&__first
+				float: left
+				margin-right: 10px
+
+			&__mid
+				margin: 8px 0
+				float: left
+
+			&__last
+				margin: 8px 0
+				float: right
+
+			&:last-child
+				padding-bottom: 0

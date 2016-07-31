@@ -1,0 +1,36 @@
+- content_for :title, @course.title
+- content_for :description, @course.description
+- content_for :image, request.protocol + request.host + @course.bg_img.thumb.url
+- content_for :ref_link, course_path(@course)
+
+.container.container_mt_40
+  .content-sidebar
+    = render 'shared/lectures_list_sidebar'
+    = render 'shared/course_sidebar'
+  .content.content-main.left
+    .content-inner
+      .list__item__details__top__item_static style="margin-bottom: 8px"= @exam.title
+      h2.font-20.mb_20 Экзамены и ответы
+      ul.list-mini
+        - @exam.exam_files.each do |exam_file|
+          - unless exam_file.exam_type == 'answer'
+            li.list-mini__item
+              .list-mini__item__first
+                = link_to '', exam_file.file.url, class: 'button button_circle-download', style: "border-color: #{@course.color}; background: #{@course.color}; margin: 0"
+              .list-mini__item__mid.list__item__more-details__mid
+                = link_to exam_file.title + ' ' + exam_file.number.to_s + ' ' + exam_file.year.to_s, exam_file.file.url, class: "list__item__details__title list__item__details__title_small"
+                span.dot-separator •
+                span style="font-weight: normal" #{exam_file.file.file.extension.upcase}
+                span.dot-separator •
+                span style="font-weight: normal" #{number_to_human_size(exam_file.file.size)}
+              - if exam_file.has_children?
+                .list-mini__item__last.list__item__more-details__mid
+                  = link_to exam_file.children[0].title, exam_file.children[0].file.url, class: "list__item__details__title list__item__details__title_small"
+                  span.dot-separator •
+                  span style="font-weight: normal" #{exam_file.children[0].file.file.extension.upcase}
+                  span.dot-separator •
+                  span style="font-weight: normal" #{number_to_human_size(exam_file.children[0].file.size)}
+  .content.content-main.left
+    .content-inner
+      #disqus_thread
+.container.content-more

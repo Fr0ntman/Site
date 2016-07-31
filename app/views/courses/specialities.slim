@@ -1,0 +1,8 @@
+- content_for :title, 'Переводы лекций'
+- content_for :subtitle, 'Массачусетского технологического института'
+
+= render 'tab_menu'
+
+.container.container_mt_40
+  == print_specialities @specialities
+.content-more.container

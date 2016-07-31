@@ -1,0 +1,18 @@
+= link_to 'javascript:;', class: 'button button_big_green' do
+  .button_big_green__title Нашли ошибку в переводе?
+  .button_big_green__subtitle Свяжитесь с нами
+.content.content_mt_20
+  .content-inner
+    .tab-panel.sidebar-tab
+      .container
+        = link_to 'Похожие курсы', 'javascript:;', class: "tab tab_state_active"
+        = link_to 'Новые', 'javascript:;', class: "tab"
+    .container
+      ul
+        - @similar_courses.each do |item|
+          li.card.card_mini
+            .card__date.card__date_mini
+              .label= item.number
+            = image_tag item.bg_img.card.url, class: 'card__image'
+            = link_to item, class: 'card-container js-news-container' do
+              .card__title.card__title_mini= item.title

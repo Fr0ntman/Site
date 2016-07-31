@@ -1,6 +1,6 @@
-$(document).on 'page:change', ->
+$(document).on 'turbolinks:load', ->
 
-	$('.tab').each ->
+	$('.team-tab').each ->
 		$(this).click (e) ->
 			e.preventDefault()
 			$(this).addClass 'tab_state_active'

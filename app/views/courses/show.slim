@@ -1,0 +1,42 @@
+- content_for :title, @course.title
+- content_for :description, @course.description
+- content_for :image, request.protocol + request.host + @course.bg_img.thumb.url
+- content_for :ref_link, speciality_courses_path(@speciality)
+
+.container.container_mt_40
+  .content.content-main.left
+    .content-inner
+      - unless @course.lectures.blank?
+        ul.list
+          - @course.lectures.each do |lecture|
+            li.list__item
+              .list__item__cover
+                img src=image_path('other.jpg') width="150" height="100"
+              .list__item__details
+                .list__item__details__top
+                  = link_to lecture.type_title + ' ' + lecture.number.to_s, [@course, lecture], class: 'list__item__details__top__item'
+                = link_to lecture.title, [@course, lecture], class: 'list__item__details__title'
+            - unless lecture.tasks.blank?
+              - lecture.tasks.each do |task|
+                li.list__item
+                  .list__item__cover
+                    img src=image_path('other.jpg') width="150" height="100"
+                  .list__item__details
+                    .list__item__details__top
+                      = link_to task.title + ' ' + task.number.to_s, [@course, lecture, task], class: 'list__item__details__top__item'
+                    = link_to 'Задания и решения', [@course, lecture, task], class: 'list__item__details__title'
+          - unless @course.exams.blank?
+            - @course.exams.each do |exam|
+              li.list__item
+                .list__item__cover
+                  img src=image_path('other.jpg') width="150" height="100"
+                .list__item__details
+                  .list__item__details__top
+                    = link_to exam.title + ' ' + exam.number.to_s, [@course, exam], class: 'list__item__details__top__item'
+                  = link_to 'Экзамены и ответы', [@course, exam], class: 'list__item__details__title'
+  .content-sidebar
+    = render 'shared/course_sidebar'
+  .content.content-main.left
+    .content-inner
+      #disqus_thread
+.container.content-more

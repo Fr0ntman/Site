@@ -2,7 +2,7 @@
 - content_for :description, item.description
 
 .content-header.description
-  .news-bg= image_tag item.attachments[0].url
+  .custom-bg= image_tag item.attachments[0].url
   .description__header.container
     .description__title.content-main
       .description__label.label= l item.updated_at.localtime, format: :default_card
@@ -20,8 +20,8 @@
           svg.icon.icon-vk role="img" title="vk"
             use xlink:href=image_path('icons.svg#icon-vk')
     .content-main
-      .news-img.card-news
-        = image_tag item.attachments[0].header_thumb.url, class: 'card-news__image'
+      .news-img.card
+        = image_tag item.attachments[0].url, class: 'card__image'
 .container.container_mt_40
   .content.content-sidebar
     = render 'shared/sidebar', last_news: @last_news

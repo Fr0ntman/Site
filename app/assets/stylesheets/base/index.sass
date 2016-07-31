@@ -18,6 +18,12 @@ body
   min-height: 100%
   background-color: #efefef
 
+.wrapper
+  margin: 0 auto
+  max-width: 960px
+  width: 100%
+  @extend %clearfix
+
 .container
   position: relative
   z-index: 5
@@ -29,6 +35,9 @@ body
 
   &_mt_40
     margin-top: 40px
+  
+  &_pb_40
+    padding-bottom: 40px
 
   &_full
     max-width: none
@@ -58,9 +67,31 @@ body
 
 .right
   float: right
-  
+
+.dot-separator
+  margin: 0 8px
+
+  &_gray
+    color: $color-another-gray
+
 em
   font-style: italic
 
 strong
   font-weight: 700
+
+.mCSB_dragger_bar
+  width: 5px !important
+  box-shadow: none !important
+  background: rgba(0,0,0,.3) !important
+
+.fader
+  display: block
+  width: 100%
+  height: 20px
+  background: linear-gradient(to top, rgba(#fff, .9) 0, rgba(#fff, 0) 50%)
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 10

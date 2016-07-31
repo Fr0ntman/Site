@@ -4,11 +4,23 @@
   background-color: #ffffff
   border-radius: 10px
   font-size: 0
+  box-shadow: 0 0 15px rgba(101, 101, 101, 0.05)
+
+  &_mt_20
+    margin-top: 20px
+
+  &_mb_20
+    margin-bottom: 20px
+
+  &_fix_h
+    height: 360px
+    overflow: hidden
 
   &_ptb15
     padding: 15px 10px
 
   &-inner
+    position: relative
     padding: 0 10px
     font-size: 14px
     font-size: 1rem
@@ -37,6 +49,21 @@
     min-height: 250px
     padding-top: 120px
     font-size: 1rem
+
+    .custom-bg
+      position: absolute
+      z-index: 3
+      top: 0
+      left: 0
+      overflow: hidden
+      @include size(100%)
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        filter: grayscale(100%)
+        @include size(100%, auto)
 
     &:before
       position: absolute

@@ -1,4 +1,5 @@
 class ExamFile < ActiveRecord::Base
+	mount_uploader :file, ExamFileUploader
 	belongs_to :exam
-	has_one    :answer_file
+	has_ancestry
 end

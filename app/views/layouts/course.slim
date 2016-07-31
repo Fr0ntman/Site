@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    = render 'shared/main_meta', locals: yield
+  body
+    .main
+      = render 'shared/main_menu', locals: yield
+      = render 'shared/course_head'
+      = yield
+      = render 'shared/main_footer'

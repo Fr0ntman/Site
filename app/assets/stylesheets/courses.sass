@@ -1,0 +1,28 @@
+.mCSB_dragger_bar
+	width: 5px !important
+
+.course-head
+
+	&__label
+		position: relative
+		padding-left: 25px
+		@include transition(background-color)
+
+		&:hover
+			background: darken($color-red, 15%)
+
+		&:before
+			content: ''
+			width: 15px
+			height: 10px
+			background: url(asset-path('arrow_left_white.svg')) no-repeat
+			@extend %v-align
+			left: 8px
+	
+	&__title
+		margin: 10px 0
+
+	&__description
+		font-size: 16px
+		color: #fff
+		line-height: 23px

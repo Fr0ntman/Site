@@ -1,0 +1,66 @@
+- content_for :title, 'Переводы лекций'
+- content_for :subtitle, 'Массачусетского технологического института'
+
+= render 'tab_menu'
+
+.selector.wrapper
+	.section
+		.section__value Выберите категорию
+		ul.section__options
+			li.option Бизнес
+			li.option Энергетика
+			li.option Инженерия
+			li.option Искусства
+			li.option Здоровье и медицина
+			li.option Гуманитарные науки
+			li.option Математика
+			li.option Математика
+			li.option Математика
+			li.option Математика
+			li.option Математика
+	.section
+		.section__value Выберите подкатегорию
+		ul.section__options
+			li.option Бизнес
+			li.option Энергетика
+			li.option.selected Инженерия
+			li.option Искусства
+	.section
+	 	.section__value Выберите специальность
+		ul.section__options
+			li.option Бизнес
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option Энергетика
+			li.option.selected Инженерия
+			li.option Искусства
+			li.option Здоровье и медицина
+
+.content.container.container_mt_40
+	.content-inner
+		.sort
+			.sort__label Сортировать по:
+			= link_to 'Название курса', 'javascript:;', class: 'sort__type'
+		ul.list
+			li.list__item
+				.list__item__cover
+					img src=image_path('other.jpg') width="150" height="100"
+				.list__item__details
+					.list__item__details__top
+						=link_to '#6.02', 'javascript:;', class: 'list__item__details__top__item'
+						span.dot-separator.dot-separator_gray •
+						.list__item__details__top__item-more 2008
+					.list__item__details__mid Деннис Фримен
+					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'list__item__details__title'
+				.list__item__more-details
+					.list__item__more-details__mid Сложность: Студент
+					span.dot-separator.dot-separator_gray •
+					.list__item__more-details__mid Лекций: 20
+.content-more.container
+	button.button type='button' Показать еще

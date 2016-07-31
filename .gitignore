@@ -15,6 +15,12 @@
 Gemfile.lock
 passenger.*.*
 rails_best_practices_output.html
+<<<<<<< HEAD
 .ruby-gemset
 .ruby-version
 .generators
+=======
+REVISION
+.ruby-gemset
+.ruby-version
+>>>>>>> feature/courses

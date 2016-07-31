@@ -1,0 +1,54 @@
+footer.footer
+  .container
+    .footer__logo.left
+      = link_to root_path do
+        svg.icon.icon-logo role='img' title='logo'
+          use xlink:href=image_path('icons.svg#icon-logo')
+    .footer__social.right
+      .social.social_icon-color_gray
+        = link_to 'https://twitter.com/kursomir', class: 'social__link', target: 'blank' do
+          svg.icon.icon-twitter role='img' title='twitter'
+            use xlink:href=image_path('icons.svg#icon-twitter')
+        = link_to 'https://www.facebook.com/groups/kursomir/', class: 'social__link', target: 'blank' do
+          svg.icon.icon-facebook role='img' title='facebook'
+            use xlink:href=image_path('icons.svg#icon-facebook')
+        = link_to 'https://vk.com/kursomir', class: 'social__link', target: 'blank' do
+          svg.icon.icon-vk role='img' title='vk'
+            use xlink:href=image_path('icons.svg#icon-vk')
+        = link_to 'https://telegram.me/translate_mit', class: 'social__link', target: 'blank' do
+          svg.icon.icon-telegram role='img' title='telegram'
+            use xlink:href=image_path('icons.svg#icon-telegram')
+    .footer__copyright Copyright © 2016 Курсомир
+#js-go-top.top
+coffee:
+  ((d, w, c) ->
+    (w[c] = w[c] or []).push ->
+      try
+        w.yaCounter37344280 = new (Ya.Metrika)(
+          id: 37344280
+          clickmap: true
+          trackLinks: true
+          accurateTrackBounce: true
+          webvisor: true)
+      catch e
+      return
+    n = d.getElementsByTagName('script')[0]
+    s = d.createElement('script')
+
+    f = ->
+      n.parentNode.insertBefore s, n
+      return
+
+    s.type = 'text/javascript'
+    s.async = true
+    s.src = 'https://mc.yandex.ru/metrika/watch.js'
+    if w.opera == '[object Opera]'
+      d.addEventListener 'DOMContentLoaded', f, false
+    else
+      f()
+    return
+  ) document, window, 'yandex_metrika_callbacks'
+noscript
+  div
+    img alt="" src="https://mc.yandex.ru/watch/37344280" style="position:absolute; left:-9999px;"
+script#dsq-count-scr src='//kursomir.disqus.com/count.js' async='true'

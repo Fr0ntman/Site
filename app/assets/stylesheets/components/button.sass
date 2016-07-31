@@ -16,6 +16,30 @@
   &:hover
     border-color: $color-red
     color: $color-red
+  
+  &_circle-download
+    padding: 0
+    width: 30px
+    height: 30px
+    position: relative
+    @include transition(transform .5s)
+
+    &:before
+      content: ''
+      @extend %vh-align
+      width: 10px
+      height: 12px
+      background: url(asset-path('arrow_down_white.svg')) no-repeat
+
+    &:hover
+      transform: rotate(360deg)
+
+  &_size_medium
+    line-height: 38px
+    padding: 0 24px
+    margin: 15px 0
+    text-transform: none
+    font-weight: bold
 
   &_size_big
     line-height: 43px
@@ -34,7 +58,7 @@
     color: $color-purple
 
   &_text_red:hover
-    color: $color-another-red
+    color: $color-red
 
   &_text_vinous:hover
     color: $color-vinous
@@ -53,4 +77,38 @@
     &:hover
       background-color: #bd2519
       border-color: #bd2519
+      color: #fff
+  
+  &_icon_download
+    padding-left: 33px
+    position: relative
+
+    &:before
+      content: ''
+      @extend %v-align
+      left: 14px
+      width: 12px
+      height: 12px
+      background: url(asset-path('arrow_down_white.svg')) no-repeat
+
+  &_big_green
+    display: block
+    background: $color-green
+    padding: 12px 28px
+    border-radius: 5px
+    border: none
+    line-height: normal
+    text-transform: none
+    text-align: center
+
+    &:hover
+      background: darken($color-green, 10%)
+
+    &__title
+      font:
+        size: 17px
+        weight: bold
+      color: #fff
+
+    &__subtitle
       color: #fff

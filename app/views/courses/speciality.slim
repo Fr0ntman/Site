@@ -1,0 +1,27 @@
+- content_for :title, 'Переводы лекций'
+- content_for :subtitle, 'Массачусетского технологического института'
+
+- unless @courses.blank?
+	.content.container.container_mt_40
+		.content-inner
+			.sort
+				.sort__label Сортировать по:
+				= link_to 'Название курса', 'javascript:;', class: 'sort__type'
+			ul.list
+				- @courses.each do |course|
+					li.list__item
+						.list__item__cover
+							img src=course.bg_img.thumb.url width="150" height="100"
+						.list__item__details
+							.list__item__details__top
+								= link_to '#' + course.number, 'javascript:;', class: 'list__item__details__top__item'
+								span.dot-separator.dot-separator_gray •
+								.list__item__details__top__item-more= course.date_of_creating.strftime("%Y")
+							.list__item__details__mid= course.teacher
+							= link_to course.title, course_path(course), class: 'list__item__details__title'
+						.list__item__more-details
+							.list__item__more-details__mid Сложность: #{course.level}
+							span.dot-separator.dot-separator_gray •
+							.list__item__more-details__mid Лекций: #{course.lectures.count}
+	.content-more.container
+		button.button type='button' Показать еще

@@ -11,6 +11,8 @@ gem 'rails', '4.2.5.1'
 gem 'remotipart'
 gem 'sass-rails', '~> 5.0'
 gem 'sass-globbing'
+gem 'breakpoint', '~> 2.5'
+gem 'compass-rails'
 gem 'autoprefixer-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails', '~> 3.0', '>= 3.0.1'
@@ -22,6 +24,9 @@ gem 'vkontakte_api'
 gem 'trumbowyg_rails'
 gem 'high_voltage', '~> 3.0.0'
 gem 'gaffe'
+gem 'scrollbar-rails'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'ancestry'
 gem 'mini_magick'
 
 group :development, :test do

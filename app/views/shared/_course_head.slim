@@ -1,0 +1,32 @@
+.content-header
+  .custom-bg= image_tag @course.bg_img.url    
+  .container.container_pb_40.course-head
+    .content-main.left
+      = link_to @speciality.title, yield(:ref_link), class: 'label course-head__label'
+      h1.font-35.course-head__title= @course.title
+      .course-head__description= @course.description
+    .content-sidebar
+      .course-info
+        .course-info__item
+          .course-info__label Преподаватель:
+          .course-info__data= @course.teacher
+        .course-info__item
+          .course-info__label Номер курса MIT:
+          .course-info__data= @course.number
+        .course-info__item
+          .course-info__label Дата появления курса:
+          .course-info__data= l @course.date_of_creating.localtime, format: :course_date
+        .course-info__item
+          .course-info__label Уровень сложности:
+          .course-info__data= @course.level
+      = link_to 'Оригинал курса на MIT', @course.original_course_link, class: 'button button_color_red button_size_medium', target: '_blank'
+      .social.social_p_0
+        = link_to "http://twitter.com/home?status=#{@course.title}+#{request.original_url}", class: 'social__twitter social__link social__link_type_round' do
+          svg.icon.icon-twitter role='img' title='twitter'
+            use xlink:href=image_path('icons.svg#icon-twitter')
+        = link_to "http://www.facebook.com/share.php?u=#{request.original_url}&title=#{@course.title}", class: 'social__facebook social__link social__link_type_round' do
+          svg.icon.icon-facebook role='img' title='facebook'
+            use xlink:href=image_path('icons.svg#icon-facebook')
+        = link_to "http://vk.com/share.php?url=#{request.original_url}", class: 'social__vk social__link social__link_type_round' do
+          svg.icon.icon-vk role='img' title='vk'
+            use xlink:href=image_path('icons.svg#icon-vk')

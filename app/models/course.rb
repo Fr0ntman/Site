@@ -20,14 +20,15 @@
 #
 
 class Course < ActiveRecord::Base
+  mount_uploader :bg_img, CourseBgUploader
+
   has_many :lectures
   has_many :exams
 
   validates :title, presence: true
   validates :bg_img, presence: true
   validates :color, 
-  					presence: true, 
-  					uniqueness: { case_sensitive: false }, 
+  					presence: true,
   					format: { 
   						with: /\A(#[0-9a-fA-F]{3,6}|rgb\s?\((?:\d{1,3}\,?\s?){3}\))\z/, 
   						message: 'неверный формат цвета'
@@ -44,5 +45,5 @@ class Course < ActiveRecord::Base
   validates :teacher, presence: true
   validates :category, presence: true
   validates :sub_category, presence: true
-  validates :date_of_creating, presence: true, numericality: true, length: { is: 4 }
+  #validates :date_of_creating, presence: true, numericality: true, length: { is: 4 }
 end

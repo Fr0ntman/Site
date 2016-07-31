@@ -14,5 +14,5 @@
 
 class Exam < ActiveRecord::Base
   belongs_to :course
-  has_many   :exam_files
+  has_many :exam_files
 end

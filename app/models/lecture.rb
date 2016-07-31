@@ -16,6 +16,11 @@
 #
 
 class Lecture < ActiveRecord::Base
+	mount_uploader :cover, LectureCoverUploader
+	mount_uploader :multimedia, LectureMultimediaUploader
+	mount_uploader :lecture, LectureUploader
+
   belongs_to :course
   has_many   :tasks
+  has_many   :materials
 end
