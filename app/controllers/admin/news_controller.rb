@@ -24,7 +24,7 @@ class Admin::NewsController < Admin::ApplicationController
 
   def update
     if @news_item.update_attributes news_params
-      redirect_to admin_news_index_path(@news_item)
+      redirect_to admin_news_index_path
     else
       render :edit
     end

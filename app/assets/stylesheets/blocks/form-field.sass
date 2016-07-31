@@ -1,0 +1,26 @@
+.form-field
+	margin-bottom: 20px
+
+	&__label
+
+		label
+			display: inline-block
+			font-weight: bold
+			color: $color-another-gray
+			margin-bottom: 8px
+			letter-spacing: 0.0001em
+
+			&.required:after
+				content: '*'
+				padding-left: 3px
+				color: $color-red
+	
+	&-separated
+		border-top: 1px solid $color-light-gray
+		padding: 20px 0
+		margin: 0
+
+	&__input
+
+		&_hs
+			width: 50%

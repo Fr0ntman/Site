@@ -1,6 +1,12 @@
+menubar: false
+elementpath: false
 toolbar:
-  - styleselect | bold italic | undo redo
-  - image | link
+  - undo redo |  bold italic underline strikethrough | alignleft aligncenter alignright alignjustify bullist numlist fontsizeselect | link table image blockquote | subscript superscript | forecolor backcolor | fullscreen
 plugins:
   - image
   - link
+  - autolink
+  - fullscreen
+  - textcolor
+skin: myskin
+min_height: 200

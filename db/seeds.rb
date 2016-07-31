@@ -1,4 +1,3 @@
-
 3.times do |i|
 	News.create! title: FFaker::DizzleIpsum.sentence, content: FFaker::HTMLIpsum.body
 end
