@@ -1,5 +1,5 @@
 input[type="checkbox"]
-	
+
 	&:not(checked)
 		position: absolute
 		opacity: 0
@@ -17,23 +17,68 @@ input[type="checkbox"]
 				background: #fff
 				border: 1px solid #ccc
 				border-radius: 2px
-				position: absolute
-				left: 0
 				@extend %v-align
+				left: 0
 	
 	&:checked 
 
-		& + label:before
-			background: $color-red
-			border: none
+		& + label
 
-		& + label:after
-			content: ''
+			&:before
+				background: $color-red
+				border: none
+
+			&:after
+				content: ''
+				position: absolute
+				width: 11px
+				height: 9px
+				@extend %vh-align
+				background: url(asset-path('check.svg')) no-repeat
+
+	&.toggle
+
+		&:not(checked)
 			position: absolute
-			width: 11px
-			height: 9px
-			@extend %vh-align
-			background: url(asset-path('check.svg')) no-repeat
+			opacity: 0
+
+			& + label
+				position: relative
+				padding-left: 45px
+				margin-right: 0
+				cursor: pointer
+				color: $color-text
+
+				&:before
+					content: ''
+					border: none
+					width: 35px
+					height: 20px
+					background: #b3b3b3
+					border-radius: 10px
+					@extend %v-align
+					left: 0
+					@include transition(background)
+
+				&:after
+					content: ''
+					width: 16px
+					height: 16px
+					background: #fff
+					border-radius: 50%
+					@extend %v-align
+					left: 3px
+					@include transition(left)
+		
+		&:checked 
+
+			& + label
+
+				&:before
+					background: $color-red
+
+				&:after
+					left: 16px
 
 input[type="text"],
 input[type="password"],
@@ -47,3 +92,36 @@ textarea
 
 textarea
 	resize: vertical
+
+.file_upload
+	position: relative
+	overflow: hidden
+	font-size: 14px
+	padding: 10px
+	border: 1px solid #ccc
+	border-radius: 3px
+	
+	& > button, div
+		cursor: pointer
+
+	& > div
+		color: $color-another-gray
+
+	& > button
+		padding: 2px 4px
+		@extend %v-align
+		right: 7px
+		color: #b3b3b3
+		background: transparent
+		border: none
+		letter-spacing: 2px
+		border-radius: 3px
+		@include transition(background)
+
+		&:hover
+			background: rgba(236, 78, 66, .14)
+
+	input[type=file]
+		position: absolute
+		top: 0
+		visibility: hidden

@@ -44,6 +44,26 @@
   &_size_big
     line-height: 43px
 
+  &_color_green
+    background: $color-green
+    border-color: $color-green
+    color: #fff
+
+    &:hover
+      background: darken($color-green, 10%)
+      border-color: darken($color-green, 10%)
+      color: darken(#fff, 10%)
+
+  &_color_gray
+    background: #b3b3b3
+    border-color: #b3b3b3
+    color: #fff
+
+    &:hover
+      background: darken(#b3b3b3, 10%)
+      border-color: darken(#b3b3b3, 10%)
+      color: darken(#fff, 10%)
+
   &_color_white
     background: transparent
     border: 1px solid #fff
@@ -75,9 +95,9 @@
     color: #fff
 
     &:hover
-      background-color: #bd2519
-      border-color: #bd2519
-      color: #fff
+      background: darken($color-red, 10%)
+      border-color: darken($color-red, 10%)
+      color: darken(#fff, 10%)
   
   &_icon_download
     padding-left: 33px

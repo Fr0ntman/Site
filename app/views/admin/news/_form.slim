@@ -26,15 +26,25 @@
     .form-field__label
       = f.label :description, 'Описание новости'
     .form-field__input.form-field__input_hs
-      = f.text_area :description
+      = f.text_area :description, rows: 5
   .form-field.form-field-separated
     .form-field__label
       = f.label :attachments, 'Изображение'
-    .form-field__input
-      = f.file_field :attachments, multiple: true
-  .form-field.form-field-separated
+    .form-field__input.form-field__input_hs
+      .file_upload
+        button type="button" •••
+        div Выберите файл
+        = f.file_field :attachments, multiple: true
+  .form-field.form-field-separated.form-field-separated-last
     .form-field__label
       = f.label :source, 'Источник'
     .form-field__input.form-field__input_hs
       = f.text_field :source
-  = f.submit
+  .form-field
+    .left
+      = f.check_box :published, class: 'toggle'
+      = f.label :published, 'Опубликовать', style: 'display:block; margin: 28px 0'
+    .right
+      = link_to 'Удалить', url, method: :delete, class: 'button button_size_medium button_color_red', style: 'margin-right: 10px'
+      = link_to 'Отмена', admin_news_index_path, class: 'button button_size_medium button_color_gray', style: 'margin-right: 10px'
+      = f.submit 'Сохранить', class: 'button button_size_medium button_color_green'

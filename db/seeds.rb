@@ -3,6 +3,10 @@ random_image = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '
 random_pdf = ['1.pdf', '2.pdf', '3.pdf', '4.pdf', '5.pdf', '6.pdf', '7.pdf', '8.pdf', '9.pdf', '10.pdf', '11.pdf', '12.pdf', '13.pdf', '14.pdf']
 random_zip = ['1.zip', '2.zip', '3.zip', '4.zip', '5.zip', '6.zip', '7.zip', '8.zip']
 
+5.times do |i|
+	NewsCategory.create! name: FFaker::Lorem.word
+end
+
 3.times do |i|
 	News.create! title: FFaker::DizzleIpsum.sentence, content: FFaker::HTMLIpsum.body
 end
@@ -21,24 +25,25 @@ end
 3.times do |i|
 	rand_int = rand(0..7)
 	news = News.create! title: FFaker::DizzleIpsum.sentence, content: FFaker::HTMLIpsum.body
-	news.attachments = [Pathname.new(path_to_file + random_file[rand_int]).open]
+	news.attachments = [Pathname.new(path_to_files + random_image[rand_int]).open]
 	news.save!
 end
 
 5.times do |i|
-	Category.create! title: FFaker::Lorem.word
+	CourseCategory.create! title: FFaker::Lorem.word
 end
 
 5.times do |i|
 	rand_int = rand(1..5)
-	sub_category = SubCategory.new title: FFaker::Lorem.word
-	Category.find(rand_int).sub_categories << sub_category
+	CourseCategory.find(rand_int).children.create title: FFaker::Lorem.word
 end
 
 5.times do |i|
 	rand_int = rand(1..5)
-	speciality = Speciality.new title: FFaker::Lorem.word
-	SubCategory.find(rand_int).specialities << speciality
+	node = CourseCategory.find(rand_int)
+	if node.children.exists?(id: rand_int)
+		node.children_of(rand_int).create title: FFaker::Lorem.word
+	end
 end
 
 10.times do |i|
