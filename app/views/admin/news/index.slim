@@ -21,7 +21,7 @@
               label for="checkbox#{i}"
             td.table-list__col
               = link_to news.title, edit_admin_news_path(news), class: 'link-red'
-            td.table-list__col= news.category
+            td.table-list__col= news.category.name
             td.table-list__col= news.created_at.strftime("%d.%m.%Y - %H:%M")
             td.table-list__col= news.source
             - if news.published

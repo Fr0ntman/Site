@@ -17,7 +17,8 @@ class CoursesController < ApplicationController
 		@courses = Course.where speciality: params[:speciality_id]
 	end
 
-	def topics		
+	def topics
+		@categories = CourseCategory.all.map { |item| [item.title, item.id] }
 	end
 
 	def mit_courses

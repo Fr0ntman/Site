@@ -1,5 +1,4 @@
 - url = @news_item.new_record? ? admin_news_index_path : admin_news_path(@news_item)
-
 = flash[:error]
 = form_for @news_item, url: url do |f|
   - if @news_item.errors.messages.any?
@@ -10,7 +9,7 @@
     .form-field__label
       = f.label :category_id, 'Категория', class: 'required'
     .form-field__input.form-field__input_hs
-      = f.select :category_id, options_for_select(NewsCategory.options_for_select)
+      = f.select :category_id, options_for_select(NewsCategory.options_for_select), {include_blank: 'Выберите категорию'}, {class: 'selector select-field'}
   .form-field
     .form-field__label
       = f.label :title, 'Заголовок новости', class: 'required'

@@ -1,0 +1,61 @@
+.select
+	position: relative
+
+	&:last-child
+		margin-right: 0
+
+	&__value
+		width: 100%
+		background: #fff
+		border-radius: 3px
+		padding: 10px
+		color: $color-another-gray
+		position: relative
+		cursor: pointer
+
+		&:after
+			content: ''
+			width: 10px
+			height: 7px
+			background: url(asset-path('arrow_down.svg')) no-repeat
+			@extend %v-align
+			right: 10px
+
+	&__options
+		box-shadow: 0 5px 20px rgba(0,0,0,.3)
+		display: none
+		width: 100%
+		max-height: 266px
+		position: absolute
+		top: 102%
+		left: 0
+		list-style: none
+		background: #fff
+		border-radius: 3px
+		padding: 0
+		margin: 0
+		margin-right: 10px
+		z-index: 6
+		overflow: hidden !important
+
+		&__selected
+			background: #FCDFDD
+
+		&__item
+			color: $color-text
+			padding: 12px 10px
+			cursor: pointer
+
+			&:hover
+				background: #FCDFDD
+
+.select-field
+	border: 1px solid #ccc
+	border-radius: 3px
+
+	.select__options
+		border: 1px solid #ccc
+		border-radius: 0 0 3px 3px
+		top: 100%
+		left: -1px
+		width: 100.5%

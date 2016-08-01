@@ -7,7 +7,6 @@
 #= require jquery.spin
 #= require jquery.mCustomScrollbar.concat.min
 #= require_self
-#= upload_button
 #= require_tree .
 
 $(document).on 'turbolinks:load', ->
