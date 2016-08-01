@@ -19,7 +19,7 @@ class News < ActiveRecord::Base
 
   validates :title, presence: true#, length: { maximum: 100 }
   validates :content, presence: true
-  validates :description, length: { maximum: 220 }
+  # validates :description, length: { maximum: 220 }
 
   scope :published, -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }

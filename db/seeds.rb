@@ -29,28 +29,28 @@ end
 	news.save!
 end
 
-5.times do |i|
-	CourseCategory.create! title: FFaker::Lorem.word
-end
-
-5.times do |i|
-	rand_int = rand(1..5)
-	CourseCategory.find(rand_int).children.create title: FFaker::Lorem.word
-end
-
-5.times do |i|
-	rand_int = rand(1..5)
-	node = CourseCategory.find(rand_int)
-	if node.children.exists?(id: rand_int)
-		node.children_of(rand_int).create title: FFaker::Lorem.word
+3.times do |i|
+	category = CourseCategory.create! title: FFaker::Lorem.word
+	2.times do |j|
+		parent = category.children.create! title: FFaker::Lorem.word
+		parent.children.create! title: FFaker::Lorem.word
 	end
+end
+
+2.times do |i|
+	parent = CourseCategory.create title: FFaker::Lorem.word
+	parent.children.create! title: FFaker::Lorem.word
+end
+
+2.times do |i|
+	CourseCategory.create title: FFaker::Lorem.word
 end
 
 10.times do |i|
 	rand_int = rand(0..7)
-	rand_category = rand(1..5)
-	rand_sub_category = rand(1..5)
-	rand_speciality = rand(1..5)
+	rand_category = rand(1..7)
+	rand_sub_category = rand(1..7)
+	rand_speciality = rand(1..7)
 	course = Course.new(
 		title: FFaker::CheesyLingo.title,
 		color: '#61CDAB',

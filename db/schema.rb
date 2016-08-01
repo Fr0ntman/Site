@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160717161155) do
   create_table "course_categories", force: :cascade do |t|
     t.string   "title"
     t.string   "ancestry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "ancestry_depth", default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "course_categories", ["ancestry"], name: "index_course_categories_on_ancestry", using: :btree

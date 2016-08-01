@@ -2,23 +2,15 @@ class CoursesController < ApplicationController
 	layout :resolve_layout
 
 	def specialities
-		# @specialities = {}
-		# @categories = Category.all
-		# @categories.each do |category|
-		# 	@specialities[:"#{category.id}"] = {title: category.title, specialities: []}
-		# 	category.sub_categories.each do |sub_category|
-		# 		sub_category.specialities.each do |speciality|
-		# 			@specialities[:"#{category.id}"][:specialities] << speciality
-		# 		end
-		# 	end
-		# end
-		# @specialities.delete_if { |k, v| v[:specialities].empty? }
-		@specialities = {}
+		@specialities = []
 		@categories = CourseCategory.all
 		@categories.each do |item|
-			@specialities << item.ancestors depth_from: 2, depth_to: 1
+			if item.has_children?
+				descendants = item.descendants(from_depth: 2)
+				@specialities << {parent: item, specialities: descendants}
+			end
 		end
-		@specialities
+		@specialities.delete_if { |item| item[:specialities].empty? }
 	end
 
 	def speciality
@@ -37,7 +29,7 @@ class CoursesController < ApplicationController
 
 	def show
 		@course = Course.find params[:id]
-		@speciality = Speciality.find @course.speciality
+		@speciality = CourseCategory.find @course.speciality
 		@similar_courses = Course.where(speciality: @speciality.id).take(4)
 	end
 
