@@ -4,7 +4,7 @@
 = render 'tab_menu'
 
 .chosen.wrapper
-	= select_tag :category, options_for_select(@categories), {class: 'selector'}
+	= select_tag 'Выберите категорию', options_for_select(@categories), {class: 'selector', name: 'category'}
 	= select_tag :sub_category, options_for_select(@categories), {class: 'selector'}
 	= select_tag :speciality, options_for_select(@categories), {class: 'selector'}
 
