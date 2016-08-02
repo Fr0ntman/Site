@@ -27,6 +27,7 @@ class News < ActiveRecord::Base
   # after_create :vk_wall_post
   # after_update :vk_wall_edit
   # after_destroy :vk_wall_delete
+  after_destroy :delete_attachments
 
   private
 
@@ -64,5 +65,9 @@ class News < ActiveRecord::Base
         end
       end
       files
+    end
+
+    def delete_attachments
+      self.remove_attachments!
     end
 end

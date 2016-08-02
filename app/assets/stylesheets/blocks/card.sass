@@ -12,6 +12,11 @@
 
     &:last-child
       margin-bottom: 0
+  
+  &_admin
+    display: inline-block
+    margin: 0
+    width: auto
 
   &-container
     position: absolute
@@ -37,7 +42,33 @@
         transform: translateY(-15px)
 
   &__image
+    display: block
     @include size(100%, auto)
+
+    &_admin
+      width: auto
+    
+    &_admin_layer
+      position: relative
+
+    &_admin_btn
+      z-index: 2
+      cursor: pointer
+      display: block
+      background: $color-red
+      border-radius: 50%
+      @include size(40px, 40px)
+      @extend %vh-align
+      @include transition(background)
+
+      &:after
+        content: ''
+        @include size(20px, 20px)
+        background: url(asset-path('close_btn.svg')) no-repeat
+        @extend %vh-align
+
+      &:hover
+        background: darken($color-red, 10%)
 
   &__date
     position: absolute

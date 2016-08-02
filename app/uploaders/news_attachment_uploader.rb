@@ -19,4 +19,8 @@ class NewsAttachmentUploader < CarrierWave::Uploader::Base
   version :header_thumb do
     process resize_to_fill: [620, 350]
   end
+
+  version :admin_thumb do
+    process resize_to_fill: [275, 180]
+  end
 end

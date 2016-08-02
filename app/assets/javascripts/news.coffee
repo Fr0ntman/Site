@@ -23,6 +23,14 @@ $(document).on 'turbolinks:load', ->
 		do e.preventDefault
 		return false
 
+	$('.card__image_admin_btn').click (e) ->
+		$(this).parent().parent().css 'display', 'none'
+		$('.file_upload').css 'display', 'block'
+		$('#news_remove_attachments').prop 'checked', 'checked'
+
+		do e.preventDefault
+		return false
+
 	$('.check-all').click (e) ->
 		$checkboxes = $('input[type="checkbox"]')
 		$checkboxes.prop 'checked', !$checkboxes.prop 'checked'

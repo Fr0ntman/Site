@@ -39,7 +39,7 @@ class Admin::NewsController < Admin::ApplicationController
   private
 
     def news_params
-      params.require(:news).permit(:title, :source, :category_id, :content, :description, :published, {attachments: []})
+      params.require(:news).permit(:title, :source, :category_id, :content, :description, :published, {attachments: []}, :remove_attachments)
     end
 
     def load_news_item

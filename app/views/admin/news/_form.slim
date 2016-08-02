@@ -1,6 +1,6 @@
 - url = @news_item.new_record? ? admin_news_index_path : admin_news_path(@news_item)
 - select_categories = @news_item.category.blank? ? options_for_select(NewsCategory.options_for_select) : options_for_select(NewsCategory.options_for_select, @news_item.category.id)
-= flash[:error]
+
 = form_for @news_item, url: url do |f|
   - if @news_item.errors.messages.any?
     ul
@@ -31,10 +31,22 @@
     .form-field__label
       = f.label :attachments, 'Изображение'
     .form-field__input.form-field__input_hs
-      .file_upload
-        button type="button" •••
-        div Выберите файл
-        = f.file_field :attachments, multiple: true
+      - unless @news_item.attachments.blank?
+        .card.card_mini.card_admin
+          .card__image_admin_layer
+            = image_tag @news_item.attachments[0].admin_thumb.url, class: 'card__image card__image_admin'
+            = link_to '', '#', class: 'card__image_admin_btn'
+          .card-container
+        .file_upload style="display: none"
+          button type="button" •••
+          div Выберите файл
+          = f.file_field :attachments, multiple: true
+        = f.check_box :remove_attachments
+      - else
+        .file_upload
+          button type="button" •••
+          div Выберите файл
+          = f.file_field :attachments, multiple: true
   .form-field.form-field-separated.form-field-separated-last
     .form-field__label
       = f.label :source, 'Источник'
@@ -45,6 +57,10 @@
       = f.check_box :published, class: 'toggle'
       = f.label :published, 'Опубликовать', style: 'display:block; margin: 28px 0'
     .right
-      = link_to 'Удалить', url, method: :delete, class: 'button button_size_medium button_color_red', style: 'margin-right: 10px'
-      = link_to 'Отмена', admin_news_index_path, class: 'button button_size_medium button_color_gray', style: 'margin-right: 10px'
-      = f.submit 'Сохранить', class: 'button button_size_medium button_color_green'
+      - if @news_item.new_record?
+        = link_to 'Отменить', admin_news_index_path, class: 'button button_size_medium button_color_gray', style: 'margin-right: 10px'
+        = f.submit 'Добавить', class: 'button button_size_medium button_color_green'
+      - else
+        = link_to 'Удалить', url, method: :delete, class: 'button button_size_medium button_color_red', style: 'margin-right: 10px'
+        = link_to 'Отменить', admin_news_index_path, class: 'button button_size_medium button_color_gray', style: 'margin-right: 10px'
+        = f.submit 'Сохранить', class: 'button button_size_medium button_color_green'

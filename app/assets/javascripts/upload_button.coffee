@@ -4,6 +4,7 @@ $(document).on 'turbolinks:load', ->
   inp = wrapper.find('input')
   btn = wrapper.find('button')
   lbl = wrapper.find('div')
+  remove_attach = $('#news_remove_attachments')
   # Crutches for the :focus style:
   btn.focus(->
     wrapper.addClass 'focus'
@@ -29,5 +30,6 @@ $(document).on 'turbolinks:load', ->
       btn.text '•••'
     else
       btn.text file_name
+    remove_attach.prop 'checked', '' if remove_attach.length
     return
   ).change()
