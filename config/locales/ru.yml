@@ -1,4 +1,6 @@
 ru:
+  errors:
+    format: "Поле \"%{attribute}\" %{message}"
   defaults: &defaults
     month_names: [~, Января, Февраля, Марта, Апреля, Мая, Июня, Июля, Августа, Сентября, Октября, Ноября, Декабря]
     month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
@@ -11,14 +13,21 @@ ru:
   time:
     <<: *defaults
   activerecord:
+    models:
+      news: Новость
+    attributes:
+      news:
+        title: "Заголовок новости"
+        category_id: Категория
+        content: "Текст новости"
     errors:
       models:
         news:
           attributes:
             title:
-              blank: "Заполните заголовок новости"
+              blank: "обязательно к заполнению"
             content:
-              blank: "Заполните текст новости"
+              blank: "обязательно к заполнению"
         course:
           attributes:
             title:

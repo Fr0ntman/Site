@@ -2,10 +2,6 @@
 - select_categories = @news_item.category.blank? ? options_for_select(NewsCategory.options_for_select) : options_for_select(NewsCategory.options_for_select, @news_item.category.id)
 
 = form_for @news_item, url: url do |f|
-  - if @news_item.errors.messages.any?
-    ul
-      - @news_item.errors.messages.each do |attr, msg|
-        li= msg[0]
   .form-field
     .form-field__label
       = f.label :category_id, 'Категория', class: 'required'
@@ -14,8 +10,8 @@
   .form-field
     .form-field__label
       = f.label :title, 'Заголовок новости', class: 'required'
-    .form-field__input.form-field__input_hs
-      = f.text_field :title
+      .form-field__input.form-field__input_hs
+        = f.text_field :title
   .form-field
     .form-field__label
       = f.label :content, 'Текст новости', class: 'required'

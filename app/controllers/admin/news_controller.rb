@@ -16,6 +16,7 @@ class Admin::NewsController < Admin::ApplicationController
     if @news_item.save
       redirect_to admin_news_path(@news_item)
     else
+      flash.now[:errors] = @news_item.errors if @news_item.errors.any?
       render :new
     end
   end
@@ -26,6 +27,7 @@ class Admin::NewsController < Admin::ApplicationController
     if @news_item.update_attributes news_params
       redirect_to admin_news_index_path
     else
+      flash.now[:errors] = @news_item.errors if @news_item.errors.any?
       render :edit
     end
   end

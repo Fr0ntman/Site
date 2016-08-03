@@ -3,6 +3,12 @@ html
   head
     = render 'shared/main_meta', locals: yield
   body
+    - unless flash[:errors].blank?
+      .form-errors
+        = link_to '', '#', class: 'form-errors__close-btn', data: {'close-btn': true, target: '.form-errors'}
+        ul.form-errors__list
+          - flash[:errors].full_messages.each do |msg|
+            li.form-errors__list__item= msg
     .main
       = render 'shared/main_menu', locals: yield
       .content-header

@@ -27,6 +27,13 @@ $(document).on 'turbolinks:load', ->
 	$window.scroll($.proxy(scrollTop, 'toggleBtn'))
 	scrollTop.$button.on('click', $.proxy(scrollTop, 'scroll'))
 
+	$('[data-close-btn]').click (e) ->
+		target = $(this).data 'target'
+		do $(target).slideUp
+
+		do e.preventDefault
+		return false
+
 	$.fn.clear_form_errors = ->
 		@find('.form-filed').removeClass 'has-error'
 		@find('span.help-block').remove()
