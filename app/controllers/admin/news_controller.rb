@@ -1,5 +1,5 @@
 class Admin::NewsController < Admin::ApplicationController
-
+  rescue_from VkontakteApi::Error, with: :vk_error_handler
   before_action :load_news_item, only: [:edit, :update, :show, :destroy, :publish]
 
   def index
@@ -31,12 +31,23 @@ class Admin::NewsController < Admin::ApplicationController
   end
 
   def destroy
-    @news_item.destroy
+    if params[:ids] 
+      News.delete(params[:ids])
+    else
+      @news_item.destroy
+    end
 
     redirect_to admin_news_index_path
   end
 
   private
+
+    def vk_error_handler
+      respond_to do |format|
+        format.html { render :new } 
+        flash.now[:error] = "Произошла ошибка при обращении к API вконтакте"
+      end
+    end
 
     def news_params
       params.require(:news).permit(:title, :source, :category_id, :content, :description, :published, {attachments: []}, :remove_attachments)

@@ -19,7 +19,7 @@
   .form-field
     .form-field__label
       = f.label :content, 'Текст новости', class: 'required'
-    .form-field__input
+    .form-field__input data-turbolinks="false"
       = f.text_area :content, class: 'tinymce'
       = tinymce
   .form-field.form-field-separated
@@ -29,7 +29,7 @@
       = f.text_area :description, rows: 5
   .form-field.form-field-separated
     .form-field__label
-      = f.label :attachments, 'Изображение'
+      = f.label '', 'Изображение'
     .form-field__input.form-field__input_hs
       - unless @news_item.attachments.blank?
         .card.card_mini.card_admin
