@@ -3,12 +3,12 @@
 .container.container_mt_40
   ul.order.order_lborder.order_floatnav.right
     li.order__item 
-      a.text Администрация
+      = link_to 'Администрация', '#admins', class: 'text'
     li.order__item 
-      a.text Разработчики
+      = link_to 'Разработчики', '#devs', class: 'text'
     li.order__item 
-      a.text Переводчики
-  h3.collabs__header style="color:#888" Администрация
+      = link_to 'Переводчики', '#translators', class: 'text'
+  h3#admins.collabs__header style="color:#888" Администрация
   .collabs.left
     .collab
       .collab__avatar.avatar
@@ -58,7 +58,7 @@
       .collab__name=link_to 'Ксения Корнеева', 'https://new.vk.com/ancientellada', target: 'blank'
       .collab__post Главный редактор
       .collab__descr= link_to '', 'mailto:ksenia@kursomir.ru', target: 'blank', class: 'collab__email'
-  h3.collabs__header style="color:#888" Разработчики
+  h3#devs.collabs__header style="color:#888" Разработчики
   .collabs.left
     .collab
       .collab__avatar.avatar
@@ -84,7 +84,7 @@
       .collab__name=link_to 'Иван Оловянников', 'https://new.vk.com/romeo_ebrg', target: 'blank'
       .collab__post Сотрудничество / Разработка
       .collab__descr= link_to '', 'mailto:artdirect@kursomir.ru', target: 'blank', class: 'collab__email'
-  h3.collabs__header style="color:#888" Переводчики
+  h3#translators.collabs__header style="color:#888" Переводчики
   .tlate
     .tlate__col
       .tlate__group
