@@ -1,10 +1,217 @@
 - content_for :title, 'Команда'
 
-/ .tab-panel.tab-panel_align_center.team-tab
-/   .container
-/     = link_to 'Администрация', 'javascript:;', class: 'tab tab_state_active tab_size_big', data: { template: Base64.encode64(render('team_admins')) }
-/     = link_to 'Разработчики', 'javascript:;', class: 'tab tab_size_big'
-/     = link_to 'Переводчики', 'javascript:;', class: 'tab tab_size_big'
-/     = link_to 'Редакторы', 'javascript:;', class: 'tab tab_size_big'
 .container.container_mt_40
-	= render 'team_admins'
+  ul.order.order_lborder.order_floatnav.right
+    li.order__item 
+      a.text Администрация
+    li.order__item 
+      a.text Разработчики
+    li.order__item 
+      a.text Переводчики
+  h3.collabs__header style="color:#888" Администрация
+  .collabs.left
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/ilmir.png')
+      .collab__name=link_to 'Ильмир Саитов', 'https://new.vk.com/le_chaton', target: 'blank'
+      .collab__post Основатель и царь-батюшка
+      .collab__descr= link_to '', 'mailto:ilmir@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/artem.png')
+      .collab__name=link_to 'Артём Зверковский', 'https://vk.com/zverart', target: 'blank'
+      .collab__post Project manager
+      .collab__descr= link_to '', 'mailto:artem@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/aydar.jpg')
+      .collab__name=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+      .collab__post Розовый пони / Разработка
+      .collab__descr= link_to '', 'mailto:devops@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/ivan.jpg')
+      .collab__name=link_to 'Иван Оловянников', 'https://new.vk.com/romeo_ebrg', target: 'blank'
+      .collab__post Сотрудничество / Разработка
+      .collab__descr= link_to '', 'mailto:artdirect@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/anton.jpg')
+      .collab__name=link_to 'Антон Скитёв', 'https://new.vk.com/skitev', target: 'blank'
+      .collab__post PR / Связи с общественностью
+      .collab__descr= link_to '', 'mailto:press@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/roma.png')
+      .collab__name=link_to 'Рома Вьюн', 'https://new.vk.com/vyoon', target: 'blank'
+      .collab__post Руководитель дизайнеров
+      .collab__descr= link_to '', 'mailto:design@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/senya.png')
+      .collab__name Арсений Овсянников
+      .collab__post Colocation / Support
+      .collab__descr= link_to '', 'mailto:hostmaster@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/ksenia.png')
+      .collab__name=link_to 'Ксения Корнеева', 'https://new.vk.com/ancientellada', target: 'blank'
+      .collab__post Главный редактор
+      .collab__descr= link_to '', 'mailto:ksenia@kursomir.ru', target: 'blank', class: 'collab__email'
+  h3.collabs__header style="color:#888" Разработчики
+  .collabs.left
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/ilmir.png')
+      .collab__name=link_to 'Ильмир Саитов', 'https://new.vk.com/le_chaton', target: 'blank'
+      .collab__post Основатель и царь-батюшка
+      .collab__descr= link_to '', 'mailto:ilmir@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/artem.png')
+      .collab__name=link_to 'Артём Зверковский', 'https://vk.com/zverart', target: 'blank'
+      .collab__post Project manager
+      .collab__descr= link_to '', 'mailto:artem@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/aydar.jpg')
+      .collab__name=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+      .collab__post Розовый пони / Разработка
+      .collab__descr= link_to '', 'mailto:devops@kursomir.ru', target: 'blank', class: 'collab__email'
+    .collab
+      .collab__avatar.avatar
+        img src=asset_path('team_admins/ivan.jpg')
+      .collab__name=link_to 'Иван Оловянников', 'https://new.vk.com/romeo_ebrg', target: 'blank'
+      .collab__post Сотрудничество / Разработка
+      .collab__descr= link_to '', 'mailto:artdirect@kursomir.ru', target: 'blank', class: 'collab__email'
+  h3.collabs__header style="color:#888" Переводчики
+  .tlate
+    .tlate__col
+      .tlate__group
+        h3.text_bold Название направления
+        div style="height:70px;padding:10px 0;margin-bottom:15px;"
+          .tlate__group__avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_16=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .tlate__group__post Руководитель
+          hr.hr-div.hr-div_m_20.clear
+        h4.text_bold Переводчики:
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+      .tlate__group
+        h3.text_bold Название направления
+        div style="height:70px;padding:10px 0;margin-bottom:15px;"
+          .tlate__group__avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_16=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .tlate__group__post Руководитель
+          hr.hr-div.hr-div_m_20.clear
+        h4.text_bold Переводчики:
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+    .tlate__col
+      .tlate__group
+        h3.text_bold Название направления
+        div style="height:70px;padding:10px 0;margin-bottom:15px;"
+          .tlate__group__avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_16=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .tlate__group__post Руководитель
+          hr.hr-div.hr-div_m_20.clear
+        h4.text_bold Переводчики:
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+      .tlate__group
+        h3.text_bold Название направления
+        div style="height:70px;padding:10px 0;margin-bottom:15px;"
+          .tlate__group__avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_16=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .tlate__group__post Руководитель
+          hr.hr-div.hr-div_m_20.clear
+        h4.text_bold Переводчики:
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+        .translator
+          .tlate__group__mini-avatar.avatar
+            img src=asset_path('team_admins/aydar.jpg')
+          .tlate__group__name.tlate__group__name_fs_14=link_to 'Айдар Гареев', 'https://vk.com/id5671638', target: 'blank'
+          .clear
+.content-more.container

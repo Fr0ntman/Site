@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    = render 'shared/main_meta'
+  body
+    .main
+      header.header.js-header
+        .container
+          = link_to root_url, class: 'logo left' do
+            svg.icon.icon-logo-static role="img" title="logo-static" 
+              use xlink:href=image_path('icons.svg#icon-logo-static') 
+            svg.icon.icon-logo-action.logo__action role="img" title="logo-action" 
+              use xlink:href=image_path('icons.svg#icon-logo-action') 
+          nav.menu.right
+            = link_to courses_path, class: "menu__item menu__item_white #{current_class? courses_path}" do
+              | Курсы
+              svg.icon.icon-glass role='img' title='glass'
+                use xlink:href=image_path('icons.svg#icon-glass')
+            = link_to news_index_path, class: "menu__item menu__item_white #{current_class? news_index_path}" do
+              | Новости
+              svg.icon.icon-news role='img' title='news'
+                use xlink:href=image_path('icons.svg#icon-news')
+            = link_to page_path('about'), class: "menu__item menu__item_white #{current_class? page_path('about')}" do
+              | О нас
+              svg.icon.icon-info role='img' title='info'
+                use xlink:href=image_path('icons.svg#icon-info')
+      .content-robot-header
+      .tab-panel.tab-panel_align_center.conatainer
+        = link_to page_path('about'), class: "tab tab_size_big #{current_class? page_path('about'), 'tab_state_active'}" do
+          | О проекте
+        = link_to page_path('team'), class: "tab tab_size_big #{current_class? page_path('team'), 'tab_state_active'}" do
+          | Команда
+        = link_to page_path('wanna-help'), class: "tab tab_size_big #{current_class? page_path('wanna-help'), 'tab_state_active'}" do
+          | Хочу помочь
+        = link_to page_path('partners'), class: "tab tab_size_big #{current_class? page_path('partners'), 'tab_state_active'}" do
+          | Наши партнеры
+      = yield
+      = render 'shared/main_footer'
