@@ -4,9 +4,9 @@
 - unless @courses.blank?
 	.content.container.container_mt_40
 		.content-inner
-			.sort
-				.sort__label Сортировать по:
-				= link_to 'Название курса', 'javascript:;', class: 'sort__type'
+			.content_mb15
+				.text_gray.left style="margin-right: 10px" Сортировать по:
+				= link_to 'Название курса', 'javascript:;', class: 'sort sort__current sort__asc'
 			ul.list
 				- @courses.each do |course|
 					li.list__item
