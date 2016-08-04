@@ -1,21 +1,19 @@
 .sort
-	padding: 0 0 15px
-	margin-bottom: 15px
-	border-bottom: 1px solid #DCDCDC
+	color: $color-another-gray
+	text-decoration: none
+	font-size: 14px
+	position: relative
+	border-bottom: 1px solid transparent
+	@include transition(border-color)
 
-	&__label
-		display: inline-block
-		color: $color-another-gray
-		font-size: 14px
-		margin-right: 5px
-
-	&__type
+	&__current
 		color: $color-red
-		text-decoration: none
-		font-size: 14px
-		position: relative
-		border-bottom: 1px solid transparent
-		@include transition(border-color)
+
+		&:hover
+			border-bottom: 1px solid $color-red !important
+
+	
+	&__asc
 
 		&:after
 			content: ''
@@ -25,6 +23,16 @@
 			border-left: 4px solid transparent
 			border-right: 4px solid transparent
 
-		&:hover
-			border-bottom: 1px solid $color-red
+	&__desc
+
+		&:after
+			content: ''
+			@extend %v-align
+			left: 105%
+			border-bottom: 7px solid $color-red
+			border-left: 4px solid transparent
+			border-right: 4px solid transparent
+
+	&:hover
+		border-bottom: 1px solid $color-another-gray
 

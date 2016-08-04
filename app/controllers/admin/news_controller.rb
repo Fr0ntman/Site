@@ -1,13 +1,14 @@
 class Admin::NewsController < Admin::ApplicationController
   rescue_from VkontakteApi::Error, with: :vk_error_handler
   before_action :load_news_item, only: [:edit, :update, :show, :destroy, :publish]
+  helper_method :sort_column, :sort_direction
 
   def index
     session[:per_page] = params[:per_page] unless params[:per_page].blank?
     session[:page] = params[:page] unless params[:page].blank?
     per_page = session[:per_page].blank? ? params[:per_page] : session[:per_page]
     page = session[:page].blank? ? params[:page] : session[:page]
-    @news = News.paginate(page: page, per_page: per_page).order(created_at: :desc)
+    @news = News.paginate(page: page, per_page: per_page).order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -75,6 +76,14 @@ class Admin::NewsController < Admin::ApplicationController
 
     def load_news_item
       @news_item = News.find params[:id]
+    end
+
+    def sort_column
+      News.column_names.include?(params[:sort]) ? params[:sort] : "title"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
 end

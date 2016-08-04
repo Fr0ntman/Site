@@ -10,7 +10,7 @@
         = link_to 'Создать', new_admin_news_path, class: 'page-actions__btn button button_size_small button_text_size_normal button_color_green button_plus_icon'
       .right.page-actions
         .page-actions__label.text_gray.left Показывать по:
-        = link_to '20', admin_news_index_path(per_page: 2, page: 1), class: 'tab tab_per-page'
+        = link_to '20', admin_news_index_path(per_page: 2, page: 1), class: 'tab tab_per-page tab_state_active'
         = link_to '50', admin_news_index_path(per_page: 5, page: 1), class: 'tab tab_per-page'
         = link_to '100', admin_news_index_path(per_page: 10, page: 1), class: 'tab tab_per-page'
         = link_to '200', admin_news_index_path(per_page: 200, page: 1), class: 'tab tab_per-page'
@@ -21,11 +21,11 @@
           th.table-list__head-col
             input#checkbox type="checkbox"
             label.check-all for="checkbox"
-          th.table-list__head-col style="width: 400px" Заголовок
-          th.table-list__head-col style="width: 125px" Категория
-          th.table-list__head-col style="width: 165px" Дата
-          th.table-list__head-col style="width: 118px" Источник
-          th.table-list__head-col Статус
+          th.table-list__head-col style="width: 400px"= sortable 'title', 'Заголовок'
+          th.table-list__head-col style="width: 125px"= sortable 'category_id', 'Категория'
+          th.table-list__head-col style="width: 165px"= sortable 'created_at', 'Дата'
+          th.table-list__head-col style="width: 118px"= sortable 'source', 'Источник'
+          th.table-list__head-col= sortable 'published', 'Статус'
         - @news.each.with_index do |news, i|
           tr.table-list__row
             td.table-list__col
