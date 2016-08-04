@@ -30,6 +30,8 @@ class News < ActiveRecord::Base
   # after_destroy :vk_wall_delete
   after_destroy :delete_attachments
 
+  self.per_page = 2
+
   private
 
     def vk_wall_post

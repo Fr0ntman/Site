@@ -7,6 +7,12 @@
       .text_gray.left style="margin: 10px 10px 10px 0"  Действия:
       = link_to 'Опубликовать', publicate_admin_news_index_path, method: :patch, class: 'button button_size_small button_text_size_normal button_color_red publicate_btn', style: 'margin-right: 5px'
       = link_to 'Создать', new_admin_news_path, class: 'button button_size_small button_text_size_normal button_color_green button_plus_icon'
+    .right
+      .text_gray.left Показывать по:
+      = link_to '20', admin_news_index_path(per_page: 2)
+      = link_to '50', admin_news_index_path(per_page: 5)
+      = link_to '100', admin_news_index_path(per_page: 10)
+      = link_to '200', admin_news_index_path(per_page: 200)
   .content.content_ptb15.content_plr10.container.content_mt_20
     .content-inner
       table.table-list
@@ -30,9 +36,11 @@
             td.table-list__col= news.created_at.strftime("%d.%m.%Y - %H:%M")
             td.table-list__col= news.source
             - if news.published
-              td.table-list__col.text_gray Опубликовано
+              td.table-list__col Опубликовано
             - else
-              td.table-list__col.text_gray Неопубликовано
+              td.table-list__col Неопубликовано
+  .wrapper
+    = will_paginate @news
   .content-more.container
 - else
   p.news-empty Нет новостей
