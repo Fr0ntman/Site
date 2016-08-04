@@ -2,9 +2,12 @@
 - content_for :subtitle, 'Содержимое:'
 
 - if @news.any?
-  .wrapper
-    
-  .content.content_ptb15.container.container_mt_40
+  .wrapper.content_ptb15
+    .left
+      .text_gray.left style="margin: 10px 10px 10px 0"  Действия:
+      = link_to 'Опубликовать', publicate_admin_news_index_path, method: :patch, class: 'button button_size_small button_text_size_normal button_color_red publicate_btn', style: 'margin-right: 5px'
+      = link_to 'Создать', new_admin_news_path, class: 'button button_size_small button_text_size_normal button_color_green button_plus_icon'
+  .content.content_ptb15.content_plr10.container.content_mt_20
     .content-inner
       table.table-list
         tr.table-list__row
@@ -19,7 +22,7 @@
         - @news.each.with_index do |news, i|
           tr.table-list__row
             td.table-list__col
-              input id="checkbox#{i}" type="checkbox"
+              input id="checkbox#{i}" type="checkbox" value="#{news.id}"
               label for="checkbox#{i}"
             td.table-list__col
               = link_to news.title, edit_admin_news_path(news), class: 'link-red', 'data-turbolinks': false

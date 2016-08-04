@@ -42,6 +42,20 @@ class Admin::NewsController < Admin::ApplicationController
     redirect_to admin_news_index_path
   end
 
+  def publicate
+    respond_to do |format|
+      unless params[:news_ids].blank?
+        @news = News.where id: params[:news_ids]
+        @news.update_all(published: true)
+        
+        format.html { redirect_to admin_news_index_path }
+        format.json { render json: {status: 'ok', message: 'Success!'} }
+      else
+        format.json { render json: {status: 'error', message: 'Fail!'} }
+      end
+    end
+  end
+
   private
 
     def vk_error_handler

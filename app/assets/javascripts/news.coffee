@@ -37,3 +37,21 @@ $(document).on 'turbolinks:load', ->
 
 		do e.preventDefault
 		return false
+
+	$('.publicate_btn').click (e) ->
+		url = $(this).attr 'href'
+		method = $(this).data 'method'
+		news_ids = []
+
+		$('.table-list').find('[type="checkbox"]:checked').each ->
+			news_ids.push $(this).val()
+
+		$.ajax
+			type: 'POST'
+			url: url
+			data:
+				_method: method
+				news_ids: news_ids
+
+		do e.preventDefault
+		return false

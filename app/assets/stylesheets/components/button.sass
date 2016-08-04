@@ -16,6 +16,17 @@
   &:hover
     border-color: $color-red
     color: $color-red
+
+  &_plus_icon
+    position: relative
+    padding-left: 33px !important
+
+    &:before
+      content: ''
+      @include size(14px, 14px)
+      background: url(asset-path('plus_icon.svg')) no-repeat
+      @extend %v-align
+      left: 12px
   
   &_circle-download
     padding: 0
@@ -33,6 +44,12 @@
 
     &:hover
       transform: rotate(360deg)
+
+  &_size_small
+    text-transform: none
+    padding: 0 20px
+    font-size: 14px !important
+    line-height: 30px
 
   &_size_medium
     line-height: 38px
@@ -87,7 +104,9 @@
     color: $color-dark-pink
 
   &_text_size_normal
-    font-size: 13px
+    font: 
+      size: 13px
+      weight: normal
 
   &_color_red
     background-color: $color-red
