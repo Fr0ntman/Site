@@ -4,8 +4,9 @@ class Admin::NewsController < Admin::ApplicationController
 
   def index
     session[:per_page] = params[:per_page] unless params[:per_page].blank?
+    session[:page] = params[:page] unless params[:page].blank?
     per_page = session[:per_page].blank? ? params[:per_page] : session[:per_page]
-    page = params[:page]
+    page = session[:page].blank? ? params[:page] : session[:page]
     @news = News.paginate(page: page, per_page: per_page).order(created_at: :desc)
   end
 
