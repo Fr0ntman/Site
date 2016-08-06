@@ -5,7 +5,7 @@
 
 .chosen.wrapper
 	= select_tag :category, options_for_select(@categories), prompt: 'Выберите категорию', class: 'selector', data: {'remote-url': sub_categories_courses_path}
-	= select_tag :sub_category, '', prompt: 'Выберите подкатегорию', class: 'selector'
+	= select_tag :sub_category, '', prompt: 'Выберите подкатегорию', class: 'selector', data: {'remote-url': specialities_list_courses_path}
 	= select_tag :speciality, '', prompt: 'Выберите специальность', class: 'selector'
 
 .content.container.container_mt_40
@@ -14,19 +14,5 @@
 			.text_gray.left style="margin-right: 10px" Сортировать по:
 			= link_to 'Название курса', 'javascript:;', class: 'sort sort__current sort__asc'
 		ul.list
-			li.list__item
-				.list__item__cover
-					img src=image_path('other.jpg') width="150" height="100"
-				.list__item__details
-					.list__item__details__top
-						=link_to '#6.02', 'javascript:;', class: 'list__item__details__top__item'
-						span.dot-separator.dot-separator_gray •
-						.list__item__details__top__item-more 2008
-					.list__item__details__mid Деннис Фримен
-					= link_to 'Введение в EECS II: Цифровые системы связи', 'javascript:;', class: 'list__item__details__title'
-				.list__item__more-details
-					.list__item__more-details__mid Сложность: Студент
-					span.dot-separator.dot-separator_gray •
-					.list__item__more-details__mid Лекций: 20
 .content-more.container
 	button.button type='button' Показать еще

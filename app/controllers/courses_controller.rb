@@ -23,14 +23,17 @@ class CoursesController < ApplicationController
 	end
 
 	def sub_categories
-		@sub_categories = CourseCategory.find(params[:cat_id]).descendants from_depth: 1 , to_depth: 1
-		respond_to do |format|
-			if @sub_categories
-				format.json { render json: {status: 'ok', message: 'Success!', sub_categories: @sub_categories} }
-			else
-				format.json { render json: {status: 'ok', message: 'Fail!'} }
-			end
-		end
+		@categories = CourseCategory.find(params[:cat_id]).descendants to_depth: 1
+		@cat_ids = @categories.map { |item| [item.id] }
+		@courses = Course.where category: @cat_ids
+		respond_courses
+	end
+
+	def specialities_list
+		@categories = CourseCategory.find(params[:cat_id]).descendants to_depth: 2
+		@cat_ids = @categories.map { |item| [item.id] }
+		@courses = Course.where sub_category: @cat_ids
+		respond_courses
 	end
 
 	def mit_courses
@@ -63,6 +66,17 @@ class CoursesController < ApplicationController
 	end
 
 	private
+
+		def respond_courses
+			respond_to do |format|
+				if @categories
+					format.json { render json: {status: 'ok', message: 'Success!', categories: @categories} }
+					format.js { render 'courses_by_topics' }
+				else
+					format.json { render json: {status: 'error', message: 'Fail!'} }
+				end
+			end
+		end
 
 		def course_params
 			params.require(:course).permit(
