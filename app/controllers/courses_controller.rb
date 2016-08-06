@@ -21,6 +21,17 @@ class CoursesController < ApplicationController
 		@categories = CourseCategory.all.map { |item| [item.title, item.id] }
 	end
 
+	def sub_categories
+		@sub_categories = CourseCategory.find(params[:cat_id]).descendants from_depth: 1 , to_depth: 1
+		respond_to do |format|
+			if @sub_categories
+				format.json { render json: {status: 'ok', message: 'Success!', sub_categories: @sub_categories} }
+			else
+				format.json { render json: {status: 'ok', message: 'Fail!'} }
+			end
+		end
+	end
+
 	def mit_courses
 	end
 

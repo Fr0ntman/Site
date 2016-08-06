@@ -4,9 +4,9 @@
 = render 'tab_menu'
 
 .chosen.wrapper
-	= select_tag 'Выберите категорию', options_for_select(@categories), {class: 'selector', name: 'category'}
-	= select_tag :sub_category, options_for_select(@categories), {class: 'selector'}
-	= select_tag :speciality, options_for_select(@categories), {class: 'selector'}
+	= select_tag :category, options_for_select(@categories), prompt: 'Выберите категорию', class: 'selector', data: {'remote-url': sub_categories_courses_path}
+	= select_tag :sub_category, '', prompt: 'Выберите подкатегорию', class: 'selector'
+	= select_tag :speciality, '', prompt: 'Выберите специальность', class: 'selector'
 
 .content.container.container_mt_40
 	.content-inner
