@@ -18,7 +18,8 @@ class CoursesController < ApplicationController
 	end
 
 	def topics
-		@categories = CourseCategory.all.map { |item| [item.title, item.id] }
+		@categories = CourseCategory.select { |item| item.depth == 0 }
+		@categories.map! { |item| [item.title, item.id] }
 	end
 
 	def sub_categories
