@@ -6,7 +6,7 @@
 			.list__item__details__top
 				= link_to course.number, 'javascript:;', class: 'list__item__details__top__item'
 				span.dot-separator.dot-separator_gray •
-				.list__item__details__top__item-more= course.date_of_creating
+				.list__item__details__top__item-more= course.date_of_creating.strftime "%Y"
 			.list__item__details__mid= course.teacher
 			= link_to course.title, course, class: 'list__item__details__title'
 		.list__item__more-details
