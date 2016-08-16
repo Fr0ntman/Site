@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get '/speciality/:speciality_id' => :speciality, as: :speciality
       post 'sub_categories'
       post 'specialities_list'
+      post 'courses_list'
     end 
   end
 

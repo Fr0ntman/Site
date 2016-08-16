@@ -21,6 +21,12 @@ course_filter = (options={}) ->
 			data: {cat_id: cat_id}
 			success: (data) ->
 				if data.status is 'ok' and data.categories.length
+					$.ajax
+						type: 'POST'
+						url: 'courses_list'
+						dataType: 'script'
+						data: {cat_ids: data.cat_ids, cat_type: options.selector.slice(1)}
+
 					clear_options $select_options, options.default_text, $(options.target)
 					if options.target_child?
 						clear_options $target_child_options, options.target_child.default_text

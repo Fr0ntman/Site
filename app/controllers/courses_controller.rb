@@ -24,19 +24,33 @@ class CoursesController < ApplicationController
 
 	def sub_categories
 		@categories = CourseCategory.find(params[:cat_id]).descendants to_depth: 1
-		@cat_ids = @categories.map { |item| [item.id] }
-		@courses = Course.where category: @cat_ids
 		respond_courses
 	end
 
 	def specialities_list
 		@categories = CourseCategory.find(params[:cat_id]).descendants to_depth: 2
-		@cat_ids = @categories.map { |item| [item.id] }
-		@courses = Course.where sub_category: @cat_ids
 		respond_courses
 	end
 
 	def mit_courses
+	end
+
+	def courses_list
+		cat_type = case params[:cat_type]
+								 when 'category'
+									 'category'
+								 when 'sub_category'
+									 'sub_category'
+								 when 'speciality'
+									 'speciality'
+								 end
+			
+		cat_ids = params[:cat_ids].collect { |key, value| [value] }
+		@courses = Course.where :"#{cat_type}" => cat_ids
+
+		respond_to do |format|
+			format.js { render 'courses', layout: false }
+		end
 	end
 
 	def index
@@ -68,10 +82,10 @@ class CoursesController < ApplicationController
 	private
 
 		def respond_courses
+			@cat_ids = @categories.map { |item| [item.id] }
 			respond_to do |format|
 				if @categories
-					format.json { render json: {status: 'ok', message: 'Success!', categories: @categories} }
-					format.js { render 'courses_by_topics' }
+					format.json { render json: {status: 'ok', message: 'Success!', categories: @categories, cat_ids: @cat_ids} }
 				else
 					format.json { render json: {status: 'error', message: 'Fail!'} }
 				end
