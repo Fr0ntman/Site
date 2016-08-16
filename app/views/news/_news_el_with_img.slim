@@ -1,4 +1,4 @@
-.card
+.card.card-item
   .card__date.js-news-date
     .label= l item.updated_at.localtime, format: :default_card
   = image_tag item.attachments[0].preview.url, class: 'card__image'

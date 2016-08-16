@@ -1,4 +1,4 @@
-.text-news
+.text-news.card-item
   .text-news__date= l item.updated_at.localtime, format: :default
   = link_to item.title, item, class: 'text-news__title'
   .text-news__descr= item.description
