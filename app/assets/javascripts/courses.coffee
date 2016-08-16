@@ -34,9 +34,12 @@ course_fliter = (options={}) ->
 						$('<li/>', text: text, class: cls, 'data-value': item.id).appendTo $select_options
 				else
 					clear_options $select_options, options.default_text, $(options.target)
-					clear_options $target_child_options, optionstarget_child.default_text
+					clear_options $target_child_options, options.target_child.default_text
 					$select_options.css height: $select_options.css 'max-height'
-					$('<div/>', text: 'Опции отсутсвуют', class: "text_gray select__empty").appendTo $select_options
+					$target_child_options.css height: $target_child_options.css 'max-height'
+					$empty_text = $('<div/>', text: 'Опции отсутсвуют', class: "text_gray select__empty")
+					$empty_text.appendTo $select_options
+					$empty_text.appendTo $target_child_options
 
 $(document).on 'turbolinks:load', ->
 
