@@ -1,10 +1,7 @@
-course_fliter = (options={}) ->
+course_filter = (options={}) ->
 	options.selector ?= '#category'
 	options.target ?= '#sub_category'
 	options.default_text ?= 'Выберите подкатегорию'
-	options.target_child = {}
-	options.target_child.selector ?= '#speciality'
-	options.target_child.default_text ?= 'Выберите специальность'
 
 	clear_options = (select_options, text, selector) ->
 		select_options.empty()
@@ -15,7 +12,7 @@ course_fliter = (options={}) ->
 	cat_id = $selected.val()
 	url = $(options.selector).data 'remote-url'
 	$select_options = $ "#{options.target} + .select .select__options"
-	$target_child_options = $ "#{options.target_child.selector} + .select .select__options"
+	$target_child_options = $("#{options.target_child.selector} + .select .select__options") if options.target_child?
 
 	if cat_id
 		$.ajax
@@ -25,7 +22,10 @@ course_fliter = (options={}) ->
 			success: (data) ->
 				if data.status is 'ok' and data.categories.length
 					clear_options $select_options, options.default_text, $(options.target)
-					clear_options $target_child_options, options.target_child.default_text
+					if options.target_child?
+						clear_options $target_child_options, options.target_child.default_text
+						$target_child_options.css height: $target_child_options.css 'max-height'
+						$('<div/>', text: 'Опции отсутсвуют', class: "text_gray select__empty").appendTo $target_child_options
 					for item in data.categories
 						text = item.title
 						cls = 'select__options__item'
@@ -34,12 +34,12 @@ course_fliter = (options={}) ->
 						$('<li/>', text: text, class: cls, 'data-value': item.id).appendTo $select_options
 				else
 					clear_options $select_options, options.default_text, $(options.target)
-					clear_options $target_child_options, options.target_child.default_text
 					$select_options.css height: $select_options.css 'max-height'
-					$target_child_options.css height: $target_child_options.css 'max-height'
-					$empty_text = $('<div/>', text: 'Опции отсутсвуют', class: "text_gray select__empty")
-					$empty_text.appendTo $select_options
-					$empty_text.appendTo $target_child_options
+					$('<div/>', text: 'Опции отсутсвуют', class: "text_gray select__empty").appendTo $select_options
+					if options.target_child?
+						clear_options $target_child_options, options.target_child.default_text
+						$target_child_options.css height: $target_child_options.css 'max-height'
+						$('<div/>', text: 'Опции отсутсвуют', class: "text_gray select__empty").appendTo $target_child_options
 
 $(document).on 'turbolinks:load', ->
 
@@ -53,10 +53,13 @@ $(document).on 'turbolinks:load', ->
 	# 		return false
 
 	$('#category').on 'change', ->
-		do course_fliter
+		course_filter
+			target_child:
+				selector: '#speciality'
+				default_text: 'Выберите специальность'
 
 	$('#sub_category').on 'change', ->
-		course_fliter
+		course_filter
 			selector: '#sub_category'
 			target: '#speciality'
 			default_text: 'Выберите специальность'
