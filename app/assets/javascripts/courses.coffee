@@ -71,8 +71,9 @@ $(document).on 'turbolinks:load', ->
 			default_text: 'Выберите специальность'
 
 	$('#speciality').on 'change', ->
+		$el = $(this)
 		$.ajax
 			type: 'POST'
 			url: 'courses_list'
 			dataType: 'script'
-			data: {cat_ids: [$(this).find('option:selected').val()], cat_type: 'speciality'}
+			data: {cat_ids: {'0': [parseInt($el.find(':selected').val())]}, cat_type: 'speciality'}
