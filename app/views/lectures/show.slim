@@ -18,7 +18,7 @@
           .lecture-info__details__number= @lecture.type_title + ' ' + @lecture.number.to_s
           .lecture-info__details__title= @lecture.title
           .lecture-info__details__description= @lecture.description
-      = link_to @lecture.lecture.url, class: 'button button_color_red button_size_medium button_text_size_normal button_icon_download', style: 'margin: 20px 0; letter-spacing: normal' do
+      = link_to @lecture.lecture.url, class: 'button button_color_red button_size_medium button_text_size_normal button_icon_download', style: 'margin: 20px 0; font-weight: bold' do
         | Скачать в PDF 
         span.dot-separator •
         span style="font-weight: normal" #{number_to_human_size(@lecture.lecture.size)}
