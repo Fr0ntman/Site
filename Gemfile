@@ -29,6 +29,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'ancestry'
 gem 'mini_magick'
 gem 'will_paginate'
+gem 'russian'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'

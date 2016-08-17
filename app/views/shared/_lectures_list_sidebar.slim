@@ -8,7 +8,8 @@
           - @course.lectures.each do |lecture|
             li.list__item.list__item
               .list__item__cover.list__item__cover_small
-                img src=image_path('other.jpg') width="75" height="50"
+                .list__item__cover_small__cap style="background-color: #{@course.color}"
+                  img.list__item__cover_small__cap__icon src=image_path('lecture_icon.svg') width="20"
               .list__item__details.list__item__details_small
                 .list__item__details__top
                   = link_to lecture.type_title + ' ' + lecture.number.to_s, [@course, lecture], class: 'list__item__details__top__item list__item__details__top__item_small'
@@ -17,7 +18,8 @@
               - lecture.tasks.each do |task|
                 li.list__item
                   .list__item__cover.list__item__cover_small
-                    img src=image_path('other.jpg') width="75" height="50"
+                    .list__item__cover_small__cap style="background-color: #{@course.color}"
+                      img.list__item__cover_small__cap__icon src=image_path('task_icon.svg') width="25"
                   .list__item__details.list__item__details_small
                     .list__item__details__top
                       = link_to task.title + ' ' + task.number.to_s, [@course, lecture, task], class: 'list__item__details__top__item list__item__details__top__item_small'
@@ -26,7 +28,8 @@
             - @course.exams.each do |exam|
               li.list__item
                 .list__item__cover.list__item__cover_small
-                  img src=image_path('other.jpg') width="75" height="50"
+                  .list__item__cover_small__cap style="background-color: #{@course.color}"
+                    img.list__item__cover_small__cap__icon src=image_path('exam_icon.svg') width="30"
                 .list__item__details.list__item__details_small
                   .list__item__details__top
                     = link_to exam.title + ' ' + exam.number.to_s, [@course, exam], class: 'list__item__details__top__item list__item__details__top__item_small'
