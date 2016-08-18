@@ -1,6 +1,11 @@
 - content_for :title, 'Новости'
 - content_for :subtitle, 'Переводы. Анонсы. События'
 
+.tab-panel.tab-panel_align_center.courses-tab
+  .container
+    - @categories.each do |category|
+      = link_to category.name, category_news_index_path(category.id), class: "tab tab_size_big #{current_class? category_news_index_path(category.id), 'tab_state_active'}"
+
 - if @news.any?
   .content.container.container_mt_40
     == print_news @news

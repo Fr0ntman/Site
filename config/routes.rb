@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :news, only: [:show, :index]
+  resources :news, only: [:show, :index] do
+    get 'category/:cat_id' => :category, as: :category, on: :collection
+  end
   resources :courses do
     resources :lectures do
       resources :tasks

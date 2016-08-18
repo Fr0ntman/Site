@@ -3,11 +3,18 @@ class NewsController < ApplicationController
 
   def index
     @news = News.order(created_at: :desc).all
+    @categories = NewsCategory.all
   end
 
   def show
     @news = News.find params[:id]
     @last_news = News.last 4
+  end
+
+  def category
+    @news = News.where category_id: params[:cat_id]
+    @categories = NewsCategory.all
+    render :index
   end
 
   private
