@@ -30,8 +30,9 @@ $(document).on 'turbolinks:load', ->
 			$('.order .order__item__active').removeClass 'active'
 			$('.order .order__item:first').find('a').addClass 'active'
 
-		$('.order a').on 'click', (e) -> 
-			do e.preventDefault
-			$target = $ $(this).attr 'href'
-			$('html, body').stop().animate 'scrollTop': $target.offset().top+2
 	).scroll()
+
+	$('.order a').on 'click', (e) -> 
+		do e.preventDefault
+		$target = $ $(this).attr 'href'
+		$('html, body').stop().animate 'scrollTop': $target.offset().top - 20
