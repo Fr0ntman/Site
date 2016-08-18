@@ -30,6 +30,7 @@ gem 'ancestry'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'russian'
+gem 'sticky-rails'
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.4'

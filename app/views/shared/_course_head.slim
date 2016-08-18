@@ -15,7 +15,7 @@
           .course-info__data= @course.number
         .course-info__item
           .course-info__label Дата появления курса:
-          .course-info__data= l @course.date_of_creating, format: :course_date
+          .course-info__data= Russian::l @course.date_of_creating, format: :course_date
         .course-info__item
           .course-info__label Уровень сложности:
           .course-info__data= @course.level
