@@ -1,1 +1,1 @@
-$('ul.list').empty().append "<%= j(render 'courses') %>"
+$('ul.list').slideUp().empty().append("<%= j(render 'courses') %>").hide().slideDown(200)
