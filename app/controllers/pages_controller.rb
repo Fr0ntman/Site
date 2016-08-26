@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 				'home'
 			when 'exam'
 				'course'
-			when 'about', 'team', 'wanna-help', 'partners'
+			when 'about/project', 'about/team', 'about/wanna-help', 'about/partners'
 				'about'
 			else
 				'application'
