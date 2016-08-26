@@ -1,12 +1,12 @@
 - content_for :title, 'Команда'
 
 .container.container_mt_40
-  ul.order.order_lborder.order_floatnav.right
-    li.order__item 
+  ul.order.order_lborder.order_floatnav.right.js-order
+    li.order__item.js-order__item
       = link_to 'Администрация', '#admins', class: 'text order__item__active'
-    li.order__item 
+    li.order__item.js-order__item
       = link_to 'Разработчики', '#devs', class: 'text'
-    li.order__item 
+    li.order__item.js-order__item
       = link_to 'Переводчики', '#translators', class: 'text'
   h3#admins.collabs__header style="color:#888" Администрация
   .collabs.left

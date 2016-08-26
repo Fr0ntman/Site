@@ -9,7 +9,7 @@ $(document).on 'turbolinks:load', ->
 			$('.container.container_mt_40').html Base64.decode template if template
 			return false
 
-	$el = $('.order')
+	$el = $('.js-order')
 	if $el.length
 		top = $el.offset().top
 		marginTop = $el.css 'marginTop'
@@ -23,13 +23,13 @@ $(document).on 'turbolinks:load', ->
 
 				$('.collabs__header').each (i) ->
 					if $(this).offset().top - 20 <= scrollTop
-						$('.order a').removeClass 'order__item__active'
-						$('.order .order__item').eq(i).find('a').addClass 'order__item__active'
+						$('.js-order a').removeClass 'order__item__active'
+						$('.js-order .js-order__item').eq(i).find('a').addClass 'order__item__active'
 			else
 				$el.stop().animate {'marginTop', marginTop}, 'swing'
 
-				$('.order .order__item__active').removeClass 'active'
-				$('.order .order__item:first').find('a').addClass 'active'
+				$('.js-order .order__item__active').removeClass 'active'
+				$('.js-order .js-order__item:first').find('a').addClass 'active'
 
 		).scroll()
 
