@@ -19,7 +19,7 @@ class Admin::NewsController < Admin::ApplicationController
     @news_item = News.new news_params
 
     if @news_item.save
-      redirect_to admin_news_path(@news_item)
+      redirect_to admin_news_index_path
     else
       flash.now[:errors] = @news_item.errors if @news_item.errors.any?
       render :new
