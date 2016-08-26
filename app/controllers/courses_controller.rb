@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
 	end
 
 	def index
-		redirect_to specialities_courses_path
+		redirect_to topics_courses_path
 	end
 
 	def show
