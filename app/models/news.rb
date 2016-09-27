@@ -17,7 +17,7 @@ class News < ActiveRecord::Base
 
   belongs_to :category, class_name: 'NewsCategory'
 
-  validates :title, presence: true #, length: { maximum: 110 }
+  validates :title, presence: true #, length: { maximum: 125 }
   validates :content, presence: true
   #validates :category_id, presence: true
   #validates :description, length: { maximum: 190 }
@@ -30,7 +30,7 @@ class News < ActiveRecord::Base
   # after_destroy :vk_wall_delete
   after_destroy :delete_attachments
 
-  self.per_page = 2
+  self.per_page = 20
 
   private
 

@@ -2,8 +2,13 @@ class NewsController < ApplicationController
   layout :resolve_layout
 
   def index
-    @news = News.order(created_at: :desc).all
+    @news = News.paginate(page: params[:page]).order(created_at: :desc).all
     @categories = NewsCategory.all
+
+    respond_to do |format|
+      format.js { render :index, layout: false}
+      format.html { render :index }
+    end
   end
 
   def show
@@ -12,9 +17,12 @@ class NewsController < ApplicationController
   end
 
   def category
-    @news = News.where category_id: params[:cat_id]
+    @news = News.where(category_id: params[:cat_id]).paginate(page: params[:page]).order(created_at: :desc).all
     @categories = NewsCategory.all
-    render :index
+    respond_to do |format|
+      format.js { render :index, layout: false}
+      format.html { render :index }
+    end
   end
 
   private

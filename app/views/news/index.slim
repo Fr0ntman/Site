@@ -8,8 +8,11 @@
 
 - if @news.any?
   .content.container.container_mt_40
-    == print_news @news
+  	.news
+    	== print_news @news
   .content-more.container
-    / button.button type='button' Показать еще
+  	div style="display: none"= will_paginate @news
+    - if @news.next_page
+      button.button.js-btn-showmore role="show-more" type='button' Показать еще
 - else
   p.news-empty Нет новостей

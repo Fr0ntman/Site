@@ -15,6 +15,24 @@ TPL
 		Slim::Template.new { content }.render self
 	end
 
+	def print_news_odd(news)
+		@news = news
+		content =<<TPL
+			- news.each.with_index do |item, index|
+				= news_el item if index.odd?
+TPL
+		Slim::Template.new { content }.render self
+	end
+
+	def print_news_even(news)
+		@news = news
+		content =<<TPL
+			- news.each.with_index do |item, index|
+				= news_el item if index.even?
+TPL
+		Slim::Template.new { content }.render self
+	end
+
 	private
 
 		def news_el(news)
