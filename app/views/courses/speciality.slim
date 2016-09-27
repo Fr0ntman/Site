@@ -7,21 +7,9 @@
 			.content_mb15
 				.text_gray.left style="margin-right: 10px" Сортировать по:
 				= link_to 'Название курса', 'javascript:;', class: 'sort sort__current sort__asc'
-			ul.list
-				- @courses.each do |course|
-					li.list__item
-						.list__item__cover
-							img src=course.bg_img.thumb.url width="150" height="100"
-						.list__item__details
-							.list__item__details__top
-								= link_to '#' + course.number, 'javascript:;', class: 'list__item__details__top__item'
-								span.dot-separator.dot-separator_gray •
-								.list__item__details__top__item-more= course.date_of_creating.strftime("%Y")
-							.list__item__details__mid= course.teacher
-							= link_to course.title, course_path(course), class: 'list__item__details__title'
-						.list__item__more-details
-							.list__item__more-details__mid Сложность: #{course.level}
-							span.dot-separator.dot-separator_gray •
-							.list__item__more-details__mid Лекций: #{course.lectures.count}
+			ul.list.js-speciality
+				= render partial: 'speciality_list', locals: {courses: @courses}
 	.content-more.container
-		button.button type='button' Показать еще
+		div style="display: none"= will_paginate @courses
+		- if @courses.next_page
+			button.button.js-btn-showmore role="show-more" type='button' Показать еще

@@ -14,7 +14,11 @@ class CoursesController < ApplicationController
 	end
 
 	def speciality
-		@courses = Course.where speciality: params[:speciality_id]
+		@courses = Course.where(speciality: params[:speciality_id]).paginate(page: params[:page])
+		respond_to do |format|
+      format.js { render 'speciality', layout: false}
+      format.html { render 'speciality' }
+    end
 	end
 
 	def topics

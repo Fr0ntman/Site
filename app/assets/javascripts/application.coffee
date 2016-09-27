@@ -7,7 +7,7 @@
 #= require jquery.spin
 #= require jquery.mCustomScrollbar.concat.min
 #= require_self
-#= require infinite_scroll
+#= require showmore
 #= require_tree .
 
 $(document).on 'turbolinks:load', ->

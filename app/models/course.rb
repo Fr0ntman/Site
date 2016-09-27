@@ -20,6 +20,8 @@
 #
 
 class Course < ActiveRecord::Base
+  self.per_page = 1
+
   mount_uploader :bg_img, CourseBgUploader
 
   has_many :lectures
