@@ -13,7 +13,7 @@ class NewsAttachmentUploader < CarrierWave::Uploader::Base
   end
 
   version :preview do
-    process resize_to_fill: [450, 230]
+    process resize_to_fill: [450, 250]
   end
 
   version :header_thumb do

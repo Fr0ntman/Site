@@ -5,7 +5,7 @@ $(document).on 'turbolinks:load', ->
 		$description = $ '.js-news-descr', @
 		$date = $(@).parent().find '.js-news-date'
 		if $description.length
-			topBound = $date.offset().top + $date.innerHeight() + 15 # 15px вниз от даты
+			topBound = $date.offset().top + $date.innerHeight() + 40 # 15px вниз от даты
 			titleTop = $title.offset().top
 		else
 			topBound = 10

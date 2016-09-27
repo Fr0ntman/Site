@@ -3,8 +3,9 @@
 		.label= Russian::l item.updated_at.localtime, format: :default_card
 	= image_tag item.attachments[0].preview.url, class: 'card__image'
 	= link_to item, class: 'card-container js-news-container' do
-		/ - unless item.source.blank?
-		/ 	.card__source= item.source + ':'
-		.card__title.js-news-title= item.title
+		.card__title.js-news-title
+			= item.title
+			- unless item.source.blank?
+				.card__source.card__source_img= item.source + ':'
 		- unless item.description.blank?
 			.card__descr.js-news-descr= item.description

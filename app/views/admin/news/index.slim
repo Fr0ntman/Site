@@ -7,7 +7,7 @@
       .left.page-actions
         .page-actions__label.text_gray.left  Действия:
         = link_to 'Опубликовать', publicate_admin_news_index_path, method: :patch, class: 'page-actions__btn button button_size_small button_text_size_normal button_color_red publicate_btn'
-        = link_to 'Создать', new_admin_news_path, class: 'page-actions__btn button button_size_small button_text_size_normal button_color_green button_plus_icon'
+        = link_to 'Создать', new_admin_news_path, 'data-turbolinks': false, class: 'page-actions__btn button button_size_small button_text_size_normal button_color_green button_plus_icon'
       .right.page-actions
         .page-actions__label.text_gray.left Показывать по:
         = link_to '20', admin_news_index_path(per_page: 2, page: 1), class: 'tab tab_per-page tab_state_active'

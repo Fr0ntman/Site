@@ -1,9 +1,9 @@
 .card
   position: relative
   margin: 20px 0
-  @include size(100%, 230px)
+  @include size(100%, 250px)
   overflow: hidden
-  border-radius: 10px
+  border-radius: 5px
   will-change: transform
 
   &__source
@@ -12,6 +12,11 @@
       size: 16px
       weight: bold
     padding: 0 25px
+
+    &_img
+      padding: 0 !important
+      position: absolute
+      bottom: 100%
 
   &-item:first-child
     margin-top: 0
