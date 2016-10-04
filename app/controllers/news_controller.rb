@@ -2,7 +2,7 @@ class NewsController < ApplicationController
   layout :resolve_layout
 
   def index
-    @news = News.paginate(page: params[:page]).order(created_at: :desc).all
+    @news = News.published.paginate(page: params[:page]).order(created_at: :desc).all
     @categories = NewsCategory.all
 
     respond_to do |format|
@@ -13,7 +13,8 @@ class NewsController < ApplicationController
 
   def show
     @news = News.find params[:id]
-    @last_news = News.last 4
+    @last_news = News.last(4).select { |n| n.published? }
+    redirect_to '/error' unless @news.published?
   end
 
   def category

@@ -32,7 +32,7 @@ html
           | Команда
         = link_to page_path('about/wanna-help'), class: "tab tab_size_big #{current_class? page_path('about/wanna-help'), 'tab_state_active'}" do
           | Хочу помочь
-        = link_to page_path('about/partners'), class: "tab tab_size_big #{current_class? page_path('about/partners'), 'tab_state_active'}" do
+        /= link_to page_path('about/partners'), class: "tab tab_size_big #{current_class? page_path('about/partners'), 'tab_state_active'}" do
           | Наши партнеры
       = yield
       = render 'shared/main_footer'

@@ -17,10 +17,10 @@ class News < ActiveRecord::Base
 
   belongs_to :category, class_name: 'NewsCategory'
 
-  validates :title, presence: true #, length: { maximum: 125 }
+  validates :title, presence: true , length: { maximum: 125 }
   validates :content, presence: true
-  #validates :category_id, presence: true
-  #validates :description, length: { maximum: 190 }
+  validates :category_id, presence: true
+  validates :description, length: { maximum: 190 }
 
   scope :published, -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
